@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.mdx h1 {
+  @apply text-3xl mb-4 text-blue-700;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.mdx h2 {
+  @apply text-2xl mb-4 text-blue-700;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.mdx h3 {
+  @apply text-xl mb-4 text-blue-700;
+}
+
+.mdx p {
+  @apply mb-2;
+}
+
+.mdx a {
+  @apply text-blue-600 underline;
+}
+
+.mdx em {
+  @apply italic;
+}
+
+.mdx strong {
+  @apply font-bold;
+}
+
+.mdx blockquote {
+  @apply border-l-4 border-blue-700 pl-4 mb-4;
+}
+
+.mdx h6 {
+  @apply italic text-gray-600 mb-8;
 }
