@@ -7,19 +7,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
 
-  const metadata = await getAllArticles().then((data) => {
-    return data.map((article) => {
-      return { frontmatter: article.frontmatter, category: article.category };
-    });
-    // Use the frontmatterArray as needed
-  });
+//   const metadata = await getAllArticles().then((data) => {
+//     return data.map((article) => {
+//       return { frontmatter: article.frontmatter, category: article.category };
+//     });
+//     // Use the frontmatterArray as needed
+//   });
 
-//   console.log("layout", metadata);
+// //   console.log("layout", metadata);
 
 
   return (
     <div className="flex flex-row">
-      <Sidebar postMetadata={metadata}/>
+      {/* <Sidebar postMetadata={metadata}/> */}
       {children}
     </div>
   );
