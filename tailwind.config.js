@@ -5,7 +5,6 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
   ],
   prefix: "",
   theme: {
@@ -18,6 +17,30 @@ module.exports = {
     },
     extend: {
       colors: {
+        purewhite: '#ffffff',
+        pureblack: '#000000',
+        black: '#040301',
+        white: '#f7f5f3',
+        main: {
+          50: '#f2faeb',
+          100: '#e3f3d4',
+          200: '#c8e9ad',
+          300: '#a5d97d',
+          400: '#84c754',
+          500: '#66ac36',
+          600: '#4d8927',
+          700: '#3c6922',
+          800: '#365922',
+          900: '#2d481f',
+          950: '#15270c',
+        },
+        sec: {
+          300: '#fffbcc',
+          500: '#ffea00',
+          700: '#ffd700',
+        },
+
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -56,6 +79,21 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      width: {
+        'xs': '320px',
+        'sm': '576px',
+        'md': '768px',
+        'lg': '992px',
+        'xl': '1200px',
+      },
+      height: {
+        'xs': '320px',
+        'illustration': '420px',
+        'sm': '576px',
+        'md': '768px',
+        'lg': '992px',
+        'xl': '1200px',
       },
       keyframes: {
         "accordion-down": {

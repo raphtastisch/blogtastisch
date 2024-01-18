@@ -1,5 +1,5 @@
 import Sidebar from "@/components/categorySidebar";
-import { getAllArticles } from "@/lib/getarticles";
+import { getAllPosts } from "@/lib/getarticles";
 
 export default async function RootLayout({
   children,

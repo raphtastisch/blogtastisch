@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import { MainNavigation } from "@/components/mainNavigation";
-import { getAllArticles } from "@/lib/getarticles";
+import { getAllPosts } from "@/lib/getarticles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 //   )
 // }
 
+
 export default async function RootLayout({
   children,
 }: {
@@ -32,8 +33,7 @@ export default async function RootLayout({
   // const components: { title: string; href: string; description: string }[] = [
   //   {}];
 
-  const mainNavbarData = await getAllArticles().then((data) => {
-    
+  const mainNavbarData = await getAllPosts().then((data) => {
     // sort data by date to get newest first
     return data
       .sort((a, b) => {
@@ -46,7 +46,7 @@ export default async function RootLayout({
         return {
           title: article.frontmatter.title,
           href: `/${article.category}/${article.frontmatter.slug}`,
-          description: article.frontmatter.shortDescription,
+          shortDescription: article.frontmatter.shortDescription,
           category: article.category,
           date: article.frontmatter.date,
         };
@@ -54,18 +54,17 @@ export default async function RootLayout({
     // Use the frontmatterArray as needed
   });
 
-  console.log("layout", mainNavbarData);
+  // console.log("layout", mainNavbarData);
 
   return (
     <html lang="de">
-      <body className="flex flex-col w-screen overflow-hidden">
-        <div className="w-full flex-none">
-          <MainNavigation mainNavDataFull={mainNavbarData} />
-          {/* <Navbar /> */}
-
-          {/* <Navbar articlesMetadata={metadata} /> */}
-        </div>
-        <div className="flex-grow p-4">{children}</div>
+      <body className="w-screen flex px-8 md:justify-center bg-white text-black">
+        <main className="flex flex-col space-y-8 md:w-md md:items-center">
+          <div className="flex-none py-4">
+            <MainNavigation mainNavDataFull={mainNavbarData} />
+          </div>
+          <div className="flex-grow">{children}</div>
+        </main>
       </body>
     </html>
   );

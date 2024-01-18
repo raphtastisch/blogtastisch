@@ -4,8 +4,8 @@ import OverviewGrid from "@/components/overviewGrid";
 // import { getAllPosts, getImagePath } from "@/lib/getarticles";
 
 export default async function Home() {
-  const category = "books";
-  const headline = "Alles zum Thema Bücher!";
+  const category = "articles";
+  const headline = "Alle von mir geschriebenen Artikel!";
 
   // const overviewElementData = await Promise.all(
   //   await getAllPosts().then((data) => {
