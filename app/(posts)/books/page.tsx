@@ -1,5 +1,6 @@
 // import OverviewElement from "@/components/overviewElement";
 import OverviewGrid from "@/components/overviewGrid";
+import StyledH1 from "@/components/styledH1";
 // import { contentFolder } from "@/lib/config";
 // import { getAllPosts, getImagePath } from "@/lib/getarticles";
 
@@ -45,9 +46,10 @@ export default async function Home() {
 
   return (
     <>
-      <div className="text-3xl text-main-700 font-semibold mb-8">
+    <StyledH1 className="mb-8 mt-0">{headline}</StyledH1>
+      {/* <div className="text-3xl text-main-700 font-semibold mb-8">
         {headline}
-      </div>
+      </div> */}
       <OverviewGrid category={category} />
       {/* <div className="w-full grid gap-16 cols-1 lg:gap-12 xl:gap-20 lg:grid-cols-10 lg:grid-flow-row-dense">
         {overviewElementData.map((data, index) => {

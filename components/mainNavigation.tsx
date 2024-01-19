@@ -7,6 +7,7 @@ import {
   BookOpenIcon,
   DocumentTextIcon,
   AcademicCapIcon,
+  UserIcon,
 } from "@heroicons/react/24/solid";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -50,9 +51,9 @@ export function MainNavigation({
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
-              className={navigationMenuTriggerStyle() + " md:px-8"}
+              className={navigationMenuTriggerStyle() + " md:px-8 bg-white"}
             >
-              <div className="flex flex-row space-x-2 items-center">
+              <div className="flex flex-row space-x-2 items-center text-main-700 text-lg">
                 <HomeIcon className="h-6 w-6 " />
                 <p>Home</p>
               </div>
@@ -63,21 +64,23 @@ export function MainNavigation({
         Books 
         */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="md:px-8">
-            <div className="flex flex-row space-x-2 items-center">
+          {/* <Link href="/books"> */}
+          <NavigationMenuTrigger className="md:px-8 bg-white">
+            <div className="flex flex-row space-x-2 items-center text-main-700 text-lg">
               <BookOpenIcon className="h-6 w-6 " />
               <p>Bücher</p>
             </div>
           </NavigationMenuTrigger>
+          {/* </Link> */}
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3" key="bookmain">
                 <NavigationMenuLink asChild>
-                  <a
+                  <Link
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/books"
                   >
-                    <AcademicCapIcon className="h-12 w-12" />
+                    <AcademicCapIcon className="h-12 w-12 text-main-700" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Alle Bücher
                     </div>
@@ -85,7 +88,7 @@ export function MainNavigation({
                       Hier findest du alle Buchreviews, Empfehlungen und vieles
                       mehr!
                     </p>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>
               {mainNavData.books.map((navData: any) => (
@@ -104,8 +107,8 @@ export function MainNavigation({
         Articles 
         */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="md:px-8">
-            <div className="flex flex-row space-x-2 items-center">
+          <NavigationMenuTrigger className="md:px-8 bg-white">
+            <div className="flex flex-row space-x-2 items-center text-main-700 text-lg">
               <DocumentTextIcon className="h-6 w-6" />
               <p>Artikel</p>
             </div>
@@ -118,7 +121,7 @@ export function MainNavigation({
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/articles"
                   >
-                    <AcademicCapIcon className="h-12 w-12" />
+                    <AcademicCapIcon className="h-12 w-12 text-main-700" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Alle Artikel
                     </div>
@@ -141,6 +144,21 @@ export function MainNavigation({
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/* 
+        about me
+         */}
+        <NavigationMenuItem>
+          <Link href="/aboutme" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle() + " md:px-8 bg-white"}
+            >
+              <div className="flex flex-row space-x-2 items-center text-main-700 text-lg">
+                <UserIcon className="h-6 w-6 " />
+                <p>Über mich</p>
+              </div>
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
         {/*
         Linkedin 
         */}
@@ -152,11 +170,14 @@ export function MainNavigation({
           >
             <NavigationMenuLink
               className={
-                navigationMenuTriggerStyle() + " md:px-8 ml-16 md:ml-60"
+                navigationMenuTriggerStyle() +
+                " md:px-8 ml-16 md:ml-60 bg-white"
               }
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="flex flex-row space-x-2 items-center">
-                <FaLinkedin size={24} className="text-blue-700" />
+                <FaLinkedin size={32} className="text-blue-700" />
                 {/* <p>Linkedin</p> */}
               </div>
             </NavigationMenuLink>

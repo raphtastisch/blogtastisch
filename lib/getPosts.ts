@@ -2,6 +2,12 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
 import { contentPath, categories, contentFolder, Category, ImageType, backupImagePaths } from "./config";
+import React from "react";
+import InPostImage from "@/components/inPostImage";
+import StyledLink from "@/components/styledLink";
+import StyledH1 from "@/components/styledH1";
+import StyledH2 from "@/components/styledH2";
+import StyledBlockquote from "@/components/styledBlockquote";
 
 
 
@@ -41,7 +47,43 @@ export async function getAllPosts(): Promise<any[]> {
 }
 
 
-export async function getPostBySlug(slug: string): Promise<{ content: any, frontmatter: any, category: Category|null }> {
+const widthSettings = " w-sm lg:w-md"
+const components = {
+    InPostImage,
+
+    h1: (props: any) => (
+        React.createElement(StyledH1, { ...props, className: widthSettings }, props.children)
+    ),
+    h2: (props: any) => (
+        React.createElement(StyledH2, { ...props, className: "mt-8 " + widthSettings }, props.children)
+    ),
+    h3: (props: any) => (
+        React.createElement("h3", { ...props, className: "text-xl mt-8 mb-2 text-main-700" + widthSettings }, props.children)
+    ),
+    p: (props: any) => (
+        React.createElement("p", { ...props, className: "mb-2" + widthSettings }, props.children)
+    ),
+    a: (props: any) => (
+        React.createElement(StyledLink, { ...props, className: "" }, props.children)
+    ),
+
+    blockquote: (props: any) => (
+        React.createElement(StyledBlockquote, { ...props, className: widthSettings }, props.children)
+        // React.createElement("blockquote", { ...props, className: "border-l-4 border-main-700 pl-4 mb-4" + widthSettings }, props.children)
+    ),
+
+
+    em: (props: any) => (
+        React.createElement("em", { ...props, className: "italic" }, props.children)
+    ),
+    strong: (props: any) => (
+        React.createElement("strong", { ...props, className: "font-bold" }, props.children)
+    ),
+}
+
+
+
+export async function getPostBySlug(slug: string): Promise<{ content: any, frontmatter: any, category: Category | null }> {
 
     // check in all folders
     for (const category of categories) {
@@ -54,6 +96,7 @@ export async function getPostBySlug(slug: string): Promise<{ content: any, front
                     "utf8"
                 ),
                 options: { parseFrontmatter: true },
+                components: components,
             });
             return { content, frontmatter, category }
 

@@ -1,8 +1,10 @@
-import { getAllPosts, getImagePath } from "@/lib/getarticles";
+import { getAllPosts, getImagePath } from "@/lib/getPosts";
 import OverviewElement from "@/components/overviewElement";
 
-export default async function OverviewGrid({ category }: { category: string }) {
- 
+export default async function OverviewGrid({ category }: { category?: string }) {
+
+  console.log("category", category)
+
     const overviewElementData = await Promise.all(
     await getAllPosts().then((data) => {
       // sort data by date to get newest first
@@ -13,7 +15,7 @@ export default async function OverviewGrid({ category }: { category: string }) {
             new Date(a.frontmatter.date).getTime()
           );
         })
-        .filter((post) => post.category === category)
+        .filter((post) => category ? post.category === category : true) // only filter if its not empty
         .map(async (post) => {
           const imagePath = await getImagePath(
             post.category,

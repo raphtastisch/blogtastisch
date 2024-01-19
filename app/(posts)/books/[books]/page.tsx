@@ -1,7 +1,10 @@
 import Image from "next/image";
-import { getAllPosts, getPostBySlug, getImagePath } from "@/lib/getarticles";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { getAllPosts, getPostBySlug, getImagePath } from "@/lib/getPosts";
+import InPostImage from "@/components/inPostImage";
+import StyledLink from "@/components/styledLink";
+import StyledBlockquote from "@/components/styledBlockquote";
+import StyledH1 from "@/components/styledH1";
+import StyledH2 from "@/components/styledH2";
 
 // not sure if actually working
 export async function generateStaticParams() {
@@ -34,16 +37,14 @@ export default async function Home({ params }: any) {
   );
 
   return (
-    <div className="mdx flex flex-col space-y-8 items-center md:mt-8 pb-24 text-md md:text-lg">
+    <div className="mdx flex flex-col items-center md:mt-8 pb-24 text-md md:text-lg">
       <div className="w-sm lg:w-md flex flex-col ">
-        <div className="text-main-700 text-3xl md:text-5xl font-semibold text-center">
-          {frontmatter.title}
-        </div>
+        <StyledH1 className="text-center">{frontmatter.title}</StyledH1>
 
         {frontmatter.titleSub && frontmatter.titleSub !== "" ? (
-          <div className="text-main-700 text-xl md:text-3xl text-center mt-2">
+          <StyledH2 className="text-center mt-2">
             {frontmatter.titleSub}
-          </div>
+          </StyledH2>
         ) : null}
 
         <div className="mt-2 flex w-full justify-end text-main-700">
@@ -51,31 +52,26 @@ export default async function Home({ params }: any) {
         </div>
 
         {frontmatter.description && frontmatter.description !== "" ? (
-          <div className="mt-8 w-full">
-            <blockquote className="w-full">
-              {frontmatter.description}
-            </blockquote>
-          </div>
+          <StyledBlockquote className="mt-8">
+            {frontmatter.description}
+          </StyledBlockquote>
         ) : null}
       </div>
 
-      <div className="relative w-sm md:w-md lg:w-lg  h-illustration overflow-hidden rounded-xl">
-        <div className="relative h-full transition-transform duration-500 ease-in-out transform hover:scale-110">
-          <Image
-            src={illustrationImagePath}
-            alt="Illustration for the book"
-            fill={true}
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-          />
+      <InPostImage src={illustrationImagePath} />
+
+      <div className="w-sm lg:w-md flex flex-col">{content}</div>
+
+      {frontmatter.initialReleaseUrl && frontmatter.initialReleaseName ? (
+        <div className="mt-8 w-sm lg:w-md ">
+          Dieser Buchreview erschien ursprünglich auf&nbsp;
+          <StyledLink href={frontmatter.initialReleaseUrl}>
+            {frontmatter.initialReleaseName}
+          </StyledLink>
         </div>
-      </div>
+      ) : null}
 
-      <div className="w-sm lg:w-md flex flex-col pt-4">{content}</div>
-
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-4 mt-8">
         <div className="relative h-sm w-sm overflow-hidden rounded-xl">
           <Image
             src={coverImagePath}

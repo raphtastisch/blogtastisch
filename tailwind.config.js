@@ -6,6 +6,19 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
   ],
+  safelist: [
+    'h-xs',
+    'h-illustration',
+    'h-sm',
+    'h-md',
+    'h-lg',
+    'h-xl',
+    'w-xs',
+    'w-sm',
+    'w-md',
+    'w-lg',
+    'w-xl',
+  ],
   prefix: "",
   theme: {
     container: {

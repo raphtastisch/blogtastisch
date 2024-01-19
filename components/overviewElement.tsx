@@ -32,7 +32,7 @@ export default function OverviewElement({
       <Link href={data.href}>
         <div
           className={cn(
-            "relative w-full overflow-hidden rounded-xl",
+            "relative w-full overflow-hidden rounded-xl shadow-xl",
             isBig ? "h-72 lg:h-96 xl:h-illustration" : "h-72 lg:h-40 xl:h-56"
           )}
         >
