@@ -1,7 +1,6 @@
 
 export type Category = 'books' | 'articles';
 export const categories: Category[] = ["books", "articles"];
-export const categoriesToShow: Category[] = ["books", "articles"];
 
 export type ImageType = 'illustration' | 'cover';
 

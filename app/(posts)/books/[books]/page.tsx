@@ -37,8 +37,17 @@ export default async function Home({ params }: any) {
   );
 
   return (
-    <div className="mdx flex flex-col items-center md:mt-8 pb-24 text-md md:text-lg">
+    <div className="mdx flex flex-col items-center text-md md:text-lg">
       <div className="w-sm lg:w-md flex flex-col ">
+        <div className="text-main-700 text-sm md:text-md ml-auto">
+          {`${new Date(frontmatter.date)
+            .getDate()
+            .toString()
+            .padStart(2, "0")}.${(new Date(frontmatter.date).getMonth() + 1)
+            .toString()
+            .padStart(2, "0")}.${new Date(frontmatter.date).getFullYear()}`}
+        </div>
+
         <StyledH1 className="text-center">{frontmatter.title}</StyledH1>
 
         {frontmatter.titleSub && frontmatter.titleSub !== "" ? (
@@ -58,7 +67,7 @@ export default async function Home({ params }: any) {
         ) : null}
       </div>
 
-      <InPostImage src={illustrationImagePath} />
+      <InPostImage src={illustrationImagePath} priority={true}/>
 
       <div className="w-sm lg:w-md flex flex-col">{content}</div>
 
@@ -80,7 +89,7 @@ export default async function Home({ params }: any) {
             // width={300}
             // height={500}
             fill={true}
-            sizes="100vw"
+            sizes="(max-size-768px):70vw (max-size-1024px):50vw 33vw"
             style={{
               width: "100%",
               objectFit: "contain",

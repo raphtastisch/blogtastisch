@@ -41,6 +41,7 @@ export default function OverviewElement({
               src={data.illustrationImagePath}
               alt="The illustration for this book"
               fill={true}
+              sizes={"(max-width:992px):576px " + isBig ? "60vw" : "40vw"}
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
@@ -54,7 +55,14 @@ export default function OverviewElement({
         </div>
         <div className="mt-1 p-1 rounded-sm">
           {data.titleSub ? (
-            <div className="text-md italic text-main-700">{data.titleSub}</div>
+            <div
+              className={cn(
+                "italic text-main-700 text-md",
+                isBig ? "lg:text-lg" : "md:text-md"
+              )}
+            >
+              {data.titleSub}
+            </div>
           ) : null}
           <div
             className={cn(
@@ -72,7 +80,10 @@ export default function OverviewElement({
           )}
         </div>
         <div
-          className={cn("text-main-700", isBig ? "text-right" : "text-left")}
+          className={cn(
+            "text-main-700 ",
+            isBig ? "text-right" : "text-left text-sm"
+          )}
         >
           von <strong>{data.autor}</strong>
         </div>

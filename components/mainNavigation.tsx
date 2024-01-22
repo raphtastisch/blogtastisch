@@ -21,7 +21,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { categories, categoriesToShow } from "@/lib/config";
+import { categories } from "@/lib/config";
 
 export function MainNavigation({
   mainNavDataFull,

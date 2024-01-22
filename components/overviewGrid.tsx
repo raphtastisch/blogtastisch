@@ -3,7 +3,7 @@ import OverviewElement from "@/components/overviewElement";
 
 export default async function OverviewGrid({ category }: { category?: string }) {
 
-  console.log("category", category)
+  // console.log("category", category)
 
     const overviewElementData = await Promise.all(
     await getAllPosts().then((data) => {
@@ -39,7 +39,7 @@ export default async function OverviewGrid({ category }: { category?: string }) 
   );
 
   return (
-    <div className="w-full grid gap-16 cols-1 lg:gap-12 xl:gap-20 lg:grid-cols-10 lg:grid-flow-row-dense">
+    <div className="w-full grid gap-16 cols-1 lg:gap-12 xl:gap-16 lg:grid-cols-10 lg:grid-flow-row-dense">
       {overviewElementData.map((data, index) => {
         // to match the pattern this condition needs to be met. desired pattern for optimal alignment: 0 4 6 10 12 16 18
         const isBig = index === 0 || (index % 2 === 0 && (index - 2) % 6 !== 0);

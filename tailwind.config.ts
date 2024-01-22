@@ -1,1 +1,1 @@
-// empty, everything in .js
+// empty, everything in .js/** @type {import('tailwindcss').Config} */

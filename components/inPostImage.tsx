@@ -5,13 +5,17 @@ export default async function InPostImage({
   src,
   height,
   width,
+  priority,
 }: {
   src: string;
   height?: string;
   width?: string;
+  priority?:boolean
 }) {
   height = height ? height : "h-illustration";
   width = width ? width : "w-sm md:w-md lg:w-lg"
+
+  priority = priority ? priority : false
 
   return (
     <div className="py-8">
@@ -27,10 +31,12 @@ export default async function InPostImage({
             src={src}
             alt="Illustration for the post."
             fill={true}
+            sizes="(max-width: 1040px) 100vw, 1040px"
             style={{
               objectFit: "cover",
               objectPosition: "center",
             }}
+            priority={priority}
           />
         </div>
       </div>
