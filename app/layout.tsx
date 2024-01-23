@@ -51,7 +51,7 @@ export default async function RootLayout({
             <Navigation navDataFull={mainNavbarData} />
             {/* <MainNavigation mainNavDataFull={mainNavbarData} /> */}
           </div>
-          <div className="w-full">{children}</div>
+          <div className="w-full flex flex-col items-center">{children}</div>
         </main>
       </body>
     </html>

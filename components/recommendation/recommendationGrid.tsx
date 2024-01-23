@@ -81,7 +81,7 @@ export default function RecommendationGrid({
                   src={book.imagePath!}
                   alt="Book"
                   fill={true}
-                  sizes={"50vw"}
+                  sizes={"20vw"}
                   style={{ objectFit: "contain", objectPosition: "center" }}
                   className=""
                 ></Image>
