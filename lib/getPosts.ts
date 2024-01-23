@@ -3,11 +3,11 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
 import { contentPath, categories, contentFolder, Category, ImageType, backupImagePaths } from "./config";
 import React from "react";
-import InPostImage from "@/components/inPostImage";
-import StyledLink from "@/components/styledLink";
-import StyledH1 from "@/components/styledH1";
-import StyledH2 from "@/components/styledH2";
-import StyledBlockquote from "@/components/styledBlockquote";
+import InPostImage from "@/components/ui/inPostImage";
+import StyledLink from "@/components/ui/styledLink";
+import StyledH1 from "@/components/ui/styledH1";
+import StyledH2 from "@/components/ui/styledH2";
+import StyledBlockquote from "@/components/ui/styledBlockquote";
 
 
 

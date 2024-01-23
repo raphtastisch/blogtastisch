@@ -1,6 +1,6 @@
 // import OverviewElement from "@/components/overviewElement";
-import OverviewGrid from "@/components/overviewGrid";
-import StyledH1 from "@/components/styledH1";
+import OverviewGrid from "@/components/postOverview/overviewGrid";
+import StyledH1 from "@/components/ui/styledH1";
 // import { contentFolder } from "@/lib/config";
 // import { getAllPosts, getImagePath } from "@/lib/getarticles";
 

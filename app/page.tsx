@@ -1,7 +1,7 @@
-import InPostImage from "@/components/inPostImage";
-import OverviewGrid from "@/components/overviewGrid";
-import StyledH1 from "@/components/styledH1";
-import StyledH2 from "@/components/styledH2";
+import InPostImage from "@/components/ui/inPostImage";
+import OverviewGrid from "@/components/postOverview/overviewGrid";
+import StyledH1 from "@/components/ui/styledH1";
+import StyledH2 from "@/components/ui/styledH2";
 
 export default async function Home() {
   return (

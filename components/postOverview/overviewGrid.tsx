@@ -1,5 +1,5 @@
 import { getAllPosts, getImagePath } from "@/lib/getPosts";
-import OverviewElement from "@/components/overviewElement";
+import OverviewElement from "@/components/postOverview/overviewElement";
 
 export default async function OverviewGrid({ category }: { category?: string }) {
 

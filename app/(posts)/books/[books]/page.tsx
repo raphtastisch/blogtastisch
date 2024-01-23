@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { getAllPosts, getPostBySlug, getImagePath } from "@/lib/getPosts";
-import InPostImage from "@/components/inPostImage";
-import StyledLink from "@/components/styledLink";
-import StyledBlockquote from "@/components/styledBlockquote";
-import StyledH1 from "@/components/styledH1";
-import StyledH2 from "@/components/styledH2";
+import InPostImage from "@/components/ui/inPostImage";
+import StyledLink from "@/components/ui/styledLink";
+import StyledBlockquote from "@/components/ui/styledBlockquote";
+import StyledH1 from "@/components/ui/styledH1";
+import StyledH2 from "@/components/ui/styledH2";
 
 // not sure if actually working
 export async function generateStaticParams() {
