@@ -28,13 +28,13 @@ export default async function Home() {
 
   //         return {
   //           title: post.frontmatter.title,
-  //           titleSub: post.frontmatter.titleSub || null,
+  //           subtitle: post.frontmatter.subtitle || null,
   //           href: `/${post.category}/${post.frontmatter.slug}`,
   //           illustrationImagePath: imagePath,
-  //           description: post.frontmatter.description,
+  //           longDescription post.frontmatter.longDescription,
   //           category: post.category,
   //           date: post.frontmatter.date,
-  //           autor: post.frontmatter.autor,
+  //           author: post.frontmatter.author,
   //         };
   //       });
   //     // Use the frontmatterArray as needed

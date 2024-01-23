@@ -9,13 +9,13 @@ export default function OverviewElement({
   isBig?: boolean;
   data: {
     title: string;
-    titleSub: string | null;
+    subtitle: string | null;
     href: string;
     illustrationImagePath: string;
-    description: string | null;
+    longDescription: string | null;
     category: string;
     date: string;
-    autor: string;
+    author: string;
   };
 }) {
   isBig = isBig || false;
@@ -54,14 +54,14 @@ export default function OverviewElement({
           </div>
         </div>
         <div className="mt-1 p-1 rounded-sm">
-          {data.titleSub ? (
+          {data.subtitle ? (
             <div
               className={cn(
                 "italic text-main-700 text-md",
                 isBig ? "lg:text-lg" : "md:text-md"
               )}
             >
-              {data.titleSub}
+              {data.subtitle}
             </div>
           ) : null}
           <div
@@ -73,10 +73,10 @@ export default function OverviewElement({
             {data.title}
           </div>
 
-          {data.description && isBig ? (
-            <div className="mt-2 text-lg">{data.description}</div>
+          {data.longDescription && isBig ? (
+            <div className="mt-2 text-lg">{data.longDescription}</div>
           ) : (
-            <div className="mt-2 text-lg lg:hidden">{data.description}</div>
+            <div className="mt-2 text-lg lg:hidden">{data.longDescription}</div>
           )}
         </div>
         <div
@@ -85,7 +85,7 @@ export default function OverviewElement({
             isBig ? "text-right" : "text-left text-sm"
           )}
         >
-          von <strong>{data.autor}</strong>
+          von <strong>{data.author}</strong>
         </div>
       </Link>
     </div>

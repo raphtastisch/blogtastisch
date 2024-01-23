@@ -9,7 +9,8 @@ export function NavigationDropdown({
   children,
   pathname,
   href,
-  hooverMethod,
+  hoverMethod,
+  isHovered,
 }: {
   // navDataFull?: {
   //   title: string;
@@ -20,8 +21,8 @@ export function NavigationDropdown({
   children?: any;
   pathname: string;
   href: string;
-  hooverMethod?: (param: boolean) => void;
-  
+  hoverMethod?: (param: boolean) => void;
+  isHovered?: boolean;
 }) {
   //   const [isHovering, setIsHovering] = useState(false);
 
@@ -35,11 +36,11 @@ export function NavigationDropdown({
 
   const commonStyling = cn(
     "flex flex-row space-x-2 items-center  h-full",
-    "md:px-6 rounded-b-xl",
+    "py-4 px-8 md:py-0 md:px-4 lg:px-8 rounded-xl md:rounded-t-none",
     "border-b-2 border-white"
   );
 
-  if (!hooverMethod) {
+  if (!hoverMethod) {
     return (
       <>
         <Link
@@ -62,15 +63,18 @@ export function NavigationDropdown({
   } else {
     return (
       <>
-        <Link href={href} className="h-full">
+        <Link href={href} className="h-full ">
           <div
-            onMouseEnter={() => hooverMethod(true)}
-            onMouseLeave={() => hooverMethod(false)}
+            onMouseEnter={() => hoverMethod(true)}
+            onMouseLeave={() => hoverMethod(false)}
             className={cn(
               "relative inline-block",
               commonStyling,
-              "hover:bg-purewhite hover:border-purewhite hover:rounded-none",
-              pathname.includes(href) ? "border-main-700 bg-purewhite" : ""
+              "hover:bg-purewhite hover:border-purewhite md:hover:rounded-none",
+              pathname.includes(href) ? "border-main-700 bg-purewhite" : "",
+              isHovered
+                ? "bg-purewhite border-purewhite rounded-b-none md:rounded-t-none"
+                : ""
             )}
           >
             {children}

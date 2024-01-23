@@ -5,6 +5,20 @@ export const categories: Category[] = ["books", "articles"];
 export type ImageType = 'illustration' | 'cover';
 
 
+export interface Book {
+    title: string;
+    subtitle?: string;
+    author: string;
+    slug: string;
+    shortDescription: string;
+    longDescription?: string;
+    date: Date;
+    tags?: string[];
+    initialReleaseUrl?: string;
+    initialReleaseName?: string;
+    imagePath?:string;
+}
+
 export const contentFolder = "data";
 
 export const contentPath = ["public", "data"] // is linked to gether, no different paths!

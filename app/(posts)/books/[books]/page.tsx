@@ -50,19 +50,19 @@ export default async function Home({ params }: any) {
 
         <StyledH1 className="text-center">{frontmatter.title}</StyledH1>
 
-        {frontmatter.titleSub && frontmatter.titleSub !== "" ? (
+        {frontmatter.subtitle && frontmatter.subtitle !== "" ? (
           <StyledH2 className="text-center mt-2">
-            {frontmatter.titleSub}
+            {frontmatter.subtitle}
           </StyledH2>
         ) : null}
 
         <div className="mt-2 flex w-full justify-end text-main-700">
-          von&nbsp;<strong>{frontmatter.autor}</strong>
+          von&nbsp;<strong>{frontmatter.author}</strong>
         </div>
 
-        {frontmatter.description && frontmatter.description !== "" ? (
+        {frontmatter.longDescription && frontmatter.longDescription !== "" ? (
           <StyledBlockquote className="mt-8">
-            {frontmatter.description}
+            {frontmatter.longDescription}
           </StyledBlockquote>
         ) : null}
       </div>

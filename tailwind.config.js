@@ -93,6 +93,11 @@ module.exports = {
       //   md: "calc(var(--radius) - 2px)",
       //   sm: "calc(var(--radius) - 4px)",
       // },
+
+      // borderWidth: {
+      //   16: "16px",
+      // },
+
       width: {
         'xs': '320px',
         'sm': '576px',
