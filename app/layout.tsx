@@ -45,7 +45,7 @@ export default async function RootLayout({
   return (
     <html lang="de">
       <body className="w-screen flex md:justify-center bg-white text-black overflow-x-hidden">
-        <main className="flex flex-col space-y-4 w-sm sm:w-full 2xl:w-2xl  xl:px-16 items-center pb-32  ">
+        <main className="flex flex-col space-y-4 w-sm sm:w-full 2xl:w-2xl px-2 xl:px-16 items-center pb-32  ">
           <div className="flex-none ">
             <Navigation navDataFull={mainNavbarData} />
           </div>
