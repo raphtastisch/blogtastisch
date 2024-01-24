@@ -1,4 +1,4 @@
-import InPostImage from "@/components/ui/inPostImage";
+import Image from "next/image";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
@@ -13,11 +13,29 @@ export default async function Home() {
       </StyledH2>
 
       <div className="flex flex-col md:flex-row md:space-x-8 items-center">
-        <InPostImage
+        {/* <InPostImage
           src="/statics/RaphaelFritz.jpg"
           width="w-xs"
           height="h-xs"
-        />
+        /> */}
+        <div className="flex flex-shrink-0">
+          <div className="relative overflow-hidden rounded-xl shadow-xl w-xs h-xs ">
+            <div className="relative h-full transition-transform duration-500 ease-in-out transform hover:scale-110">
+              <Image
+                src="/statics/RaphaelFritz.jpg"
+                alt="A picture of me."
+                fill={true}
+                sizes="(max-width: 1040px) 40vw, 25vw"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                priority={true}
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="md:p-8 flex flex-col space-y-4">
           <p>
             Schon als Kind war ich ein Bücherwurm, aber erst nach dem Studium

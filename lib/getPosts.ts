@@ -120,7 +120,7 @@ export async function getImagesForContent(category: Category, slug: string): Pro
     // filter for images
     const images = filenames.filter((filename: string) => {
         const extension = filename.split(".").pop();
-        return extension === "jpg" || extension === "png" || extension === "jpeg";
+        return extension === "jpg" || extension === "png" || extension === "jpeg" || extension === "webp";
     });
 
     // return the images

@@ -22,7 +22,8 @@ export default function RecommendationGrid({
           const matchesTags =
             book.tags &&
             book.tags.length > 0 &&
-            book.tags.some((tag) => tags.includes(tag));
+            tags.every((tag) => book.tags!.includes(tag)); // all selected tags must be in the book tags
+          //            book.tags.some((tag) => tags.includes(tag));
           return matchesTags;
         });
 
@@ -72,7 +73,7 @@ export default function RecommendationGrid({
         </div>
       </div>
       <div className="h-1 bg-main-700 opacity-50 w-full my-4 rounded-full" />
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-8">
         {filteredBooks.map((book) => {
           return (
             <div className="flex flex-row p-4" key={book.slug}>
@@ -87,18 +88,20 @@ export default function RecommendationGrid({
                 ></Image>
               </div>
               <div className="flex flex-col pl-4">
-                {book.subtitle && (
-                  <div className="text-md text-main-700  italic">
-                    {book.subtitle}
-                  </div>
-                )}
+                <div className="text-md text-main-700  italic">
+                  {book.subtitle ? (
+                    <>{book.subtitle}</>
+                  ) : (
+                    <>{book.shortDescription}</>
+                  )}
+                </div>
                 <div className="mt-1 text-main-700 font-semibold text-3xl">
                   {book.title}
                 </div>
 
                 <div className="text-md mt-2">{book.longDescription}</div>
                 <div className="mt-1 text-md text-right text-main-700">
-                  von&nbsp;<strong>{book.author}</strong>
+                  by&nbsp;<strong>{book.author}</strong>
                 </div>
                 {book.tags && (
                   <div className="flex flex-wrap mt-4">
