@@ -18,8 +18,8 @@ export default async function Home() {
           width="w-xs"
           height="h-xs"
         /> */}
-        <div className="flex flex-shrink-0">
-          <div className="relative overflow-hidden rounded-xl shadow-xl w-xs h-xs ">
+        <div className="flex flex-shrink-0  ">
+          <div className="relative overflow-hidden  rounded-xl shadow-xl w-xs h-xs ">
             <div className="relative h-full transition-transform duration-500 ease-in-out transform hover:scale-110">
               <Image
                 src="/statics/RaphaelFritz.jpg"

@@ -39,7 +39,7 @@ export default async function OverviewGrid({ category }: { category?: string }) 
   );
 
   return (
-    <div className="w-full grid gap-16 cols-1 lg:gap-12 xl:gap-16 lg:grid-cols-10 lg:grid-flow-row-dense">
+    <div className="grid gap-16 cols-1 lg:gap-12 xl:gap-16 lg:grid-cols-10 lg:grid-flow-row-dense">
       {overviewElementData.map((data, index) => {
         // to match the pattern this condition needs to be met. desired pattern for optimal alignment: 0 4 6 10 12 16 18
         const isBig = index === 0 || (index % 2 === 0 && (index - 2) % 6 !== 0);

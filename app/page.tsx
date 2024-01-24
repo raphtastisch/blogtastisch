@@ -52,23 +52,24 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center space-y-16 w-sm lg:w-lg xl:w-xl">
       {/* <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
-      <div className="flex flex-col space-y-8 items-center">
-        <StyledH1 className="">Buchempfehlungen</StyledH1>
+      <div className=" flex flex-col space-y-8 items-start sm:items-center">
+        <StyledH1 className="w-sm sm:w-full text-center">
+          Buchempfehlungen
+        </StyledH1>
         <Link href="/recommendations">
-          <div className="flex flex-col items-center justify-center">
-            {/* <div className=" shadow-2xl border-main-700 border-4 rounded-xl text-center p-8 bg-white font-semibold text-main-700 text-3xl md:text-4xl absolute z-10">
-            Zu den Buchempfehlungen
-          </div> */}
-
-            <div className="flex flex-row justify-center">
+          <div className="flex flex-col items-center justify-center w-screen overflow-hidden shadow-xl">
+            <div className="flex flex-row justify-center ">
               {exampleCoversPath.map((path, index) => (
-                <div key={index} className="relative h-52 w-36 flex-shrink-0 ">
+                <div
+                  key={index}
+                  className="relative h-52 w-36 flex-shrink-0 select-none "
+                >
                   <Image
                     src={path}
                     alt="Cover"
                     fill={true}
                     sizes={"10vw"}
-                    className=""
+                    className="select-none"
                   />
                 </div>
               ))}
@@ -79,8 +80,11 @@ export default async function Home() {
       <div className="h-1 bg-main-700 opacity-50 w-full rounded-full" />
 
       <div className="flex flex-col space-y-8 items-center">
-        <StyledH1 className="mt-0 md:mt-0">Ausführliche Rezensionen und Artikel</StyledH1>
+        <StyledH1 className="mt-0 md:mt-0">
+          Ausführliche Rezensionen und Artikel
+        </StyledH1>
         <OverviewGrid />
+
       </div>
     </div>
   );

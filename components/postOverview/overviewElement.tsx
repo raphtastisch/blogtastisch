@@ -23,7 +23,6 @@ export default function OverviewElement({
   return (
     <div
       className={cn(
-        "w-full",
         isBig
           ? "col-span-1 lg:col-span-6 lg:row-span-2"
           : "col-span-1 lg:col-span-4 lg:row-span-1"
@@ -32,11 +31,17 @@ export default function OverviewElement({
       <Link href={data.href}>
         <div
           className={cn(
-            "relative w-full overflow-hidden rounded-xl shadow-xl",
-            isBig ? "h-72 lg:h-96 xl:h-illustration" : "h-72 lg:h-40 xl:h-56"
+            "relative",
+            "w-full overflow-hidden rounded-xl shadow-xl"
           )}
         >
-          <div className="relative h-full transition-transform duration-500 ease-in-out transform hover:scale-110">
+          <div
+            className={cn(
+              "transition-transform duration-500 ease-in-out transform hover:scale-110",
+              "relative ",
+              isBig ? "h-72 lg:h-96 xl:h-illustration" : "h-72 lg:h-40 xl:h-56"
+            )}
+          >
             <Image
               src={data.illustrationImagePath}
               alt="The illustration for this book"

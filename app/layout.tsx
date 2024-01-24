@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   description: "Raphis personal blog",
 };
 
-
 export default async function RootLayout({
   children,
 }: {
@@ -45,11 +44,10 @@ export default async function RootLayout({
 
   return (
     <html lang="de">
-      <body className="w-screen flex px-2 sm:px-8 md:justify-center bg-white text-black">
+      <body className="w-screen flex md:justify-center bg-white text-black">
         <main className="flex flex-col space-y-4 w-sm sm:w-full 2xl:w-2xl  xl:px-16 items-center pb-32 ">
           <div className="flex-none ">
             <Navigation navDataFull={mainNavbarData} />
-            {/* <MainNavigation mainNavDataFull={mainNavbarData} /> */}
           </div>
           <div className="w-full flex flex-col items-center">{children}</div>
         </main>
