@@ -101,7 +101,7 @@ export default function RecommendationGrid({
 
                 <div className="text-md mt-2">{book.longDescription}</div>
                 <div className="mt-1 text-md text-right text-main-700">
-                  by&nbsp;<strong>{book.author}</strong>
+                  von &nbsp;<strong>{book.author}</strong>
                 </div>
                 {book.tags && (
                   <div className="flex flex-wrap mt-4">

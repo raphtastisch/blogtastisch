@@ -51,8 +51,10 @@ export function NavigationDropdown({
           <div
             className={cn(
               commonStyling,
-              "hover:bg-purewhite hover:border-main-700 hover:border-opacity-50",
-              pathname === href ? "border-main-700 bg-purewhite" : ""
+              "hover:bg-purewhite  hover:border-main-700 hover:border-opacity-50",
+              pathname === href
+                ? "border-main-700 bg-purewhite bg-opacity-70"
+                : ""
             )}
           >
             {children}
@@ -73,7 +75,7 @@ export function NavigationDropdown({
               "hover:bg-purewhite hover:border-purewhite md:hover:rounded-none",
               pathname.includes(href) ? "border-main-700 bg-purewhite" : "",
               isHovered
-                ? "bg-purewhite border-purewhite rounded-b-none md:rounded-t-none"
+                ? "bg-purewhite border-purewhite bg-opacity-70 rounded-b-none md:rounded-t-none"
                 : ""
             )}
           >

@@ -9,7 +9,7 @@ export default async function Home() {
       <StyledH1 className="text-center">Über mich:</StyledH1>
 
       <StyledH2>
-        Ich bin IT-Unternehmer mit Fokus auf AI & Productivity.
+        Ich bin IT-Unternehmer mit Fokus auf AI & Produktivität.
       </StyledH2>
 
       <div className="flex flex-col md:flex-row md:space-x-8 items-center">
@@ -40,9 +40,9 @@ export default async function Home() {
           <p>
             Schon als Kind war ich ein Bücherwurm, aber erst nach dem Studium
             entdeckte ich Hörbücher für mich. So lässt sich mein Wissensdurst in
-            den Bereichen Technologie, Politik, Philosophie, Wissenschaft und
+            den Bereichen Technologie, Politik, Wissenschaft, Philosophie, Produktivität und
             Persönlichkeitsentwicklung trotz eines hektischen Alltags
-            hervorragend stillen. Knapp 70 Hörbücher und 5 gedruckte Bücher pro
+            hervorragend stillen. Über 70 Hörbücher und 5 gedruckte Bücher pro
             Jahr liefern mir dabei einen guten Pool, um hervorragende
             Empfehlungen abgeben zu können. Die meisten Bücher werden auf
             Englisch gelesen oder gehört. Ausnahmen gibt es primär, wenn Deutsch
@@ -51,8 +51,11 @@ export default async function Home() {
         </div>
       </div>
       <StyledBlockquote className="mt-8 w-sm">
-        Technology, science & politics nerd. Experienced tech-entrepreneur & AI
-        expert. Impact driven. Convince people by action, not by words.
+        Technologe, Wissenschaft & Politik Nerd. Erfahrender Tech-Unternehmer &
+        AI-Experte. Impact driven. Überzeuge Menschen durch Taten, nicht durch
+        Worte.
+        {/* Technology, science & politics nerd. Experienced tech-entrepreneur & AI
+        expert. Impact driven. Convince people by action, not by words. */}
       </StyledBlockquote>
     </div>
   );
