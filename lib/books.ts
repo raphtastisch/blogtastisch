@@ -28,7 +28,7 @@ export const books: Book[] = [
     {
         title: "Superforecasting",
         subtitle: "Die Kunst der richtigen Prognose",
-        author: "Philip E. Tetlock und Dan Gardner",
+        author: "Philip E. Tetlock & Dan Gardner",
         slug: "superforecasting",
         shortDescription:
             "Wie gehen besere Prognosen und die Wissenschaft dahinter.",
@@ -178,7 +178,7 @@ export const books: Book[] = [
     {
         title: "Option B",
         subtitle: "Facing Adversity, Building Resilience, and Finding Joy",
-        author: "Sheryl Sandberg and Adam Grant",
+        author: "Sheryl Sandberg & Adam Grant",
         slug: "option-b",
         shortDescription: "Navigating through adversity and building resilience.",
         longDescription:
@@ -270,7 +270,7 @@ export const books: Book[] = [
 
     {
         title: "Poor Economics",
-        author: "Abhijit V. Banerjee and Esther Duflo",
+        author: "Abhijit V. Banerjee & Esther Duflo",
         slug: "poor-economics",
         shortDescription:
             "Analysis of global poverty and strategies to alleviate it.",
@@ -316,7 +316,7 @@ export const books: Book[] = [
     {
         title: "Zero to One",
         subtitle: "Notes on Startups, or How to Build the Future",
-        author: "Peter Thiel with Blake Masters",
+        author: "Peter Thiel & Blake Masters",
         slug: "zero-to-one",
         shortDescription: "Insights on entrepreneurship and startup innovation.",
         longDescription:
@@ -349,7 +349,7 @@ export const books: Book[] = [
     {
         title: "The Phoenix Project",
         subtitle: "A Novel About IT, DevOps, and Helping Your Business Win",
-        author: "Gene Kim, Kevin Behr and George Spafford",
+        author: "Gene Kim, Kevin Behr & George Spafford",
         slug: "phoenix-project",
         shortDescription:
             "A novel that illuminates the principles of IT and DevOps.",
@@ -372,7 +372,7 @@ export const books: Book[] = [
     {
         title: "Algorithms to Live By",
         subtitle: "The Computer Science of Human Decisions",
-        author: "Brian Christian and Tom Griffiths",
+        author: "Brian Christian & Tom Griffiths",
         slug: "algorithms-live-by",
         shortDescription: "Applying computer algorithms to everyday life.",
         longDescription:
@@ -395,7 +395,7 @@ export const books: Book[] = [
         title: "Factfulness",
         subtitle:
             "Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think",
-        author: "Hans Rosling with Ola Rosling and Anna Rosling Rönnlund",
+        author: "Hans Rosling",
         slug: "factfulness",
         shortDescription:
             "A new perspective on global trends and misconceptions.",
@@ -508,7 +508,7 @@ export const books: Book[] = [
     {
         title: "Why Nations Fail",
         subtitle: "The Origins of Power, Prosperity, and Poverty",
-        author: "Daron Acemoglu and James A. Robinson",
+        author: "Daron Acemoglu & James A. Robinson",
         slug: "why-nations-fail",
         shortDescription:
             "An exploration of the reasons behind the success and failure of nations.",

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { getAllPosts } from "@/lib/getPosts";
 import { Navigation } from "@/components/navigation/navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,6 +52,7 @@ export default async function RootLayout({
           </div>
           <div className="w-full flex flex-col items-center">{children}</div>
         </main>
+        <SpeedInsights/>
       </body>
     </html>
   );

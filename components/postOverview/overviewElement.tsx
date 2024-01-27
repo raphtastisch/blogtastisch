@@ -87,7 +87,7 @@ export default function OverviewElement({
         <div
           className={cn(
             "text-main-700 ",
-            isBig ? "text-right" : "text-left text-sm"
+            isBig ? "text-right" : "text-right lg:text-left lg:text-sm "
           )}
         >
           von <strong>{data.author}</strong>
