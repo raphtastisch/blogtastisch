@@ -59,7 +59,7 @@ export default function RecommendationGrid({
 
   return (
     <div className="w-full">
-      <div className="flex flex-row space-x-8 w-full pt-4 items-center">
+      <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 w-full pt-4 items-center">
         <div className="min-w-44 h-fit cursor-pointer p-1 rounded bg-main-700 text-white font-semibold text-center">
           {tags.length > 0 ? (
             <div className="" onClick={() => setTags([])}>
@@ -108,7 +108,7 @@ export default function RecommendationGrid({
 
           return (
             <Wrapper key={book.slug}>
-              <div className="flex flex-row p-4">
+              <div className="flex flex-row sm:p-4">
                 <div>
                   <div className="relative min-w-48 w-48 h-72">
                     <Image
@@ -128,19 +128,19 @@ export default function RecommendationGrid({
                 </div>
 
                 <div className="flex flex-col pl-4">
-                  <div className="text-md text-main-700  italic">
+                  <div className=" text-main-700  italic">
                     {book.subtitle ? (
                       <>{book.subtitle}</>
                     ) : (
                       <>{book.shortDescription}</>
                     )}
                   </div>
-                  <div className="mt-1 text-main-700 font-semibold text-3xl">
+                  <div className="mt-1 text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
                     {book.title}
                   </div>
 
-                  <div className="text-md mt-2">{book.longDescription}</div>
-                  <div className="mt-1 text-md text-right text-main-700">
+                  <div className=" mt-2">{book.longDescription}</div>
+                  <div className="mt-1  text-right text-main-700">
                     von &nbsp;<strong>{book.author}</strong>
                   </div>
                   {book.tags && (

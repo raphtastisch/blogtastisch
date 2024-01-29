@@ -45,9 +45,7 @@ export default async function Home() {
 
       <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
       <div className=" flex flex-col space-y-8 items-start sm:items-center">
-        <StyledH1 className="w-full text-center">
-          Buchempfehlungen
-        </StyledH1>
+        <StyledH1 className="w-full text-center">Buchempfehlungen</StyledH1>
         <Link href="/recommendations">
           <div className="flex flex-col items-center justify-center w-screen overflow-hidden shadow-xl">
             <div className="flex flex-row justify-center ">
@@ -60,7 +58,8 @@ export default async function Home() {
                     src={path}
                     alt="Cover"
                     fill={true}
-                    sizes={"10vw"}
+                    sizes="(max-width: 480px) 33vw, (max-width: 768px) 20vw, 10vw"
+                    // sizes={"10vw"}
                     className="select-none"
                   />
                 </div>

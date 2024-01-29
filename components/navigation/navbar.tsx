@@ -101,7 +101,7 @@ export default function Navbar() {
         {({ open }) => (
           <>
             <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-              <div className="flex h-12 md:h-16 items-center">
+              <div className="flex h-14 md:h-16 items-center">
                 <div className="flex flex-row space-x-2 items-center w-full h-full">
                   <NavElement navItem={navigation[0]} pathname={pathname} />
 

@@ -62,8 +62,8 @@ export default function OverviewElement({
           {data.subtitle ? (
             <div
               className={cn(
-                "italic text-main-700 text-md",
-                isBig ? "lg:text-lg" : "md:text-md"
+                "italic text-main-700",
+                isBig ? "lg:text-lg" : "md:text-base"
               )}
             >
               {data.subtitle}
@@ -71,23 +71,23 @@ export default function OverviewElement({
           ) : null}
           <div
             className={cn(
-              "font-semibold text-main-700",
-              isBig ? "text-3xl" : "text-2xl"
+              "font-semibold text-main-700 text-xl",
+              isBig ? "text-xl md:text-2xl lg:text-3xl" : "text-xl md:text-2xl lg:text-2xl"
             )}
           >
             {data.title}
           </div>
 
           {data.longDescription && isBig ? (
-            <div className="mt-2 text-lg">{data.longDescription}</div>
+            <div className="mt-2 ">{data.longDescription}</div>
           ) : (
-            <div className="mt-2 text-lg lg:hidden">{data.longDescription}</div>
+            <div className="mt-2 lg:hidden">{data.longDescription}</div>
           )}
         </div>
         <div
           className={cn(
             "text-main-700 ",
-            isBig ? "text-right" : "text-right lg:text-left lg:text-sm "
+            isBig ? "text-right" : "text-right lg:text-left lg:text-sm  "
           )}
         >
           von <strong>{data.author}</strong>
