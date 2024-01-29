@@ -8,6 +8,7 @@ import StyledLink from "@/components/ui/styledLink";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
+import { cn } from "./utils";
 
 
 
@@ -47,28 +48,29 @@ export async function getAllPosts(): Promise<any[]> {
 }
 
 
-const widthSettings = " w-sm lg:w-md"
+const widthSettings = " md:w-md"
+const responsiveXPadding = ""//" px-4 md:px-0"
 const components = {
     InPostImage,
 
     h1: (props: any) => (
-        React.createElement(StyledH1, { ...props, className: widthSettings }, props.children)
+        React.createElement(StyledH1, { ...props, className: cn(widthSettings) }, props.children)
     ),
-    h2: (props: any) => (
-        React.createElement(StyledH2, { ...props, className: "mt-8 " + widthSettings }, props.children)
+        h2: (props: any) => (
+            React.createElement(StyledH2, { ...props, className: cn("mt-8 ", widthSettings) }, props.children)
     ),
     h3: (props: any) => (
-        React.createElement("h3", { ...props, className: "text-xl mt-8 mb-2 text-main-700" + widthSettings }, props.children)
+        React.createElement("h3", { ...props, className: cn("text-xl mt-8 mb-2 text-main-700",  widthSettings )}, props.children)
     ),
     p: (props: any) => (
-        React.createElement("p", { ...props, className: "mb-2" + widthSettings }, props.children)
+        React.createElement("p", { ...props, className: cn("mb-2", widthSettings) }, props.children)
     ),
     a: (props: any) => (
         React.createElement(StyledLink, { ...props, className: "" }, props.children)
     ),
 
     blockquote: (props: any) => (
-        React.createElement(StyledBlockquote, { ...props, className: widthSettings }, props.children)
+        React.createElement(StyledBlockquote, { ...props, className: cn(widthSettings,) }, props.children)
         // React.createElement("blockquote", { ...props, className: "border-l-4 border-main-700 pl-4 mb-4" + widthSettings }, props.children)
     ),
 
@@ -106,7 +108,7 @@ export async function getPostBySlug(slug: string): Promise<{ content: any, front
     }
 
     // return an error if no article was found
-    console.log("Error: Artikle not found: ", slug)
+    console.log("Error: Article not found: ", slug)
     return { content: null, frontmatter: null, category: null }
 }
 

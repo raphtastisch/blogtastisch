@@ -12,6 +12,7 @@ export interface Book {
     slug: string;
     shortDescription: string;
     longDescription?: string;
+    hasFullText?:boolean;
     date: Date;
     tags?: string[];
     initialReleaseUrl?: string;

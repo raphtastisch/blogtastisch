@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 export default async function StyledBlockquote({
   props,
   children,
@@ -5,7 +7,7 @@ export default async function StyledBlockquote({
 }: any) {
   return (
     <blockquote
-      className={"border-l-4 border-main-700 pl-4 mb-8" + " " + className}
+      className={cn("border-l-4 border-main-700 pl-4 mb-8", className)}
       {...props}
     >
       {children}

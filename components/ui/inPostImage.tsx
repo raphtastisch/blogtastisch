@@ -13,12 +13,14 @@ export default async function InPostImage({
   priority?:boolean
 }) {
   height = height ? height : "h-illustration";
-  width = width ? width : "w-sm md:w-md lg:w-lg"
+  width = width ? width : "w-full lg:w-lg"
 
   priority = priority ? priority : false
 
+
+
   return (
-    <div className="py-8">
+    <div className="flex flex-col items-center w-full py-8">
       <div
         className={cn(
           "relative overflow-hidden rounded-xl shadow-xl",

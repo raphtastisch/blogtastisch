@@ -11,6 +11,7 @@ export const books: Book[] = [
             "What you can do now to drastically increase the chance of living longer and healthier. I liked the actionable, science backed insights. Boils down what you can influence and what you can't (yet). Prevention is key, there is no wonderdrug.",
         tags: ["health", "non-fiction", "science", "fitness"],
         slug: "outlive",
+        hasFullText: false,
         date: new Date("2021-08-01"),
     },
     {
@@ -22,6 +23,7 @@ export const books: Book[] = [
             "Die Werte der Aufklärung sind der beste Quell für Fortschritt und Wohlbefinden.",
         longDescription:
             "Steven Pinker liefert mit „Aufklärung jetzt“ eine grandios geschriebene Darstellung, wieso die Werte der Aufklärung der beste Quell für Fortschritt und Wohlbefinden sind. Darum müssen wir diese Werte gerade jetzt, wo sie unter Dauerfeuer von allen Seiten stehen, eisern verteidigen.",
+        hasFullText: true,
         date: new Date("2023-11-18 00:00:00"),
         tags: ["non-fiction", "politics", "philosophy"],
     },
@@ -34,6 +36,7 @@ export const books: Book[] = [
             "Wie gehen besere Prognosen und die Wissenschaft dahinter.",
         longDescription:
             "„Superforecasting: Die Kunst der richtigen Prognose“ von Philip E. Tetlock und Dan Gardner ist ein überaus interessantes Buch über die Wissenschaft der Vorhersage, wie man Vorhersagen verbessern kann und warum man keiner Vorhersage glauben sollte, wenn die Person dahinter nicht eine Liste all ihrer richtigen und falschen Vorhersagen aus der Vergangenheit bereitstellt.",
+        hasFullText: true,
         date: new Date("2024-01-01 14:40:45"),
         tags: ["non-fiction", "strategy", "business", "psychology"],
     },
@@ -46,7 +49,8 @@ export const books: Book[] = [
             "Geostrategische Überlegungen aus US-amerikanischer Sicht mit Fokus auf China.",
         longDescription:
             "„The strategy of Denial“ von Elbridge A. Colby bietet spannende Einblicke in das Thema globale Geostrategie und wie diese aus US-amerikanischer Sicht aussehen könnte. Der Fokus liegt dabei voll auf dem Machtkampf mit China - Europa ist dabei nur ein Nebendarsteller.",
-        date: new Date("2023-12-07 00:00:00"),
+        hasFullText: true,
+            date: new Date("2023-12-07 00:00:00"),
         tags: ["non-fiction", "politics"],
     },
     {
@@ -57,7 +61,8 @@ export const books: Book[] = [
         shortDescription: "Der erste Teil von Obamas spannender Autobiografie.",
         longDescription:
             "„Ein verheißenes Land“ ist der erste Teil von Barack Obamas Autobiographie. Es beschreibt seinen Werdegang zum mächtigsten Mann der Welt und gibt spannende Einblick in die schwierigsten und folgenreichsten Entscheidungen seiner ersten Amtszeit. Dabei wirft es ein spannendes Licht auf die Überlegungen, die hinter seinen weitreichendsten Handlungen stehen.",
-        date: new Date("2023-12-01 00:00:00"),
+        hasFullText: true,
+            date: new Date("2023-12-01 00:00:00"),
         tags: ["biography", "non-fiction", "politics"],
     },
     {
@@ -527,7 +532,7 @@ export const books: Book[] = [
         longDescription:
             "Explores the difficulties and ethical implications of creating artificial intelligence that can understand and align with human values, ethics, and social norms.",
         date: new Date("2020-10-06"),
-        tags: ["AI", "philosophy", "technology", "technology", "non-fiction"],
+        tags: ["AI", "philosophy", "technology", "non-fiction"],
     },
     {
         title: "The Evolution of Desire",

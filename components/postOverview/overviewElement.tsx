@@ -39,7 +39,7 @@ export default function OverviewElement({
             className={cn(
               "transition-transform duration-500 ease-in-out transform hover:scale-110",
               "relative ",
-              isBig ? "h-72 lg:h-96 xl:h-illustration" : "h-72 lg:h-40 xl:h-56"
+              isBig ? "h-80 xl:h-illustration" : "h-80 lg:h-40 xl:h-56"
             )}
           >
             <Image

@@ -7,7 +7,13 @@ module.exports = {
     './app/**/*.{ts,tsx}',
   ],
   safelist: [
+    'h-40',
+    'h-48',
+    'h-56',
     'h-xs',
+    'sm:h-illustration',
+    'md:h-illustration',
+
     'h-illustration',
     'h-sm',
     'h-md',

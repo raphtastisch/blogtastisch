@@ -5,18 +5,7 @@ import StyledH2 from "@/components/ui/styledH2";
 import { getImagePath } from "@/lib/getPosts";
 import Image from "next/image";
 import Link from "next/link";
-
-// just to make the ordering of books on the home page different every time
-function shuffleArray<T>(array: string[]): string[] {
-  for (let i = array.length - 1; i > 0; i--) {
-    // Generate a random index from 0 to i
-    const j = Math.floor(Math.random() * (i + 1));
-
-    // Swap array[i] with array[j]
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
+import { shuffleArray } from "@/lib/utils";
 
 export default async function Home() {
   const exampleCovers: string[] = shuffleArray([
@@ -50,10 +39,13 @@ export default async function Home() {
   );
 
   return (
-    <div className="flex flex-col items-center space-y-16 w-sm lg:w-lg xl:w-xl">
-      {/* <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
+    <div className="flex flex-col items-center space-y-16 ">
+      {/*
+      w-sm lg:w-lg xl:w-xl
+
+      <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
       <div className=" flex flex-col space-y-8 items-start sm:items-center">
-        <StyledH1 className="w-sm sm:w-full text-center">
+        <StyledH1 className="w-full text-center">
           Buchempfehlungen
         </StyledH1>
         <Link href="/recommendations">
@@ -77,14 +69,14 @@ export default async function Home() {
           </div>
         </Link>
       </div>
-      <div className="h-1 bg-main-700 opacity-50 w-full rounded-full" />
-
-      <div className="flex flex-col space-y-8 items-center">
-        <StyledH1 className="mt-0 md:mt-0">
+      <div className="px-4 w-full">
+        <div className="h-1 bg-main-700 opacity-50 w-full rounded-full" />
+      </div>
+      <div className="flex flex-col space-y-8 items-center px-4">
+        <StyledH1 className="mt-0 md:mt-0 text-center ">
           Ausführliche Rezensionen und Artikel
         </StyledH1>
         <OverviewGrid />
-
       </div>
     </div>
   );

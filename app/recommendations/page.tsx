@@ -3,10 +3,10 @@ import StyledH1 from "@/components/ui/styledH1";
 import { Book } from "@/lib/config";
 import { getImagePath } from "@/lib/getPosts";
 import Image from "next/image";
-import {books} from "@/lib/books";
+import { books } from "@/lib/books";
+import { shuffleArray } from "@/lib/utils";
 
 export default async function Home() {
- 
   //.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   //iterate over all books and add "imagePath" to each book
@@ -27,15 +27,16 @@ export default async function Home() {
       return { ...book, imagePath: imagePath };
     })
   );
+  const shuffledBookData: Book[] = shuffleArray(booksWithImages);
 
   return (
-    <div className="w-full flex flex-col items-center lg:w-lg xl:w-full">
+    <div className="w-full flex flex-col items-center px-4">
       <StyledH1 className="mb-8">Alle Buchempfehlungen!</StyledH1>
       <div className="w-full text-start">
         Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich
         interessiert.
       </div>
-      <RecommendationGrid books={booksWithImages} allTags={allTags} />
+      <RecommendationGrid books={shuffledBookData} allTags={allTags} />
     </div>
   );
 }

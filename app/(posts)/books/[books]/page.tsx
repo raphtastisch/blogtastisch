@@ -37,8 +37,8 @@ export default async function Home({ params }: any) {
   );
 
   return (
-    <div className="mdx flex flex-col items-center text-md md:text-lg">
-      <div className="w-sm lg:w-md flex flex-col ">
+    <div className="mdx flex flex-col items-center text-md md:text-lg w-full">
+      <div className="md:w-md flex flex-col">
         <div className="text-main-700 text-sm md:text-md ml-auto">
           {`${new Date(frontmatter.date)
             .getDate()
@@ -61,18 +61,20 @@ export default async function Home({ params }: any) {
         </div>
 
         {frontmatter.longDescription && frontmatter.longDescription !== "" ? (
-          <StyledBlockquote className="mt-8">
+          <StyledBlockquote className="mt-8 mb-0">
             {frontmatter.longDescription}
           </StyledBlockquote>
         ) : null}
       </div>
 
-      <InPostImage src={illustrationImagePath} priority={true}/>
+      <InPostImage src={illustrationImagePath} priority={true} />
 
-      <div className="w-sm lg:w-md flex flex-col">{content}</div>
+      {/* Content */}
+      <div className="flex flex-col items-center w-full">{content}</div>
 
+      {/* Footer */}
       {frontmatter.initialReleaseUrl && frontmatter.initialReleaseName ? (
-        <div className="mt-8 w-sm lg:w-md ">
+        <div className="mt-8 lg:w-md ">
           Dieser Buchreview erschien ursprünglich auf&nbsp;
           <StyledLink href={frontmatter.initialReleaseUrl}>
             {frontmatter.initialReleaseName}
@@ -81,7 +83,7 @@ export default async function Home({ params }: any) {
       ) : null}
 
       <div className="flex flex-col items-center space-y-4 mt-8">
-        <div className="relative h-sm w-sm overflow-hidden rounded-xl">
+        <div className="relative h-sm w-xs overflow-hidden rounded-xl">
           <Image
             src={coverImagePath}
             alt="Cover for this book"
