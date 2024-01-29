@@ -45,14 +45,14 @@ export default async function RootLayout({
   // console.log("layout", mainNavbarData);
 
   return (
-    <html lang="de h-full">
+    <html lang="de" className="h-full md:w-screen">
       <body className=" h-full bg-white text-black overflow-x-hidden text-sm sm:text-base md:text-lg">
         <main className="min-h-full">
           {/* <div className="flex-none ">
             <Navigation navDataFull={mainNavbarData} />
           </div> */}
           <Navbar />
-          <div className="mx-auto max-w-7xl py-4 ">
+          <div className="mx-auto max-w-7xl py-4">
             {/* sm:px-4 lg:px-8 */}
             {children}
           </div>
