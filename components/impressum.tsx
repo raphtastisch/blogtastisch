@@ -16,7 +16,7 @@ export default function Impressum() {
           Impressum{showImpressum && ":"}
         </div>
         {showImpressum && (
-          <div className="text-xs flex flex-col spacey-1">
+          <div className="text-xs flex flex-col space-y-0.5">
             <p className="font-semibold">Raphael Fritz</p>
             <p>Marxergasse 17 / 2 / 16</p>
             <p>1030 Wien</p>
@@ -26,7 +26,10 @@ export default function Impressum() {
               href="https://www.linkedin.com/in/raphael-fritz/"
               target="_blank"
             >
-              <FaLinkedin size={24} className="text-blue-700" /> <p>LinkedIn</p>
+              <div className="flex flex-row items-center space-x-2">
+                <FaLinkedin size={24} className="text-blue-700" />{" "}
+                <p>LinkedIn</p>
+              </div>
             </StyledLink>
 
             <Link

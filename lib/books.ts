@@ -676,4 +676,148 @@ export const books: Book[] = [
             "non-fiction",
         ],
     },
+    {
+        title: "The Pragmatic Programmer",
+        subtitle: "Timeless Lessons for Software Developers",
+        author: "Andrew Hunt and David Thomas",
+        slug: "pragmatic-programmer",
+        shortDescription: "A guide to software engineering principles and practices.",
+        longDescription: "Covers a broad range of software engineering topics, aiming to improve coding efficiency and design quality. Hunt and Thomas provide valuable insights and practical advice on various aspects of programming, from writing better code to managing projects effectively, making it a must-read for both novice and experienced software developers seeking to enhance their skills and methodologies.",
+        date: new Date("2019-09-20"),
+        tags: ["IT", "technology", "strategy", "non-fiction"]
+    },
+    {
+        title: "The Infinite Game",
+        subtitle: "How to Achieve Long-Lasting Success in Business",
+        author: "Simon Sinek",
+        slug: "infinite-game",
+        shortDescription: "Exploration of leadership and sustainable business strategies.",
+        longDescription: 'Explores how adopting an "infinite mindset" can lead to greater innovation, trust, and long-term success in business and life. Sinek contrasts this approach with a "finite mindset" focused on short-term gains, arguing that leaders who embrace the principles of the infinite game build stronger, more innovative, and more resilient organizations.',
+        date: new Date("2019-10-15"),
+        tags: ["business", "leadership", "psychology", "strategy", "innovation", "non-fiction"]
+    },
+    {
+        title: "Freakonomics",
+        subtitle: "A Rogue Economist Explores the Hidden Side of Everything",
+        author: "Steven D. Levitt and Stephen J. Dubner",
+        slug: "freakonomics",
+        shortDescription: "An unconventional exploration of economics.",
+        longDescription: "Uses economic theories to explore real-world phenomena and unconventional topics not typically associated with economics. Levitt and Dubner apply economic principles to a diverse range of subjects, from crime rates to parenting styles, revealing surprising connections and insights into the hidden aspects of everyday life.",
+        date: new Date("2005-04-12"),
+        tags: ["economics", "sociology", "psychology", "non-fiction"]
+    },
+    {
+        title: "Die Macht unserer Gene",
+        subtitle: "How to use Knowledge about our Genes to improve our Health and Well-Being.",
+        author: "Daniel Wallerstorfer",
+        slug: "unsere-gene",
+        shortDescription: "A guide to understanding and improving your health through understanding your genes.",
+        longDescription: "Practical insights into the explanatory power of your genes by one of Austria's leading geneticist. A real eye-opener that shows how everyone can use knowledge about their genes to improve their health and well-being. This book is only available in German.",
+        date: new Date("2021-03-26"),
+        tags: ["health", "science", "technology", "fitness", "non-fiction"]
+    },
+    {
+        title: "Breath",
+        subtitle: "The New Science of the Lost Art of Breathing",
+        author: "James Nestor",
+        slug: "breath",
+        shortDescription: "An exploration of the lost art and science of breathing.",
+        longDescription: "Explores the historical, scientific, and cultural dimensions of breathing. Reveals how the way we breathe has changed and deteriorated over centuries. Highlights the connection between breathing practices and overall health. Offers insights into how simple adjustments in breathing can lead to major health and wellness improvements. Combines scientific analysis with ancient wisdom.",
+        date: new Date("2020-05-26"),
+        tags: ["health", "science", "history", "non-fiction", "mindset"]
+    },
+    {
+        title: "The Medici Effect",
+        subtitle: "What Elephants and Epidemics Can Teach Us About Innovation",
+        author: "Frans Johansson",
+        slug: "medici-effect",
+        shortDescription: "An examination of innovation inspired by the intersection of fields and cultures.",
+        longDescription: "Discusses how breakthrough ideas most often occur when we bring concepts from one field into a new, unfamiliar territory. Uses examples from various fields to illustrate how innovation happens at the intersection. Encourages breaking down traditional barriers and combining different fields of expertise. Challenges the reader to think differently and be more open to diverse ideas. Inspired by the Medici family of the Renaissance, who funded creators from a wide range of disciplines.",
+        date: new Date("2004-10-01"),
+        tags: ["innovation", "strategy", "business", "science", "non-fiction"]
+    },
+
+    {
+        title: "Animal Farm",
+        subtitle: "A Fairy Story",
+        author: "George Orwell",
+        slug: "animal-farm",
+        shortDescription: "A satirical tale of a group of farm animals who rebel against their human farmer.",
+        longDescription: "Depicts a group of farm animals who overthrow their human farmer, hoping to create a society where animals can be equal, free, and happy. However, the new regime becomes just as oppressive. The book is a critique of totalitarianism and a commentary on the corruption of revolutionary ideals and the nature of power. A thought-provoking read that remains relevant in modern times.",
+        date: new Date("1945-08-17"),
+        tags: ["humor", "politics", "history", "classic", "fiction"]
+    },
+    {
+        title: "Achtsam morden",
+        subtitle: "A Mindful Approach to Murder",
+        author: "Karsten Dusse",
+        slug: "achtsam-morden",
+        shortDescription: "A darkly humorous novel about a lawyer's unique approach to dealing with his problems.",
+        longDescription: "Centers on a lawyer who, overwhelmed by life, stumbles upon the principles of mindfulness. In a twist of fate, he applies these principles to his criminal activities, leading to humorous and unexpected consequences. This novel blends crime, humor, and a unique take on mindfulness, making it a captivating and unusual read. This book is only available in German.",
+        date: new Date("2019-05-27"),
+        tags: ["humor", "thrilling", "crime", "mindfulness", "fiction"]
+    },
+    {
+        title: "Fall of Giants",
+        subtitle: "Part One of The Century Trilogy ",
+        author: "Ken Follett",
+        slug: "fall-of-giants",
+        shortDescription: "An epic historical novel set during the major events of the 20th century.",
+        longDescription: `Follows five interrelated families throughout the events of the First World War, the Russian Revolution, and the struggle for women's suffrage. Combines factual history with a gripping narrative, showcasing Follett's ability to weave complex characters and intricate plot lines. Offers insight into the political and social turmoil of the early 20th century. Part one of the "Century Trilogy".`,
+        date: new Date("2010-09-28"),
+        tags: ["histroy", "fiction"]
+    },
+    {
+        title: "The Firm",
+        subtitle: "The Thriller That Became a Phenomenon",
+        author: "John Grisham",
+        slug: "the-firm",
+        shortDescription: "A legal thriller about a young attorney unknowingly hired by a mafia-controlled law firm.",
+        longDescription: "Focuses on a bright, ambitious lawyer who lands the job of his dreams at a prestigious law firm, only to discover it has a sinister dark side. Entangled in a web of deceit and corruption, he must find a way out. The novel is known for its fast-paced narrative, intricate plot, and exploration of legal and moral dilemmas.",
+        date: new Date("1991-02-01"),
+        tags: ["thrilling", "crime", "fiction"]
+    },
+
+    {
+        title: "Sooley",
+        subtitle: "A Story of Basketball and Hope",
+        author: "John Grisham",
+        slug: "sooley",
+        shortDescription: "A novel about a young basketball player from South Sudan chasing his American dream.",
+        longDescription: "Follows the journey of a talented South Sudanese teenager who gets the chance to play basketball in the United States. Balancing the excitement of sports with the harsh realities of his war-torn homeland, the story explores themes of hope, resilience, and the transformative power of sports. It's a touching and inspiring tale that's a departure from Grisham's usual legal thrillers.",
+        date: new Date("2021-04-27"),
+        tags: ["fitness", "thrilling", "mindset", "fiction"]
+    },
+    {
+        title: "The Alchemist",
+        subtitle: "A Fable About Following Your Dream",
+        author: "Paulo Coelho",
+        slug: "alchemist",
+        shortDescription: "A philosophical book about a young shepherd's journey to discover his personal legend.",
+        longDescription: "Tells the story of Santiago, a young shepherd boy who dreams of finding a world treasure as fabulous as any ever found. The book is a metaphorical tale about following one's dreams and listening to the heart. Coelho's writing inspires a sense of wonder and introspection, making it a globally beloved modern classic.",
+        date: new Date("1988-01-01"),
+        tags: ["philosophy", "mindset", "classic", "fiction"]
+    },
+    {
+        title: "Harry Potter and the Methods of Rationality",
+        subtitle: "A Rational Take on the Wizarding World",
+        author: "Eliezer Yudkowsky",
+        slug: "hpmor",
+        shortDescription: "A fan fiction reimagining of the Harry Potter universe with a focus on rationality and science.",
+        longDescription: "Reimagines the Harry Potter world where Harry is raised with a scientific mindset and approaches the wizarding world with a rational and analytical perspective. The story explores themes of logic, philosophy, and science, offering a unique twist on the original series. It's a thought-provoking read for fans of the original books and those interested in critical thinking.",
+        date: new Date("2010-02-28"),
+        tags: ["science", "strategy", "mindset", "philosophy", "fiction"]
+    },
+    {
+        title: "His Majesty's Dragon",
+        subtitle: "Book One of Temeraire Series",
+        author: "Naomi Novik",
+        slug: "his-majestys-dragon",
+        shortDescription: "An alternative-historiy fantasy novel blending the Napoleonic Wars with intelligent, realistic dragons.",
+        longDescription: "Introduces a captivating world where the Napoleonic Wars are fought with the aid of intelligent dragons. The story follows Captain Will Laurence, who discovers a rare dragon egg and forms an unbreakable bond with the dragon, Temeraire. Together, they face the challenges of aerial combat and the complexities of 19th-century society. This novel is a unique blend of historical accuracy and fantasy, offering a fresh perspective on dragon lore.",
+        date: new Date("2006-03-28"),
+        tags: ["history", "fiction"]
+    }
+
+
 ]; //.sort((a, b) => b.date.getTime() - a.date.getTime());

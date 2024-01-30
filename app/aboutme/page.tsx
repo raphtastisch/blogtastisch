@@ -10,14 +10,10 @@ export default async function Home() {
       <div className="flex flex-col items-center w-full md:w-md">
         <StyledH1 className="text-center ">Raphael Fritz</StyledH1>
         <StyledH2 className="text-center mb-8">
-          Ich bin IT-Unternehmer mit Fokus auf AI & Produktivität.
+          Bücherwurm, Techologienerd und IT-Unternehmer <p />
+          mit Fokus auf AI & Produktivität.
         </StyledH2>
         <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-8 items-center">
-          {/* <InPostImage
-          src="/statics/RaphaelFritz.jpg"
-          width="w-xs"
-          height="h-xs"
-        /> */}
           <div className="  ">
             <div className="relative overflow-hidden  rounded-xl shadow-xl w-xs h-xs ">
               <div className="relative h-full transition-transform duration-500 ease-in-out transform hover:scale-110">
@@ -61,6 +57,17 @@ export default async function Home() {
           {/* Technology, science & politics nerd. Experienced tech-entrepreneur & AI
         expert. Impact driven. Convince people by action, not by words. */}
         </StyledBlockquote>
+
+        <div>
+          Ich freu mich immer über Buchempfehlungen - schreib mir am Besten
+          einfach auf{" "}
+          <StyledLink
+            href="https://www.linkedin.com/in/raphael-fritz/"
+            target="_blank"
+          >
+            LinkedIn.
+          </StyledLink>
+        </div>
       </div>
     </div>
   );

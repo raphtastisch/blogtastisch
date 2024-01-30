@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { Book } from "@/lib/config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Tag from "./tag";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function RecommendationGrid({
   books,
@@ -15,6 +16,22 @@ export default function RecommendationGrid({
   allTags: string[];
 }) {
   const [tags, setTags] = useState<string[]>([]);
+
+  const searchParams = useSearchParams(); // Extract the tag from the URL
+  // console.log("searchParams", searchParams.getAll("tag"));
+
+  useEffect(() => {
+    const tagsFromUrl = searchParams.getAll("tag");
+    if (tagsFromUrl.length > 0) {
+      setTags(tagsFromUrl);
+    }
+  }, [searchParams]);
+
+  //   const router = useRouter();
+  // useEffect(() => {
+  //   const queryParams = tags.length > 0 ? { tag: tags } : undefined;
+  //   router.push({ query: queryParams }, undefined, { scroll: false });
+  // }, [tags]);
 
   // used to display only those tags to the user, that are still linked with a book that is shown
   const availableTags: string[] = [];
@@ -59,7 +76,7 @@ export default function RecommendationGrid({
 
   return (
     <div className="w-full">
-      <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 w-full pt-4 items-center">
+      <div className="flex flex-col items-start space-y-2 md:space-y-0 md:flex-row md:space-x-8 w-full pt-4 md:items-center">
         <div className="min-w-44 h-fit cursor-pointer p-1 rounded bg-main-700 text-white font-semibold text-center">
           {tags.length > 0 ? (
             <div className="" onClick={() => setTags([])}>
@@ -75,7 +92,7 @@ export default function RecommendationGrid({
           )}
         </div>
 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap ">
           {allTags.map((tag) =>
             availableTags.length === 0 || availableTags.includes(tag) ? (
               <Tag
@@ -93,9 +110,18 @@ export default function RecommendationGrid({
               />
             ) : null
           )}
+          {tags.length !== 0 && (
+            <div className="m-1 py-1 px-4 rounded-full select-none text-center text-xs font-semibold text-gray-500 bg-gray-300 whitespace-nowrap">
+              + {allTags.length - availableTags.length} ausgeblendete Tags
+            </div>
+          )}
         </div>
       </div>
-      <div className="h-1 bg-main-700 opacity-50 w-full my-4 rounded-full" />
+      <div className="h-1 bg-main-700 opacity-50 w-full mt-4 mb-1 rounded-full" />
+      <div className="text-main-700 text-xs md:text-sm text-right w-full mb-4">
+        Ausgewählte Tags zeigen <strong>{filteredBooks.length}</strong> von{" "}
+        <strong>{books.length}</strong> Empfehlungen
+      </div>
       <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-8">
         {filteredBooks.map((book) => {
           const Wrapper = ({ children }: { children: JSX.Element }) => {

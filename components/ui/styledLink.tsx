@@ -11,7 +11,7 @@ export default function StyledLink({
     <Link
       href={href}
       target="_blank"
-      className={"flex flex-row items-center space-x-2 text-blue-600 hover:text-blue-400 font-semibold underline" + " " + className}
+      className={"text-blue-600 hover:text-blue-400 font-semibold underline" + " " + className}
       {...props}
     >
       {children}

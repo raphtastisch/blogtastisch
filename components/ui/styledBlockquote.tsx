@@ -7,7 +7,7 @@ export default async function StyledBlockquote({
 }: any) {
   return (
     <blockquote
-      className={cn("border-l-4 border-main-700 pl-4 mb-8", className)}
+      className={cn("border-l-4 border-main-700 ml-2 pl-4 mb-8", className)}
       {...props}
     >
       {children}

@@ -30,6 +30,10 @@ export default async function Home() {
     "superforecasting",
     "aufklaerungjetzt",
     "beginning-infinity",
+    "unsere-gene",
+    "sooley",
+    "achtsam-mordern",
+    "animal-farm",
   ]);
 
   const exampleCoversPath: string[] = await Promise.all(

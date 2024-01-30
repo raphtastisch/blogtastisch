@@ -2,15 +2,12 @@ import RecommendationGrid from "@/components/recommendation/recommendationGrid";
 import StyledH1 from "@/components/ui/styledH1";
 import { Book } from "@/lib/config";
 import { getImagePath } from "@/lib/getPosts";
-import Image from "next/image";
 import { books } from "@/lib/books";
 import { shuffleArray } from "@/lib/utils";
+import StyledLink from "@/components/ui/styledLink";
 
 export default async function Home() {
-  //.sort((a, b) => b.date.getTime() - a.date.getTime());
-
   //iterate over all books and add "imagePath" to each book
-
   const allTags: string[] = [];
   const booksWithImages = await Promise.all(
     books.map(async (book) => {
@@ -37,6 +34,17 @@ export default async function Home() {
         interessiert.
       </div>
       <RecommendationGrid books={shuffledBookData} allTags={allTags} />
+      <div className="h-1 bg-main-700 opacity-50 w-full mt-6 mb-2 rounded-full" />
+      <div className="text-main-700 ">
+        Ich freu mich selbst auch immer über <strong>Buchempfehlungen</strong> -
+        schreib mir deine Tipps am Besten einfach auf{" "}
+        <StyledLink
+          href="https://www.linkedin.com/in/raphael-fritz/"
+          target="_blank"
+        >
+          LinkedIn
+        </StyledLink>
+      </div>
     </div>
   );
 }
