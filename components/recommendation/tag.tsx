@@ -18,7 +18,7 @@ export default function Tag({
       )}
       onClick={() => (onClick ? onClick() : null)}
     >
-      {tag}
+      {tag.charAt(0).toUpperCase() + tag.slice(1)}
     </div>
   );
 }

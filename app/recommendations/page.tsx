@@ -31,7 +31,7 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col items-center px-4">
-      <StyledH1 className="mb-8">Alle Buchempfehlungen!</StyledH1>
+      <StyledH1 className="mb-2 md:mb-4">Alle Buchempfehlungen!</StyledH1>
       <div className="w-full text-start text-md md:text-lg">
         Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich
         interessiert.

@@ -50,12 +50,15 @@ export default function OverviewElement({
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
-          <div className="absolute inset-2 bg-black p-1 text-white w-fit h-fit rounded-lg">
+          <div className="absolute bottom-2 right-2 bg-black py-0.5 px-2 text-white w-fit h-fit rounded-lg">
             {`${new Date(data.date).getDate().toString().padStart(2, "0")}.${(
               new Date(data.date).getMonth() + 1
             )
               .toString()
               .padStart(2, "0")}.${new Date(data.date).getFullYear()}`}
+          </div>
+          <div className="absolute inset-2 bg-main-700 py-0.5 px-2 text-white w-fit h-fit rounded-lg font-semibold ">
+            {data.category === "books" ? "Buch-Review" : "Artikel"}
           </div>
         </div>
         <div className="mt-1 p-1 rounded-sm">
@@ -72,7 +75,9 @@ export default function OverviewElement({
           <div
             className={cn(
               "font-semibold text-main-700 text-xl",
-              isBig ? "text-xl md:text-2xl lg:text-3xl" : "text-xl md:text-2xl lg:text-2xl"
+              isBig
+                ? "text-xl md:text-2xl lg:text-3xl"
+                : "text-xl md:text-2xl lg:text-2xl"
             )}
           >
             {data.title}

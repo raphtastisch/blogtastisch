@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function StyledLink({
+export default function StyledLink({
   props,
   children,
   href,
@@ -11,7 +11,7 @@ export default async function StyledLink({
     <Link
       href={href}
       target="_blank"
-      className={"text-blue-600 underline" + " " + className}
+      className={"flex flex-row items-center space-x-2 text-blue-600 hover:text-blue-400 font-semibold underline" + " " + className}
       {...props}
     >
       {children}

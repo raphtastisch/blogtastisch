@@ -37,7 +37,7 @@ export default async function Home({ params }: any) {
   return (
     <div className="mdx flex flex-col items-center w-full">
       <div className="md:w-md flex flex-col">
-        <div className="text-main-700 text-sm md:text-base ml-auto">
+        <div className="text-main-700 mt-4 text-sm md:text-base ml-auto">
           {`${new Date(frontmatter.date)
             .getDate()
             .toString()

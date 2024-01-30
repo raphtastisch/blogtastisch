@@ -40,8 +40,8 @@ module.exports = {
       colors: {
         purewhite: '#ffffff',
         pureblack: '#000000',
-        black: '#040301',
-        white: '#f7f5f3',
+        black: '#040802', //'#040301',
+        white: "#F9FDF7",//"#F9FDF7",//"#F6FBF3", // old brownish'#f7f5f3',
         main: {
           50: '#f2faeb',
           100: '#e3f3d4',

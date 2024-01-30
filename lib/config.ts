@@ -18,6 +18,7 @@ export interface Book {
     initialReleaseUrl?: string;
     initialReleaseName?: string;
     imagePath?:string;
+    amazonLink?:string;
 }
 
 export const contentFolder = "data";

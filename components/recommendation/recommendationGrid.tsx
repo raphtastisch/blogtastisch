@@ -102,7 +102,15 @@ export default function RecommendationGrid({
             return book.hasFullText ? (
               <Link href={"/books/" + book.slug}>{children}</Link>
             ) : (
-              <div>{children}</div>
+              <Link
+                target="_blank"
+                href={`https://www.amazon.de/s?k=${book.title.replace(
+                  " ",
+                  "+"
+                )}&i=audible&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y539SCFIVZKF&sprefix=alignment+prob%2Caudible%2C286&linkCode=ll2&tag=raphaelfritz-21&linkId=11b8f9eddf91a807e78d59cdb6ea22b5&language=de_DE&ref_=as_li_ss_tl`}
+              >
+                {children}
+              </Link>
             );
           };
 
@@ -141,7 +149,7 @@ export default function RecommendationGrid({
 
                   <div className=" mt-2">{book.longDescription}</div>
                   <div className="mt-1  text-right text-main-700">
-                    von &nbsp;<strong>{book.author}</strong>
+                    by&nbsp;<strong>{book.author}</strong>
                   </div>
                   {book.tags && (
                     <div className="flex flex-wrap mt-4">

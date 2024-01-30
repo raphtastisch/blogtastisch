@@ -2,17 +2,16 @@ import Image from "next/image";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
+import StyledLink from "@/components/ui/styledLink";
 
 export default async function Home() {
   return (
     <div className="w-full flex flex-col items-center p-4">
       <div className="flex flex-col items-center w-full md:w-md">
-        <StyledH1 className="text-center">Über mich:</StyledH1>
-
+        <StyledH1 className="text-center ">Raphael Fritz</StyledH1>
         <StyledH2 className="text-center mb-8">
           Ich bin IT-Unternehmer mit Fokus auf AI & Produktivität.
         </StyledH2>
-
         <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-8 items-center">
           {/* <InPostImage
           src="/statics/RaphaelFritz.jpg"
@@ -40,14 +39,18 @@ export default async function Home() {
           <div className="md:py-8 flex flex-col space-y-4">
             <p>
               Schon als Kind war ich ein Bücherwurm, aber erst nach dem Studium
-              entdeckte ich Hörbücher für mich. So lässt sich mein Wissensdurst
-              in den Bereichen Technologie, Politik, Wissenschaft, Philosophie,
-              Produktivität und Persönlichkeitsentwicklung trotz eines
-              hektischen Alltags hervorragend stillen. Über 70 Hörbücher und 5
-              gedruckte Bücher pro Jahr liefern mir dabei einen guten Pool, um
-              hervorragende Empfehlungen abgeben zu können. Die meisten Bücher
-              werden auf Englisch gelesen oder gehört. Ausnahmen gibt es primär,
-              wenn Deutsch die Originalsprache ist.
+              entdeckte ich{" "}
+              <StyledLink href="https://www.amazon.de/hz/audible/mlp?actionCode=AZDOR06602162290MVtag%3Draphaelfritz-21">
+                Hörbücher
+              </StyledLink>{" "}
+              für mich. So lässt sich mein Wissensdurst in den Bereichen
+              Technologie, Politik, Wissenschaft, Philosophie, Produktivität und
+              Persönlichkeitsentwicklung trotz eines hektischen Alltags
+              hervorragend stillen. Über 70 Hörbücher und 5 gedruckte Bücher pro
+              Jahr liefern mir dabei einen guten Pool, um hervorragende
+              Empfehlungen abgeben zu können. Die meisten Bücher werden auf
+              Englisch gelesen oder gehört. Ausnahmen gibt es primär, wenn
+              Deutsch die Originalsprache ist.
             </p>
           </div>
         </div>

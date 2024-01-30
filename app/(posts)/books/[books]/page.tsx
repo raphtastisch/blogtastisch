@@ -5,6 +5,7 @@ import StyledLink from "@/components/ui/styledLink";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
+import Link from "next/link";
 
 // not sure if actually working
 export async function generateStaticParams() {
@@ -39,7 +40,7 @@ export default async function Home({ params }: any) {
   return (
     <div className="mdx flex flex-col items-center  w-full">
       <div className="md:w-md flex flex-col">
-        <div className="text-main-700 text-sm md:text-base ml-auto">
+        <div className="text-main-700 mt-4 text-sm md:text-base ml-auto">
           {`${new Date(frontmatter.date)
             .getDate()
             .toString()
@@ -82,31 +83,37 @@ export default async function Home({ params }: any) {
         </div>
       ) : null}
 
-      <div className="flex flex-col items-center space-y-4 mt-8">
-        <div className="relative h-sm w-xs overflow-hidden rounded-xl">
-          <Image
-            src={coverImagePath}
-            alt="Cover for this book"
-            className=""
-            // width={300}
-            // height={500}
-            fill={true}
-            sizes="(max-size-768px):70vw (max-size-1024px):50vw 33vw"
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              objectPosition: "center",
-            }}
-          />
-        </div>
-        {/* <Link href="https://amazon.de">
+      <Link href={frontmatter.amazonLink} target="_blank" className="p-8">
+        <div className="flex flex-col items-center  mt-8">
+          <div className="text-main-700 text-xl font-semibold underline mb-1">
+            Als Buch oder Hörbuch hier erhältlich:
+          </div>
+          <div className="relative h-illustration w-xs overflow-hidden rounded-xl">
+            <Image
+              src={coverImagePath}
+              alt={frontmatter.title + " Cover"}
+              className=""
+              // width={300}
+              // height={500}
+              fill={true}
+              sizes="(max-size-768px):70vw (max-size-1024px):50vw 33vw"
+              style={{
+                width: "100%",
+                objectFit: "contain",
+                objectPosition: "center",
+              }}
+            />
+          </div>
+
+          {/* <Link href="https://amazon.de">
             <Button className="bg-main-900">
               <div className="text-white underline decoration-transparent">
                 Hier erhältlich!
               </div>
             </Button>
           </Link> */}
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }
