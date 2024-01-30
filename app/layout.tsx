@@ -4,6 +4,7 @@ import "./globals.css";
 // import { getAllPosts } from "@/lib/getPosts";
 // import { Navigation } from "@/components/navigation/navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/navigation/navbar";
 import Impressum from "@/components/impressum";
 
@@ -30,6 +31,7 @@ export default async function RootLayout({
           </div>
         </main>
         <SpeedInsights />
+        <Analytics/>
       </body>
     </html>
   );

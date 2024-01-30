@@ -15,7 +15,6 @@ export const books: Book[] = [
         date: new Date("2021-08-01"),
     },
     {
-
         // title: "Aufklärung jetzt",
         // subtitle: "Für Vernunft, Wissenschaft, Humanismus und Fortschritt",
         // author: "Steven Pinker",
@@ -734,7 +733,7 @@ export const books: Book[] = [
         shortDescription: "An examination of innovation inspired by the intersection of fields and cultures.",
         longDescription: "Discusses how breakthrough ideas most often occur when we bring concepts from one field into a new, unfamiliar territory. Uses examples from various fields to illustrate how innovation happens at the intersection. Encourages breaking down traditional barriers and combining different fields of expertise. Challenges the reader to think differently and be more open to diverse ideas. Inspired by the Medici family of the Renaissance, who funded creators from a wide range of disciplines.",
         date: new Date("2004-10-01"),
-        tags: ["innovation", "strategy", "business", "science", "non-fiction"]
+        tags: ["innovation", "strategy", "business", "science", "non-fiction", "entrepreneurship"]
     },
 
     {
