@@ -34,8 +34,8 @@ export default async function Home() {
         interessiert.
       </div>
       <RecommendationGrid books={shuffledBookData} allTags={allTags} />
-      <div className="h-1 bg-main-700 opacity-50 w-full mt-6 mb-2 rounded-full" />
-      <div className="text-main-700 ">
+      <div className="h-1 bg-main-700 opacity-50 w-full mt-16 rounded-full" />
+      <div className="text-main-700 mt-8 ">
         Ich freu mich selbst auch immer über <strong>Buchempfehlungen</strong> -
         schreib mir deine Tipps am Besten einfach auf{" "}
         <StyledLink

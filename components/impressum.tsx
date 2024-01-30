@@ -8,7 +8,7 @@ export default function Impressum() {
   const [showImpressum, setShowImpressum] = useState(false);
   return (
     <>
-      <div className="flex flex-col space-y-2 min-h-40 justify-end mt-8 px-4">
+      <div className="flex flex-col space-y-2 min-h-48 justify-end mt-8 px-4">
         <div
           className="underline text-sm cursor-pointer"
           onClick={() => setShowImpressum(!showImpressum)}
@@ -21,7 +21,6 @@ export default function Impressum() {
             <p>Marxergasse 17 / 2 / 16</p>
             <p>1030 Wien</p>
             <p>E-Mail: Bitte per Linkedin anfragen!</p>
-
             <StyledLink
               href="https://www.linkedin.com/in/raphael-fritz/"
               target="_blank"
@@ -31,15 +30,15 @@ export default function Impressum() {
                 <p>LinkedIn</p>
               </div>
             </StyledLink>
-
             <Link
               target="_blank"
               href="https://www.amazon.de/b?_encoding=UTF8&tag=raphaelfritz-21&linkCode=ur2&linkId=457b8ee185014069d5fa88b2b928c01d&camp=1638&creative=6742&node=288100"
-              className="mt-4 underline"
+              className="pt-4 underline"
             >
-              Als Amazon-Partner verdiene ich an qualifizierten Verkäufen über
-              angeklickte Links.
+              Hinweis: Als Amazon-Partner verdiene ich an qualifizierten
+              Verkäufen über angeklickte Links.
             </Link>
+            Das bedeutet mehr Bücher und damit bessere Empfehlungen ;)
           </div>
         )}
       </div>

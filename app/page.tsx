@@ -32,7 +32,7 @@ export default async function Home() {
     "beginning-infinity",
     "unsere-gene",
     "sooley",
-    "achtsam-mordern",
+    "achtsam-morden",
     "animal-farm",
   ]);
 
