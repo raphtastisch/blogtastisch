@@ -111,7 +111,10 @@ export default function RecommendationGrid({
             ) : null
           )}
           {tags.length !== 0 && (
-            <div className="m-1 py-1 px-4 rounded-full select-none text-center text-xs font-semibold text-gray-500 bg-gray-300 whitespace-nowrap">
+            <div
+              onClick={() => setTags([])}
+              className="cursor-pointer m-1 py-1 px-4 rounded-full select-none text-center text-xs font-semibold text-gray-500 bg-gray-300 whitespace-nowrap"
+            >
               + {allTags.length - availableTags.length} ausgeblendete Tags
             </div>
           )}

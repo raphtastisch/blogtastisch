@@ -10,7 +10,7 @@ export default async function Home() {
       <div className="flex flex-col items-center w-full md:w-md">
         <StyledH1 className="text-center ">Raphael Fritz</StyledH1>
         <StyledH2 className="text-center mb-8">
-          Bücherwurm, Techologienerd und IT-Unternehmer <p />
+          Bücherwurm, Techologienerd und IT-Unternehmer <p className="hidden sm:block"/>
           mit Fokus auf AI & Produktivität.
         </StyledH2>
         <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:space-x-8 items-center">

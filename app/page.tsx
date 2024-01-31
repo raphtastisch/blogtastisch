@@ -50,7 +50,11 @@ export default async function Home() {
       <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
       <div className=" flex flex-col space-y-8 items-start sm:items-center">
         <StyledH1 className="w-full text-center">Buchempfehlungen</StyledH1>
-        <Link href="/recommendations">
+
+        <Link
+          href="/recommendations"
+          className="relative flex flex-col items-center"
+        >
           <div className="flex flex-col items-center justify-center w-screen overflow-hidden shadow-xl">
             <div className="flex flex-row justify-center ">
               {exampleCoversPath.map((path, index) => (
@@ -70,6 +74,10 @@ export default async function Home() {
               ))}
             </div>
           </div>
+          <div className="text-xl md:text-2xl absolute top-8 shadow-xl font-semibold bg-white text-main-700 rounded-xl py-4 px-8 border-b-4 border-main-700 hover:text-white hover:bg-main-700 hover:border-transparent">
+            Zu den Empfehlungen
+          </div>
+          {/* <div>Hier findest du noch viel mehr!</div> */}
         </Link>
       </div>
       <div className="px-4 w-full">

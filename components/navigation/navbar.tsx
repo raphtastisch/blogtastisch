@@ -151,7 +151,7 @@ export default function Navbar() {
                     as="a"
                     href={item.href}
                     className={cn(
-                      "block rounded-md px-3 py-2 text-lg font-medium text-main-700 border-b-2 border-transparent",
+                      "block rounded-md px-3 py-2 text-lg font-medium text-main-700 border-b-4 border-transparent",
                       //item.current
                       pathname === item.href
                         ? "bg-main-700 text-white hover:bg-opacity-90"
