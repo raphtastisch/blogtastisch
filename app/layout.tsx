@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Raphis Blog",
-  description: "Raphis personal blog",
+  description: "Great book recommendations!",
 };
 
 export default async function RootLayout({

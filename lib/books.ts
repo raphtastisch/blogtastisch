@@ -71,7 +71,7 @@ export const books: Book[] = [
             '"The Strategy of Denial" by Elbridge A. Colby offers intriguing insights into global geostrategy and how it might be perceived from a U.S. perspective. The focus is entirely on the power struggle with China - Europe is merely a side actor in this context.',
         hasFullText: true,
         date: new Date("2023-12-07 00:00:00"),
-        tags: ["non-fiction", "politics"],
+        tags: ["non-fiction", "politics", "strategy"],
     },
     {
         // title: "Ein verheißenes Land",
@@ -816,6 +816,36 @@ export const books: Book[] = [
         longDescription: "Introduces a captivating world where the Napoleonic Wars are fought with the aid of intelligent dragons. The story follows Captain Will Laurence, who discovers a rare dragon egg and forms an unbreakable bond with the dragon, Temeraire. Together, they face the challenges of aerial combat and the complexities of 19th-century society. This novel is a unique blend of historical accuracy and fantasy, offering a fresh perspective on dragon lore.",
         date: new Date("2006-03-28"),
         tags: ["history", "fiction"]
+    },
+    {
+        title: "The Code Breaker",
+        subtitle: "Jennifer Doudna, Gene Editing, and the Future of the Human Race",
+        author: "Walter Isaacson",
+        slug: "code-breaker",
+        shortDescription: "An exploration of CRISPR, gene editing, and their profound implications.",
+        longDescription: "Explores the life of Jennifer Doudna and her groundbreaking work in developing CRISPR, a revolutionary gene-editing technology. The book delves into the ethical dilemmas, potential applications, and far-reaching implications of this scientific breakthrough. Isaacson's narrative combines scientific detail with the human stories behind the discoveries, offering a compelling look at a major scientific advancement.",
+        date: new Date("2021-03-09"),
+        tags: ["biography", "science", "evolution", "innovation", "non-fiction"]
+    },
+    {
+        title: "The Secrets of Sand Hill Road",
+        subtitle: "Venture Capital and How to Get It",
+        author: "Scott Kupor",
+        slug: "secrets-sand-hill-road",
+        shortDescription: "Insider insights into the world of venture capital.",
+        longDescription: "Provides a deep dive into the intricacies of venture capital, from the perspective of a seasoned insider. Kupor shares knowledge on how VCs operate, what they look for in startups, and how entrepreneurs can effectively pitch and negotiate. The book is a valuable resource for anyone looking to understand the complexities of raising venture capital and provides practical advice for navigating this challenging landscape.",
+        date: new Date("2019-06-04"),
+        tags: ["business", "entrepreneurship", "strategy", "non-fiction"]
+    },
+    {
+        title: "The Lean Startup",
+        subtitle: "How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
+        author: "Eric Ries",
+        slug: "lean-startup",
+        shortDescription: "A guide to innovative startup strategies and practices.",
+        longDescription: "Introduces a new approach to business that's being adopted around the world. Ries outlines how startups can be more efficient, innovate rapidly, and adapt to changing markets through 'lean' principles. The book emphasizes the importance of validated learning, rapid scientific experimentation, and a number of counter-intuitive practices that shorten product development cycles, measure actual progress without resorting to vanity metrics, and learn what customers really want.",
+        date: new Date("2011-09-13"),
+        tags: ["business", "entrepreneurship", "innovation", "strategy", "non-fiction"]
     }
 
 
