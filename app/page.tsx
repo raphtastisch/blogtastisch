@@ -43,18 +43,23 @@ export default async function Home() {
   );
 
   return (
-    <div className="flex flex-col items-center space-y-16 ">
+    <div className="flex flex-col items-center space-y-8 md:space-y-16 ">
       {/*
       w-sm lg:w-lg xl:w-xl
 
       <StyledH1 className="mb-0 mt-0">Willkommen! Genieß es.</StyledH1> */}
-      <div className=" flex flex-col space-y-8 items-start sm:items-center">
-        <StyledH1 className="w-full text-center">Buchempfehlungen</StyledH1>
+      <div className=" flex flex-col space-y-8 items-start sm:items-center mt-8">
+        <StyledH1 className="w-full text-center px-4 ">
+          Du brauchst eine Buchempfehlung?
+        </StyledH1>
 
         <Link
           href="/recommendations"
           className="relative flex flex-col items-center"
         >
+          {/* <div>
+            Finde dein nächstes Lieblingsbuch mit interaktiven Empfehlungen!
+          </div> */}
           <div className="flex flex-col items-center justify-center w-screen overflow-hidden shadow-xl">
             <div className="flex flex-row justify-center ">
               {exampleCoversPath.map((path, index) => (
@@ -74,16 +79,29 @@ export default async function Home() {
               ))}
             </div>
           </div>
-          <div className="text-xl md:text-2xl absolute top-8 shadow-xl font-semibold bg-white text-main-700 rounded-xl py-4 px-8 border-b-4 border-main-700 hover:text-white hover:bg-main-700 hover:border-transparent">
-            Zu den Empfehlungen
+
+          <div className=" flex flex-row items-center justify-center h-20 md:h-24 w-72 md:w-80  absolute top-8 md:top-6  shadow-xl bg-main-700 text-white rounded-xl  ">
+            <div
+              className="text-center font-semibold text-xl md:text-2xl transition-all duration-150 hover:scale-110"
+              style={{ transformOrigin: "bottom" }}
+            >
+              Finde hier dein <p /> nächstes Lieblingsbuch!
+            </div>
+            {/* <p className="font-semibold">Finde hier dein</p>
+            <p className="font-semibold">
+              nächstes Lieblingsbuch!
+            </p> */}
           </div>
-          {/* <div>Hier findest du noch viel mehr!</div> */}
+
+          {/* <div>
+            Finde dein nächstes Lieblingsbuch mit interaktiven Empfehlungen!
+          </div> */}
         </Link>
       </div>
-      <div className="px-4 w-full">
+      <div className="px-4 w-full pt-4  ">
         <div className="h-1 bg-main-700 opacity-50 w-full rounded-full" />
       </div>
-      <div className="flex flex-col space-y-8 items-center px-4">
+      <div className="flex flex-col space-y-4 sm:space-y-8 items-center px-4">
         <StyledH1 className="mt-0 md:mt-0 text-center ">
           Ausführliche Rezensionen und Artikel
         </StyledH1>
