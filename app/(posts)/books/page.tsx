@@ -6,7 +6,7 @@ import StyledH1 from "@/components/ui/styledH1";
 
 export default async function Home() {
   const category = "books";
-  const headline = "Alles zum Thema Bücher!";
+  const headline = "Alles zum Thema Bücher";
 
   return (
     <>

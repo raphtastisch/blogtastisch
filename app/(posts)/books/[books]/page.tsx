@@ -85,7 +85,7 @@ export default async function Home({ params }: any) {
 
       <Link href={frontmatter.amazonLink} target="_blank" className="p-8">
         <div className="flex flex-col items-center  mt-8">
-          <div className="text-main-700 text-xl font-semibold underline mb-1">
+          <div className="button px-4 py-2 rounded-lg mb-1 text-md sm:text-lg ">
             Als Buch oder Hörbuch hier erhältlich:
           </div>
           <div className="relative h-illustration w-xs overflow-hidden rounded-xl">

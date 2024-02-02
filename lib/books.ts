@@ -678,7 +678,7 @@ export const books: Book[] = [
     {
         title: "The Pragmatic Programmer",
         subtitle: "Timeless Lessons for Software Developers",
-        author: "Andrew Hunt and David Thomas",
+        author: "Andrew Hunt & David Thomas",
         slug: "pragmatic-programmer",
         shortDescription: "A guide to software engineering principles and practices.",
         longDescription: "Covers a broad range of software engineering topics, aiming to improve coding efficiency and design quality. Hunt and Thomas provide valuable insights and practical advice on various aspects of programming, from writing better code to managing projects effectively, making it a must-read for both novice and experienced software developers seeking to enhance their skills and methodologies.",
@@ -698,7 +698,7 @@ export const books: Book[] = [
     {
         title: "Freakonomics",
         subtitle: "A Rogue Economist Explores the Hidden Side of Everything",
-        author: "Steven D. Levitt and Stephen J. Dubner",
+        author: "Steven D. Levitt & Stephen J. Dubner",
         slug: "freakonomics",
         shortDescription: "An unconventional exploration of economics.",
         longDescription: "Uses economic theories to explore real-world phenomena and unconventional topics not typically associated with economics. Levitt and Dubner apply economic principles to a diverse range of subjects, from crime rates to parenting styles, revealing surprising connections and insights into the hidden aspects of everyday life.",
@@ -754,7 +754,7 @@ export const books: Book[] = [
         shortDescription: "A darkly humorous novel about a lawyer's unique approach to dealing with his problems.",
         longDescription: "Centers on a lawyer who, overwhelmed by life, stumbles upon the principles of mindfulness. In a twist of fate, he applies these principles to his criminal activities, leading to humorous and unexpected consequences. This novel blends crime, humor, and a unique take on mindfulness, making it a captivating and unusual read. This book is only available in German.",
         date: new Date("2019-05-27"),
-        tags: ["humor", "thrilling", "crime", "mindfulness", "fiction"]
+        tags: ["humor", "thrilling", "crime", "self-help", "fiction"]
     },
     {
         title: "Fall of Giants",
@@ -764,7 +764,7 @@ export const books: Book[] = [
         shortDescription: "An epic historical novel set during the major events of the 20th century.",
         longDescription: `Follows five interrelated families throughout the events of the First World War, the Russian Revolution, and the struggle for women's suffrage. Combines factual history with a gripping narrative, showcasing Follett's ability to weave complex characters and intricate plot lines. Offers insight into the political and social turmoil of the early 20th century. Part one of the "Century Trilogy".`,
         date: new Date("2010-09-28"),
-        tags: ["histroy", "fiction"]
+        tags: ["history", "fiction"]
     },
     {
         title: "The Firm",
@@ -849,4 +849,61 @@ export const books: Book[] = [
     }
 
 
-]; //.sort((a, b) => b.date.getTime() - a.date.getTime());
+];
+
+
+export const fullNameTags: { [keys: string]: string } = {
+    "non-fiction": "Sachbuch",
+    science: "Wissenschaft",
+    health: "Gesundheit",
+    fitness: "Fitness",
+    politics: "Politik",
+    philosophy: "Philosophie",
+    strategy: "Strategie",
+    business: "Business",
+    psychology: "Psychologie",
+    biography: "Biografie",
+    history: "Geschichte",
+    sociology: "Soziologie",
+    leadership: "Leadership",
+    mindset: "Mindset",
+    economics: "Wirtschaft",
+    productivity: "Produktivität",
+    "self-help": "Selbsthilfe",
+    technology: "Technologie",
+    biology: "Biologie",
+    religion: "Religion",
+    communication: "Kommunikation",
+    innovation: "Innovation",
+    entrepreneurship: "Unternehmertum",
+    IT: "IT & Software",
+    fiction: "Fiktion",
+    AI: "KI",
+    evolution: "Evolution",
+    humor: "Humor",
+    classic: "Klassiker",
+    thrilling: "Spannend",
+    crime: "Krimi",
+};
+
+function getUniqueTags(books: any[]): string[] {
+    const uniqueTags: string[] = [];
+
+    books.forEach((book) => {
+        book.tags.forEach((tag: string) => {
+            if (!uniqueTags.includes(tag)) {
+                uniqueTags.push(tag);
+            }
+        });
+    });
+
+    return uniqueTags;
+}
+
+export function checkTags(): void {
+    for (let tag of getUniqueTags(books)) {
+        if (!(tag in fullNameTags)) {
+            console.log(`Tag "${tag}" is not in fullNameTags`);
+        }
+    }
+}

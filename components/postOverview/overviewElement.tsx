@@ -57,7 +57,7 @@ export default function OverviewElement({
               .toString()
               .padStart(2, "0")}.${new Date(data.date).getFullYear()}`}
           </div>
-          <div className="absolute inset-2 bg-main-700 py-0.5 px-2 text-white w-fit h-fit rounded-lg font-semibold ">
+          <div className="absolute inset-2 bg-gradient-to-r from-main-600 to-main-700 py-0.5 px-2 text-white w-fit h-fit rounded-lg font-semibold ">
             {data.category === "books" ? "Buch-Review" : "Artikel"}
           </div>
         </div>

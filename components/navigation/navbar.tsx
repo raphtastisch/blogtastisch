@@ -128,7 +128,7 @@ export default function Navbar() {
                 </div>
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-main-700 p-2 text-white hover:bg-opacity-90 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-main-900">
+                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gradient-to-r from-main-600 to-main-700 p-2 text-white hover:bg-opacity-90 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-main-900">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -154,7 +154,7 @@ export default function Navbar() {
                       "block rounded-md px-3 py-2 text-lg font-medium text-main-700 border-b-4 border-transparent",
                       //item.current
                       pathname === item.href
-                        ? "bg-main-700 text-white hover:bg-opacity-90"
+                        ? "bg-gradient-to-r from-main-600 to-main-700 text-white hover:bg-opacity-90"
                         : "hover:bg-purewhite hover:shadow-lg hover:border-main-700"
                     )}
                     aria-current={item ? "page" : undefined}
@@ -168,7 +168,7 @@ export default function Navbar() {
                   </Disclosure.Button>
                 ))}
               </div>
-              {/* <div className="h-1 mx-2 bg-main-700 opacity-50 rounded-full" /> */}
+
             </Disclosure.Panel>
           </>
         )}

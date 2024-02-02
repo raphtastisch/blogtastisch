@@ -37,6 +37,9 @@ module.exports = {
     //   },
     // },
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         purewhite: '#ffffff',
         pureblack: '#000000',
@@ -55,6 +58,7 @@ module.exports = {
           900: '#2d481f',
           950: '#15270c',
         },
+        // maingradient: 'linear-gradient(to right, #4D8927, #365922)',
         sec: {
           300: '#fffbcc',
           500: '#ffea00',

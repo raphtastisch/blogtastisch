@@ -28,10 +28,12 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col items-center px-4">
-      <StyledH1 className="mb-2 md:mb-4">Alle Buchempfehlungen!</StyledH1>
-      <div className="w-full text-start text-md md:text-lg">
-        Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich
-        interessiert.
+      <StyledH1 className="mb-2 md:mb-4">Alle Buchempfehlungen</StyledH1>
+      <div className="ml-0 md:ml-8 w-full">
+        <div className=" w-full text-start text-md md:text-lg">
+          Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich
+          interessiert.
+        </div>
       </div>
       <RecommendationGrid books={shuffledBookData} allTags={allTags} />
       <div className="h-1 bg-main-700 opacity-50 w-full mt-16 rounded-full" />

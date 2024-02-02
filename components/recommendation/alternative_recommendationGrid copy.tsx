@@ -77,7 +77,7 @@ export default function RecommendationGrid({
   return (
     <div className="w-full">
       <div className="flex flex-col items-start space-y-2 md:space-y-0 md:flex-row md:space-x-8 w-full pt-4 md:items-center">
-        <div className="min-w-44 h-fit cursor-pointer ml-0 md:ml-4 p-2 rounded-lg  button">
+        <div className="min-w-44 h-fit cursor-pointer p-1 rounded bg-main-700 text-white font-semibold text-center">
           {tags.length > 0 ? (
             <div className="" onClick={() => setTags([])}>
               Entferne alle Tags
@@ -93,7 +93,7 @@ export default function RecommendationGrid({
         </div>
 
         <div className="flex flex-wrap ">
-          {allTags.sort().map((tag) =>
+          {allTags.map((tag) =>
             availableTags.length === 0 || availableTags.includes(tag) ? (
               <Tag
                 key={tag}
@@ -120,12 +120,12 @@ export default function RecommendationGrid({
           )}
         </div>
       </div>
-      <div className="h-1 bg-gradient-to-r from-main-600 to-main-700 opacity-50 w-full mt-4 mb-1 rounded-full" />
-      <div className="text-main-700 text-xs md:text-sm text-right w-full mb-8 xl:mb-4">
+      <div className="h-1 bg-main-700 opacity-50 w-full mt-4 mb-1 rounded-full" />
+      <div className="text-main-700 text-xs md:text-sm text-right w-full mb-4">
         Ausgewählte Tags zeigen <strong>{filteredBooks.length}</strong> von{" "}
         <strong>{books.length}</strong> Empfehlungen
       </div>
-      <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-8 gap-y-16">
         {filteredBooks.map((book) => {
           const Wrapper = ({ children }: { children: JSX.Element }) => {
             return book.hasFullText ? (
@@ -144,89 +144,78 @@ export default function RecommendationGrid({
           };
 
           return (
-            <div key={book.slug} className="sm:p-4 flex flex-col space-y-0">
-              <div className="flex flex-row">
-                <div className="flex flex-col space-y-2">
-                  <div className="relative w-40 h-56 sm:w-48 sm:h-72">
-                    <Image
-                      src={book.imagePath!}
-                      alt="Book"
-                      fill={true}
-                      sizes={"20vw"}
-                      style={{
-                        objectFit: "contain",
-                        objectPosition: "center",
-                      }}
-                      className=""
-                    ></Image>
-                  </div>
-                  <div className="flex flex-col space-y-1">
-                    <div className="text-main-700 bg-white text-center">
-                      Klingt spannend?
+            <Wrapper key={book.slug}>
+              <div className="flex flex-col sm:p4 ">
+                <div className="flex flex-row ">
+                  <div>
+                    <div className="relative `w-40 h-56 sm:w-48 sm:h-72">
+                      <Image
+                        src={book.imagePath!}
+                        alt="Book"
+                        fill={true}
+                        sizes={"20vw"}
+                        style={{
+                          objectFit: "contain",
+                          objectPosition: "center",
+                        }}
+                        className=""
+                      ></Image>
                     </div>
-                    <Wrapper key={book.slug}>
-                      <div className="rounded-lg p-2 w-full button">
-                        {book.hasFullText ? "Zum Review!" : "Hier erhältlich!"}
-                      </div>
-                    </Wrapper>
+                    <div className="w-min-fit mt-1 text-right text-main-700">
+                      by&nbsp;<strong>{book.author}</strong>
+                    </div>
+                    {/* {book.hasFullText && (
+                    <div className="bg-main-700 mt-2 w-full text-center text-white font-semibold">
+                      Full review!
+                    </div>
+                  )} */}
                   </div>
-                  <div className="block xs:hidden">
-                    {book.tags && (
-                      <div className="flex flex-wrap mt-0">
-                        {book.tags.map((tag: string) => (
-                          <Tag
-                            key={tag}
-                            tag={tag}
-                            isActive={tags.includes(tag)}
-                          />
-                        ))}
-                      </div>
-                    )}
+
+                  <div className="flex flex-col pl-4">
+                    <div className=" text-main-700  italic">
+                      {book.subtitle ? (
+                        <>{book.subtitle}</>
+                      ) : (
+                        <>{book.shortDescription}</>
+                      )}
+                    </div>
+                    <div className="mt-1 text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
+                      {book.title}
+                    </div>
+
+                    <div className=" mt-2">
+                      {
+                        book.shortDescription //longDescription
+                      }
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex flex-col pl-4">
-                  <div className=" text-main-700  italic">
-                    {book.subtitle ? (
-                      <>{book.subtitle}</>
+                <div className="flex flex-row justify-between text-nowrap items-center ">
+                  {book.tags && (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-0.5    ">
+                      {book.tags.map((tag: string) => (
+                        <Tag
+                          key={tag}
+                          tag={tag}
+                          isActive={tags.includes(tag)}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  <div className=" mt-2   font-semibold">
+                    {book.hasFullText ? (
+                      <div className="text-white bg-main-700 px-4 py-2 rounded-xl">
+                        Voller Review
+                      </div>
                     ) : (
-                      <>{book.shortDescription}</>
-                    )}
-                  </div>
-                  <div className="mt-1 text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
-                    {book.title}
-                  </div>
-
-                  <div className=" mt-2">{book.longDescription}</div>
-                  <div className="mt-1  text-right text-main-700">
-                    by&nbsp;<strong>{book.author}</strong>
-                  </div>
-                  <div className="hidden sm:block ">
-                    {book.tags && (
-                      <div className="flex flex-wrap mt-2">
-                        {book.tags.map((tag: string) => (
-                          <Tag
-                            key={tag}
-                            tag={tag}
-                            isActive={tags.includes(tag)}
-                          />
-                        ))}
+                      <div className="text-main-700 bg-white text-center">
+                        Unterstütz mich <p /> mit einem Kauf!
                       </div>
                     )}
                   </div>
                 </div>
               </div>
-              <div className="hidden xs:block sm:hidden">
-                {book.tags && (
-                  <div className="flex flex-wrap mt-2">
-                    {book.tags.map((tag: string) => (
-                      <Tag key={tag} tag={tag} isActive={tags.includes(tag)} />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-            // </Wrapper>
+            </Wrapper>
           );
         })}
       </div>

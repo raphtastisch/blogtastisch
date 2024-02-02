@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { fullNameTags } from "@/lib/books";
 
 export default function Tag({
   tag,
@@ -12,13 +13,13 @@ export default function Tag({
   return (
     <div
       className={cn(
-        "m-1 py-1 px-4 rounded-full select-none text-center text-xs font-semibold ",
+        "m-1 py-1 px-2 xs:px-4 rounded-full select-none text-center text-xs font-semibold ",
         onClick && "cursor-pointer",
-        isActive ? "bg-main-500 text-black" : "text-gray-500 bg-gray-300"
+        isActive ? "bg-main-700 text-white" : "text-gray-500 bg-gray-300"
       )}
       onClick={() => (onClick ? onClick() : null)}
     >
-      {tag.charAt(0).toUpperCase() + tag.slice(1)}
+      {fullNameTags[tag] || tag.charAt(0).toUpperCase() + tag.slice(1)}
     </div>
   );
 }
