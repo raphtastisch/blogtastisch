@@ -20,12 +20,16 @@ export default function RecommendationGrid({
   const searchParams = useSearchParams(); // Extract the tag from the URL
   // console.log("searchParams", searchParams.getAll("tag"));
 
+  const router = useRouter();
   useEffect(() => {
     const tagsFromUrl = searchParams.getAll("tag");
     if (tagsFromUrl.length > 0) {
       setTags(tagsFromUrl);
     }
-  }, [searchParams]);
+
+    // removes the search params from the URL
+    router.replace("/recommendations");
+  }, [searchParams, router]);
 
   //   const router = useRouter();
   // useEffect(() => {
@@ -125,7 +129,7 @@ export default function RecommendationGrid({
         Ausgewählte Tags zeigen <strong>{filteredBooks.length}</strong> von{" "}
         <strong>{books.length}</strong> Empfehlungen
       </div>
-      <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {filteredBooks.map((book) => {
           const Wrapper = ({ children }: { children: JSX.Element }) => {
             return book.hasFullText ? (
@@ -144,7 +148,7 @@ export default function RecommendationGrid({
           };
 
           return (
-            <div key={book.slug} className="sm:p-4 flex flex-col space-y-0">
+            <div key={book.slug} className="sm:p-4 flex flex-col space-y-0 ">
               <div className="flex flex-row">
                 <div className="flex flex-col space-y-2">
                   <div className="relative w-40 h-56 sm:w-48 sm:h-72">
@@ -160,7 +164,7 @@ export default function RecommendationGrid({
                       className=""
                     ></Image>
                   </div>
-                  <div className="flex flex-col space-y-1">
+                  <div className="flex flex-col space-y-1 md:pt-2">
                     <div className="text-main-700 bg-white text-center">
                       Klingt spannend?
                     </div>
@@ -170,9 +174,9 @@ export default function RecommendationGrid({
                       </div>
                     </Wrapper>
                   </div>
-                  <div className="block xs:hidden">
+                  {/* <div className="block xs:hidden">
                     {book.tags && (
-                      <div className="flex flex-wrap mt-0">
+                      <div className="flex flex-wrap justify-center mt-2">
                         {book.tags.map((tag: string) => (
                           <Tag
                             key={tag}
@@ -182,7 +186,7 @@ export default function RecommendationGrid({
                         ))}
                       </div>
                     )}
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="flex flex-col pl-4">
@@ -201,7 +205,7 @@ export default function RecommendationGrid({
                   <div className="mt-1  text-right text-main-700">
                     by&nbsp;<strong>{book.author}</strong>
                   </div>
-                  <div className="hidden sm:block ">
+                  {/* <div className="hidden sm:block ">
                     {book.tags && (
                       <div className="flex flex-wrap mt-2">
                         {book.tags.map((tag: string) => (
@@ -213,10 +217,10 @@ export default function RecommendationGrid({
                         ))}
                       </div>
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
-              <div className="hidden xs:block sm:hidden">
+              {/* <div className="hidden xs:block sm:hidden">
                 {book.tags && (
                   <div className="flex flex-wrap mt-2">
                     {book.tags.map((tag: string) => (
@@ -224,7 +228,7 @@ export default function RecommendationGrid({
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
             // </Wrapper>
           );

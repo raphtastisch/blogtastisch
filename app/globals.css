@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .button {
-  @apply bg-gradient-to-r from-main-600 to-main-700 text-white font-semibold tracking-wider sm:tracking-wide hover:bg-opacity-90 text-center transition-all duration-150 hover:scale-110;
+  @apply bg-gradient-to-r from-main-600 to-main-700 text-white shadow-lg font-semibold tracking-wider sm:tracking-wide hover:scale-110 text-center transition-all duration-150 border-b-2 border-main-700;
 }

@@ -63,7 +63,7 @@ const components = {
         React.createElement("h3", { ...props, className: cn("text-xl mt-8 mb-2 text-main-700",  widthSettings )}, props.children)
     ),
     p: (props: any) => (
-        React.createElement("p", { ...props, className: cn("mb-2", widthSettings) }, props.children)
+        React.createElement("p", { ...props, className: cn("text-start w-full mb-2", widthSettings) }, props.children)
     ),
     a: (props: any) => (
         React.createElement(StyledLink, { ...props, className: "" }, props.children)
