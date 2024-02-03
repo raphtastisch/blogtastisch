@@ -84,7 +84,7 @@ export default function RecommendationGrid({
         <div className="min-w-44 h-fit cursor-pointer ml-0 md:ml-4 p-2 rounded-lg  button">
           {tags.length > 0 ? (
             <div className="" onClick={() => setTags([])}>
-              Entferne alle Tags
+              Neue Suche
             </div>
           ) : (
             <div

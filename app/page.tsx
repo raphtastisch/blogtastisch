@@ -75,7 +75,7 @@ export default async function Home() {
                 "shadow-lg font-semibold tracking-wider sm:tracking-wide hover:bg-opacity-90 text-center transition-all duration-150 hover:scale-110"
               )}
             >
-              Und viele mehr!
+              Und viel mehr!
             </div>
           </Link>
         </div>
