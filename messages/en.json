@@ -1,0 +1,103 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "recommendations": "Recommendations",
+        "reviews": "Reviews",
+        "articles": "Articles",
+        "linkedin": "LinkedIn",
+        "aboutme": "About me"
+    },
+    "LocaleSwitcher": {
+        "switch": "Switch to German"
+    },
+    "Home": {
+        "title": "Do You Need a Book Recommendation?",
+        "manymore": "And Many More!",
+        "allRecommendations": "Discover all Recommendations!",
+        "allPosts": "All Reviews and Articles"
+    },
+    "OverviewGrid": {
+        "booklabel": "Book-Reviews",
+        "articlelabel": "Articles",
+        "by": "by"
+    },
+    "Recommendations": {
+        "title": "All Book Recommendations",
+        "usageInfo": "The tags help you in your search. Just choose what you're interested in.",
+        "randomSelection": "Random Selection",
+        "newSearch": "New Search",
+        "hiddenTags": " hidden Tags",
+        "notTranslated": "",
+        "showingXfromXRecommendations": "Selected tags show <strong>{filteredLength}</strong> from <strong>{booksLength}</strong> recommendations",
+        "sounds": "Sounds ",
+        "interesting": "interesting",
+        "readable": "worth reading",
+        "thrilling": "exciting",
+        "toReview": "Read Review!",
+        "availableHere": "Available here!",
+        "by": "by",
+                "recommendToMe": "I always enjoy <strong>book recommendations</strong> myself - just write me your tips on "
+    },
+    "Reviews": {
+        "title": "Everything about Books",
+        "by": "by",
+        "originallyPublished": "This review was originally published on ",
+        "available": "Available as Book & Audiobook!",
+        "releasedAt": "Release date"
+    },
+    "Articles": {
+        "title": "All Articles written by me",
+        "by": "by"
+    },
+    "About": {
+        "title": "About",
+        "subheadlinePart1": "Book Worm, Technology Nerd & IT-Entrepreneur ",
+        "subheadlinePart2": "with Focus on AI & Productivity.",
+        "textPart1": "Even as a child, I was a bookworm, but it was only after my studies that I discovered ",
+        "audiobooks": "audiobooks",
+        "textPart2": " myself. This allows me to quench my thirst for knowledge in the areas of technology, political science, philosophy, productivity, and personal development despite a hectic daily life. Over 70 audiobooks and 5 printed books per year provide me with a good pool from which I can make excellent recommendations. Most books are read or listened to in English. Exceptions are primarily made when German is the original language.",
+        "quote": "Technology, science & politics nerd. Experienced tech-entrepreneur & AI expert. Impact driven. Convince people by action, not by words.",
+        "recommendToMe": "I'm always grateful for book recommendations - just write me on "
+    },
+    "Imprint": {
+        "title": "Imprint",
+        "vienna": "Vienna",
+        "email": "Email",
+        "askViaLinkedIn": "Please ask via LinkedIn!",
+        "amazonPartner": "Note: As an Amazon Associate, I earn from qualifying purchases through clicked links.",
+        "moreRecommendations": "This means more books and thus better recommendations ;)"
+    },
+    "Tags": {
+        "non-fiction": "Non-fiction",
+        "science": "Science",
+        "health": "Health",
+        "fitness": "Fitness",
+        "politics": "Politics",
+        "philosophy": "Philosophy",
+        "strategy": "Strategy",
+        "business": "Business",
+        "psychology": "Psychology",
+        "biography": "Biography",
+        "history": "History",
+        "sociology": "Sociology",
+        "leadership": "Leadership",
+        "mindset": "Mindset",
+        "economics": "Economics",
+        "productivity": "Productivity",
+        "technology": "Technology",
+        "biology": "Biology",
+        "religion": "Religion",
+        "communication": "Communication",
+        "innovation": "Innovation",
+        "entrepreneurship": "Entrepreneurship",
+        "IT": "IT & Software",
+        "fiction": "Fiction",
+        "AI": "AI",
+        "evolution": "Evolution",
+        "humor": "Humor",
+        "classic": "Classic",
+        "thrilling": "Thrilling",
+        "crime": "Crime",
+        "self-help": "Self-help"
+    }
+}

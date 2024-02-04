@@ -5,21 +5,38 @@ export const categories: Category[] = ["books", "articles"];
 export type ImageType = 'illustration' | 'cover';
 
 
-export interface Book {
+export interface Post {
+    slug: string;
+    date: Date;
     title: string;
     subtitle?: string;
-    author: string;
-    slug: string;
     shortDescription: string;
     longDescription?: string;
-    hasFullText?:boolean;
-    date: Date;
-    tags?: string[];
+    writtenBy?: string;
+    category?: Category;
+
+    titleDE?: string;
+    subtitleDE?: string;
+    shortDescriptionDE?: string;
+    longDescriptionDE?: string;
+}
+
+export interface Book extends Post {
+    author: string;
+    hasFullText?: boolean;
+    releaseDate?: Date;
     initialReleaseUrl?: string;
     initialReleaseName?: string;
-    imagePath?:string;
-    amazonLink?:string;
+    imagePath?: string;
+    amazonLink?: string;
+    tags?: string[];
 }
+
+export interface Article extends Post {
+    test?: string
+}
+
+export const defaultWrittenBy = "Raphael Fritz";
 
 export const contentFolder = "data";
 
@@ -29,10 +46,15 @@ export const contentPath = ["public", "data"] // is linked to gether, no differe
 export const backupImagePaths = {
     books: {
         illustration: "/backup/bookIllustration.png",
-        cover: "/backup/bookCover.jpg"
+        cover: "/backup/bookCover.png"
     },
     articles: {
         illustration: "/backup/articleIllustration.png",
-        cover: "/backup/articleCover.jpg"
+        cover: "/backup/articleCover.png"
     }
 }
+
+export type Locales = 'en' | 'de'
+export const locales: string[] = ['en', 'de'];
+
+export const languageMapping: Record<string, string> = { "en": "en_US", "de": "de_DE" };

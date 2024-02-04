@@ -1,39 +1,41 @@
 import { getAllPosts, getImagePath } from "@/lib/getPosts";
 import OverviewElement from "@/components/postOverview/overviewElement";
 import { shuffleArray } from "@/lib/utils";
+import { getBooksWithFullText, getBooksWithGermanContent } from "@/lib/books";
+import { Post, defaultWrittenBy } from "@/lib/config";
+import { getLocale } from "next-intl/server";
 
-export default async function OverviewGrid({ category }: { category?: string }) {
-
+export default async function OverviewGrid({
+  category,
+}: {
+  category?: string;
+}) {
   // console.log("category", category)
 
-    const overviewElementData = await Promise.all(
-    await getAllPosts().then((data) => {
+  const locale = await getLocale();
 
-      const shuffledData: any[] = shuffleArray(data);
-      // sort data by date to get newest first
-      return (
-        shuffledData
-          .filter((post) => (category ? post.category === category : true)) // only filter if its not empty
-          .map(async (post) => {
-            const imagePath = await getImagePath(
-              post.category,
-              post.frontmatter.slug,
-              "illustration"
-            );
+  const overviewElementDataWithoutImagePaths = shuffleArray(
+    getAllPosts(category, locale)
+  );
 
-            return {
-              title: post.frontmatter.title,
-              subtitle: post.frontmatter.subtitle || null,
-              href: `/${post.category}/${post.frontmatter.slug}`,
-              illustrationImagePath: imagePath,
-              longDescription: post.frontmatter.longDescription,
-              category: post.category,
-              date: post.frontmatter.date,
-              author: post.frontmatter.author,
-            };
-          })
+  const overviewElementData = await Promise.all(
+    overviewElementDataWithoutImagePaths.map(async (post) => {
+      const imagePath = await getImagePath(
+        post.category,
+        post.slug,
+        "illustration"
       );
-      // Use the frontmatterArray as needed
+
+      return {
+        title: post.title,
+        subtitle: post.subtitle || null,
+        href: `/${post.category}/${post.slug}`,
+        illustrationImagePath: imagePath,
+        longDescription: post.longDescription,
+        category: post.category,
+        date: post.date,
+        author: post.author ? post.author : post.writtenBy || defaultWrittenBy, // if an author exists, use it, otherwise use written by, default writtenby as default
+      };
     })
   );
 

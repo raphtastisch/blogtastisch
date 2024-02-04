@@ -1,0 +1,103 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "recommendations": "Empfehlungen",
+        "reviews": "Reviews",
+        "articles": "Artikel",
+        "linkedin": "LinkedIn",
+        "aboutme": "Über mich"
+    },
+    "LocaleSwitcher": {
+        "switch": "Wechsle zu Englisch"
+    },
+    "Home": {
+        "title": "Du brauchst eine Buchempfehlung?",
+        "manymore": "Und viel mehr!",
+        "allRecommendations": "Alle Empfehlungen entdecken!",
+        "allPosts": "Alle Reviews und Artikel"
+    },
+    "OverviewGrid": {
+        "booklabel": "Buch-Review",
+        "articlelabel": "Artikel",
+        "by": "von"
+    },
+    "Recommendations": {
+        "title": "Alle Buchempfehlungen",
+        "usageInfo": "Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich interessiert.",
+        "randomSelection": "Zufallsauswahl",
+        "newSearch": "Neue Suche",
+        "hiddenTags": " ausgeblendete Tags",
+        "notTranslated": "Diese Seite ist wegen der Menge des Inhalts noch nicht ins Deutsche übersetzt.",
+        "showingXfromXRecommendations": "Ausgewählte Tags zeigen <strong>{filteredLength}</strong> von <strong>{booksLength}</strong> Empfehlungen",
+        "sounds": "Klingt ",
+        "interesting": "interessant",
+        "readable": "lesenswert",
+        "thrilling": "spannend",
+        "toReview": "Zum Review!",
+        "availableHere": "Hier erhältlich!",
+        "by": "von",
+        "recommendToMe": "Ich freu mich selbst auch immer über <strong>Buchempfehlungen</strong> - schreib mir deine Tipps am Besten einfach auf "
+    },
+    "Reviews": {
+        "title": "Alles zum Thema Bücher",
+        "by": "von",
+        "originallyPublished": "Dieser Buchreview erschien ursprünglich auf ",
+        "available": "Als Buch & Hörbuch erhältlich!",
+        "releasedAt": "Erscheinungsdatum"
+    },
+    "Articles": {
+        "title": "Alle von mir geschriebenen Artikel",
+        "by": "von"
+    },
+    "About": {
+        "title": "About",
+        "subheadlinePart1": "Bücherwurm, Techologie-Nerd & IT-Unternehmer ",
+        "subheadlinePart2": "mit Fokus auf AI & Produktivität.",
+        "textPart1": "Schon als Kind war ich ein Bücherwurm, aber erst nach dem Studium entdeckte ich ",
+        "audiobooks": "Hörbucher",
+        "textPart2": " für mich. So lässt sich mein Wissensdurst in den Bereichen Technologie, PolitikWissenschaft, Philosophie, Produktivität und Persönlichkeitsentwicklung trotz eines hektischen Alltags hervorragend stillen. Über 70 Hörbücher und 5 gedruckte Bücher pro Jahr liefern mir dabei einen guten Pool, um hervorragende Empfehlungen abgeben zu können. Die meisten Bücher werden auf Englisch gelesen oder gehört. Ausnahmen gibt es primär, wenn Deutsch die Originalsprache ist.",
+        "quote": "Technologie-, Wissenschaft- & Politik-Nerd. Erfahrener Tech-Unternehmer & AI-Experte. Impact driven. Überzeuge Menschen durch Taten, nicht durch Worte.",
+        "recommendToMe": "Ich freu mich immer über Buchempfehlungen - schreib mir am Besten einfach auf "
+    },
+    "Imprint": {
+        "title": "Impressum",
+        "vienna": "Wien",
+        "email": "E-Mail",
+        "askViaLinkedIn": "Bitte per LinkedIn anfragen!",
+        "amazonPartner": "Hinweis: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen über angeklickte Links.",
+        "moreRecommendations": "Das bedeutet mehr Bücher und damit bessere Empfehlungen ;)"
+    },
+    "Tags": {
+        "non-fiction": "Sachbuch",
+        "science": "Wissenschaft",
+        "health": "Gesundheit",
+        "fitness": "Fitness",
+        "politics": "Politik",
+        "philosophy": "Philosophie",
+        "strategy": "Strategie",
+        "business": "Business",
+        "psychology": "Psychologie",
+        "biography": "Biografie",
+        "history": "Geschichte",
+        "sociology": "Soziologie",
+        "leadership": "Leadership",
+        "mindset": "Mindset",
+        "economics": "Wirtschaft",
+        "productivity": "Produktivität",
+        "technology": "Technologie",
+        "biology": "Biologie",
+        "religion": "Religion",
+        "communication": "Kommunikation",
+        "innovation": "Innovation",
+        "entrepreneurship": "Unternehmertum",
+        "IT": "IT & Software",
+        "fiction": "Fiktion",
+        "AI": "KI",
+        "evolution": "Evolution",
+        "humor": "Humor",
+        "classic": "Klassiker",
+        "thrilling": "Spannend",
+        "crime": "Krimi",
+        "self-help": "Selbsthilfe"
+    }
+}

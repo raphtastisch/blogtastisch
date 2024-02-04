@@ -13,7 +13,7 @@ module.exports = {
         'h-xs',
         'sm:h-illustration',
         'md:h-illustration',
-
+        'max-w-text',
         'h-illustration',
         'h-sm',
         'h-md',
@@ -25,7 +25,14 @@ module.exports = {
         'w-md',
         'w-lg',
         'w-xl',
-        'w-2xl'
+        'w-2xl',
+        'ml-4',
+        'ml-6',
+        'ml-8',
+        'mr-4',
+        'mr-8',
+        'pl-4',
+        'pl-8',
     ],
     prefix: "",
     theme: {
@@ -77,6 +84,9 @@ module.exports = {
                 },
             },
 
+            maxWidth: {
+                'text': '738px', // equals with md
+            },
 
             width: {
                 'xs': '320px',

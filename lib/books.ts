@@ -1,6 +1,99 @@
-import { Book } from "./config";
+import { Book, languageMapping } from "./config";
+import { getPostWithGermanContent } from "./utils";
 
 export const books: Book[] = [
+
+    {
+        titleDE: "Aufklärung jetzt",
+        subtitleDE: "Für Vernunft, Wissenschaft, Humanismus und Fortschritt",
+        shortDescriptionDE:
+            "Die Werte der Aufklärung sind der beste Quell für Fortschritt und Wohlbefinden.",
+        longDescriptionDE:
+            "Steven Pinker liefert mit „Aufklärung jetzt“ eine grandios geschriebene Darstellung, wieso die Werte der Aufklärung der beste Quell für Fortschritt und Wohlbefinden sind. Darum müssen wir diese Werte gerade jetzt, wo sie unter Dauerfeuer von allen Seiten stehen, eisern verteidigen.",
+        title: "Enlightenment Now",
+        subtitle: "The Case for Reason, Science, Humanism, and Progress",
+        shortDescription:
+            "The values of the Enlightenment are the best source for progress and well-being.",
+        longDescription:
+            'In "Enlightenment Now", Steven Pinker provides a brilliantly written exposition on why the values of the Enlightenment are the best source for progress and well-being. Therefore, we must staunchly defend these values, especially now when they are under constant attack from all sides.',
+        author: "Steven Pinker",
+        slug: "enlightenment-now",
+        hasFullText: true,
+        date: new Date("2018-02-13 00:00:00"),
+        tags: ["non-fiction", "politics", "philosophy"],
+        releaseDate: new Date("2023-11-18 00:00:00"),
+        initialReleaseUrl: "https://materie.at/gk/rezension-aufklaerung-jetzt/",
+        initialReleaseName: "Materie.at",
+        amazonLink: "https://amzn.to/4beImS1",
+
+    },
+    {
+        titleDE: "Superforecasting",
+        subtitleDE: "Die Kunst der richtigen Prognose",
+        shortDescriptionDE:
+            "Wie gehen besere Prognosen und die Wissenschaft dahinter.",
+        longDescriptionDE:
+            "„Superforecasting: Die Kunst der richtigen Prognose“ von Philip E. Tetlock und Dan Gardner ist ein überaus interessantes Buch über die Wissenschaft der Vorhersage, wie man Vorhersagen verbessern kann und warum man keiner Vorhersage glauben sollte, wenn die Person dahinter nicht eine Liste all ihrer richtigen und falschen Vorhersagen aus der Vergangenheit bereitstellt.",
+        title: "Superforecasting",
+        subtitle: "The Art and Science of Prediction",
+        author: "Philip E. Tetlock & Dan Gardner",
+        slug: "superforecasting",
+        shortDescription:
+            "How to make better predictions and the science behind it.",
+        longDescription:
+            '"Superforecasting: The Art and Science of Prediction" by Philip E. Tetlock and Dan Gardner is a fascinating book about the science of forecasting. It discusses how to improve predictions and why one should not believe a prediction unless the person behind it provides a list of all their correct and incorrect predictions from the past.',
+        hasFullText: true,
+        date: new Date("2015-09-29 00:00:00"),
+        tags: ["non-fiction", "strategy", "business", "psychology"],
+        releaseDate: new Date("2024-01-01 00:00:00"),
+        initialReleaseUrl: "https://materie.at/gk/rezension-superforecasting-die-kunst-der-richtigen-prognose/",
+        initialReleaseName: "Materie.at",
+        amazonLink: "https://amzn.to/4beImS1"
+    },
+    {
+
+        shortDescriptionDE:
+            "Geostrategische Überlegungen aus US-amerikanischer Sicht mit Fokus auf China.",
+        longDescriptionDE:
+            "„The Strategy of Denial“ von Elbridge A. Colby bietet spannende Einblicke in das Thema globale Geostrategie und wie diese aus US-amerikanischer Sicht aussehen könnte. Der Fokus liegt dabei voll auf dem Machtkampf mit China - Europa ist dabei nur ein Nebendarsteller.",
+        title: "The Strategy of Denial",
+        subtitle: "American Defense in an Age of Great Power Conflict",
+        author: "Elbridge A. Colby",
+        slug: "strategyofdenial",
+        shortDescription:
+            "Geostrategic considerations from a U.S. perspective with a focus on China.",
+        longDescription:
+            '"The Strategy of Denial" by Elbridge A. Colby offers intriguing insights into global geostrategy and how it might be perceived from a U.S. perspective. The focus is entirely on the power struggle with China - Europe is merely a side actor in this context.',
+        hasFullText: true,
+        date: new Date("2022-09-20 00:00:00"),
+        tags: ["non-fiction", "politics", "strategy"],
+        releaseDate: new Date("2023-12-07 00:00:00"),
+        initialReleaseUrl: "https://materie.at/gk/rezension-the-strategy-of-denial/",
+        initialReleaseName: "Materie.at",
+        amazonLink: "https://amzn.to/4beImS1"
+    },
+    {
+        titleDE: "Ein verheißenes Land",
+        subtitleDE: "Teil 1 der Biografie des 44. Präsidenten der USA",
+        shortDescriptionDE: "Der erste Teil von Obamas spannender Autobiografie.",
+        longDescriptionDE:
+            "„Ein verheißenes Land“ ist der erste Teil von Barack Obamas Autobiographie. Es beschreibt seinen Werdegang zum mächtigsten Mann der Welt und gibt spannende Einblick in die schwierigsten und folgenreichsten Entscheidungen seiner ersten Amtszeit. Dabei wirft es ein spannendes Licht auf die Überlegungen, die hinter seinen weitreichendsten Handlungen stehen.",
+        title: "A Promised Land",
+        subtitle: "Part 1 of the Biography of the 44th President of the United States",
+        author: "Barack Obama",
+        slug: "promised-land",
+        shortDescription: "The first part of Obama's fascinating autobiography.",
+        longDescription:
+            '"A Promised Land" is the first part of Barack Obamas autobiography. It describes his journey to becoming the most powerful man in the world and provides intriguing insights into the most challenging and consequential decisions of his first term. It also sheds an interesting light on the considerations behind his most far-reaching actions.',
+        hasFullText: true,
+        date: new Date("2020-11-17 00:00:00"),
+        tags: ["biography", "non-fiction", "politics"],
+        amazonLink: "https://amzn.to/3UmkIx0",
+        releaseDate: new Date("2023-12-01 00:00:00"),
+        initialReleaseUrl: "https://materie.at/gk/rezension-ein-verheissenes-land-obamas-autobiographie/",
+        initialReleaseName: "Materie.at",
+
+    },
     {
         title: "Outlive",
         subtitle:
@@ -13,85 +106,6 @@ export const books: Book[] = [
         slug: "outlive",
         hasFullText: false,
         date: new Date("2021-08-01"),
-    },
-    {
-        // title: "Aufklärung jetzt",
-        // subtitle: "Für Vernunft, Wissenschaft, Humanismus und Fortschritt",
-        // author: "Steven Pinker",
-        // slug: "aufklaerungjetzt",
-        // shortDescription:
-        //     "Die Werte der Aufklärung sind der beste Quell für Fortschritt und Wohlbefinden.",
-        // longDescription:
-        //     "Steven Pinker liefert mit „Aufklärung jetzt“ eine grandios geschriebene Darstellung, wieso die Werte der Aufklärung der beste Quell für Fortschritt und Wohlbefinden sind. Darum müssen wir diese Werte gerade jetzt, wo sie unter Dauerfeuer von allen Seiten stehen, eisern verteidigen.",
-        title: "Enlightenment Now",
-        subtitle: "The Case for Reason, Science, Humanism, and Progress",
-        author: "Steven Pinker",
-        slug: "aufklaerungjetzt",
-        shortDescription:
-            "The values of the Enlightenment are the best source for progress and well-being.",
-        longDescription:
-            'In "Enlightenment Now", Steven Pinker provides a brilliantly written exposition on why the values of the Enlightenment are the best source for progress and well-being. Therefore, we must staunchly defend these values, especially now when they are under constant attack from all sides.',
-        hasFullText: true,
-        date: new Date("2023-11-18 00:00:00"),
-        tags: ["non-fiction", "politics", "philosophy"],
-    },
-    {
-        // title: "Superforecasting",
-        // subtitle: "Die Kunst der richtigen Prognose",
-        // author: "Philip E. Tetlock & Dan Gardner",
-        // slug: "superforecasting",
-        // shortDescription:
-        //     "Wie gehen besere Prognosen und die Wissenschaft dahinter.",
-        // longDescription:
-        //     "„Superforecasting: Die Kunst der richtigen Prognose“ von Philip E. Tetlock und Dan Gardner ist ein überaus interessantes Buch über die Wissenschaft der Vorhersage, wie man Vorhersagen verbessern kann und warum man keiner Vorhersage glauben sollte, wenn die Person dahinter nicht eine Liste all ihrer richtigen und falschen Vorhersagen aus der Vergangenheit bereitstellt.",
-        title: "Superforecasting",
-        subtitle: "The Art and Science of Prediction",
-        author: "Philip E. Tetlock & Dan Gardner",
-        slug: "superforecasting",
-        shortDescription:
-            "How to make better predictions and the science behind it.",
-        longDescription:
-            '"Superforecasting: The Art and Science of Prediction" by Philip E. Tetlock and Dan Gardner is a fascinating book about the science of forecasting. It discusses how to improve predictions and why one should not believe a prediction unless the person behind it provides a list of all their correct and incorrect predictions from the past.',
-        hasFullText: true,
-        date: new Date("2024-01-01 14:40:45"),
-        tags: ["non-fiction", "strategy", "business", "psychology"],
-    },
-    {
-        title: "The Strategy of Denial",
-        subtitle: "American Defense in an Age of Great Power Conflict",
-        author: "Elbridge A. Colby",
-        slug: "strategyofdenial",
-        // shortDescription:
-        //     "Geostrategische Überlegungen aus US-amerikanischer Sicht mit Fokus auf China.",
-        // longDescription:
-        //     "„The Strategy of Denial“ von Elbridge A. Colby bietet spannende Einblicke in das Thema globale Geostrategie und wie diese aus US-amerikanischer Sicht aussehen könnte. Der Fokus liegt dabei voll auf dem Machtkampf mit China - Europa ist dabei nur ein Nebendarsteller.",
-        shortDescription:
-            "Geostrategic considerations from a U.S. perspective with a focus on China.",
-        longDescription:
-            '"The Strategy of Denial" by Elbridge A. Colby offers intriguing insights into global geostrategy and how it might be perceived from a U.S. perspective. The focus is entirely on the power struggle with China - Europe is merely a side actor in this context.',
-        hasFullText: true,
-        date: new Date("2023-12-07 00:00:00"),
-        tags: ["non-fiction", "politics", "strategy"],
-    },
-    {
-        // title: "Ein verheißenes Land",
-        // subtitle: "Teil 1 der Biografie des 44. Präsidenten der USA",
-        // author: "Barack Obama",
-        // slug: "verheissenesland",
-        // shortDescription: "Der erste Teil von Obamas spannender Autobiografie.",
-        // longDescription:
-        //     "„Ein verheißenes Land“ ist der erste Teil von Barack Obamas Autobiographie. Es beschreibt seinen Werdegang zum mächtigsten Mann der Welt und gibt spannende Einblick in die schwierigsten und folgenreichsten Entscheidungen seiner ersten Amtszeit. Dabei wirft es ein spannendes Licht auf die Überlegungen, die hinter seinen weitreichendsten Handlungen stehen.",
-        title: "A Promised Land",
-        subtitle: "Part 1 of the Biography of the 44th President of the United States",
-        author: "Barack Obama",
-        slug: "verheissenesland",
-        shortDescription: "The first part of Obama's fascinating autobiography.",
-        longDescription:
-            '"A Promised Land" is the first part of Barack Obamas autobiography. It describes his journey to becoming the most powerful man in the world and provides intriguing insights into the most challenging and consequential decisions of his first term. It also sheds an interesting light on the considerations behind his most far-reaching actions.',
-        hasFullText: true,
-        date: new Date("2023-12-01 00:00:00"),
-        tags: ["biography", "non-fiction", "politics"],
-        amazonLink: "https://amzn.to/3UmkIx0"
     },
     {
         title: "Why We Sleep",
@@ -852,7 +866,16 @@ export const books: Book[] = [
 ];
 
 
-export const fullNameTags: { [keys: string]: string } = {
+export function checkTags(): void {
+    for (let tag of getUniqueTags(books)) {
+        if (!(tag in fullNameTags)) {
+            console.log(`Tag "${tag}" is not in fullNameTags`);
+        }
+    }
+}
+
+
+const fullNameTags: { [keys: string]: string } = {
     "non-fiction": "Sachbuch",
     science: "Wissenschaft",
     health: "Gesundheit",
@@ -886,11 +909,68 @@ export const fullNameTags: { [keys: string]: string } = {
     crime: "Krimi",
 };
 
-function getUniqueTags(books: any[]): string[] {
+export const uniqueTags: string[] = ['non-fiction',
+    'science',
+    'health',
+    'fitness',
+    'politics',
+    'philosophy',
+    'strategy',
+    'business',
+    'psychology',
+    'biography',
+    'history',
+    'sociology',
+    'leadership',
+    'mindset',
+    'economics',
+    'productivity',
+    'self-help',
+    'technology',
+    'biology',
+    'religion',
+    'communication',
+    'innovation',
+    'entrepreneurship',
+    'IT',
+    'fiction',
+    'AI',
+    'evolution',
+    'humor',
+    'classic',
+    'thrilling',
+    'crime']
+
+
+
+
+export function getBooksWithGermanContent(): Book[] {
+    // replaces the content with german content if avialable
+    return books.filter((book) => book.hasFullText).map((book) => getPostWithGermanContent(book) as Book)
+}
+
+
+export function getBookBySlug(slug: string, locale: string = "en"): Book | null {
+
+    for (let book of books) {
+        if (book.slug === slug) {
+            if (locale === "de") {
+                return getPostWithGermanContent(book) as Book
+            }
+            else {
+                return book
+            }
+        }
+    }
+    return null;
+}
+
+
+export function getUniqueTags(bookList: Book[] = books): string[] {
     const uniqueTags: string[] = [];
 
     books.forEach((book) => {
-        book.tags.forEach((tag: string) => {
+        book.tags!.forEach((tag: string) => {
             if (!uniqueTags.includes(tag)) {
                 uniqueTags.push(tag);
             }
@@ -900,10 +980,25 @@ function getUniqueTags(books: any[]): string[] {
     return uniqueTags;
 }
 
-export function checkTags(): void {
-    for (let tag of getUniqueTags(books)) {
-        if (!(tag in fullNameTags)) {
-            console.log(`Tag "${tag}" is not in fullNameTags`);
-        }
+
+export function getBooksWithFullText(): Book[] {
+    return books.filter((book) => book.hasFullText);
+}
+
+export function createAmazonLink(title?: string, locale: string = "de"): string {
+
+    if (!title) {
+        return "https://www.amazon.de/b?_encoding=UTF8&tag=raphaelfritz-21&linkCode=ur2&linkId=d40a5c82224a657f67daad1c413ab1d7&camp=1638&creative=6742&node=186606"
+    }
+    else {
+
+        // make title ready for url
+        title = title.replace(
+            " ",
+            "+"
+        )
+
+        return `https://www.amazon.de/s?k=${title}&i=audible&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y539SCFIVZKF&sprefix=alignment+prob%2Caudible%2C286&linkCode=ll2&tag=raphaelfritz-21&linkId=11b8f9eddf91a807e78d59cdb6ea22b5&language=${languageMapping[locale]}&ref_=as_li_ss_tl`
+
     }
 }

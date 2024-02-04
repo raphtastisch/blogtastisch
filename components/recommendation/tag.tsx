@@ -1,5 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { fullNameTags } from "@/lib/books";
+import { useTranslations } from "next-intl";
 
 export default function Tag({
   tag,
@@ -10,6 +12,8 @@ export default function Tag({
   isActive: boolean;
   onClick?: () => void;
 }) {
+  const t = useTranslations("Tags");
+
   return (
     <div
       className={cn(
@@ -19,7 +23,8 @@ export default function Tag({
       )}
       onClick={() => (onClick ? onClick() : null)}
     >
-      {fullNameTags[tag] || tag.charAt(0).toUpperCase() + tag.slice(1)}
+      {/* {tag} */}
+      {t(tag)}
     </div>
   );
 }

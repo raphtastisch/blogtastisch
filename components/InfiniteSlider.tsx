@@ -1,11 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Image from "next/image";
 import { shuffleArray } from "@/lib/utils";
 import { getImagePath } from "@/lib/getPosts";
+import { getTranslations } from "next-intl/server";
 
 export default async function InfiniteSlider() {
   const exampleCovers: string[] = shuffleArray([
-    "verheissenesland",
+    "promised-land",
     "atomic-habits",
     "why-we-sleep",
     "sapiens",
@@ -24,13 +25,15 @@ export default async function InfiniteSlider() {
     "option-b",
     "phoenix-project",
     "superforecasting",
-    "aufklaerungjetzt",
+    "enlightenment-now",
     "beginning-infinity",
     "unsere-gene",
     "sooley",
     "achtsam-morden",
     "animal-farm",
   ]);
+
+  const t = await getTranslations("Home");
 
   const exampleCoversPath: string[] = await Promise.all(
     exampleCovers.map(
@@ -77,7 +80,7 @@ export default async function InfiniteSlider() {
         </div>
 
         <div className="flex flex-row items-center py-2 sm:py-4 px-4 sm:px-8  absolute top-16 md:top-16 text-xl md:text-2xl rounded-lg button">
-          Alle Empfehlungen entdecken!
+          {t("allRecommendations")}
         </div>
       </Link>
     </>

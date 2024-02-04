@@ -5,8 +5,12 @@ import { getImagePath } from "@/lib/getPosts";
 import { books } from "@/lib/books";
 import { shuffleArray } from "@/lib/utils";
 import StyledLink from "@/components/ui/styledLink";
+import { getTranslations } from "next-intl/server";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 export default async function Home() {
+  const t = await getTranslations("Recommendations");
+
   //iterate over all books and add "imagePath" to each book
   const allTags: string[] = [];
   const booksWithImages = await Promise.all(
@@ -28,18 +32,25 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col items-center px-4">
-      <StyledH1 className="mb-2 md:mb-4">Alle Buchempfehlungen</StyledH1>
+      <StyledH1 className="mb-2 md:mb-4">{t("title")}</StyledH1>
       <div className="ml-0 md:ml-8 w-full">
         <div className=" w-full text-start text-md md:text-lg">
-          Die Tags helfen dir bei der Suche. Wähle einfach aus, was dich
-          interessiert.
+          {t("usageInfo")}
         </div>
       </div>
+
       <RecommendationGrid books={shuffledBookData} allTags={allTags} />
+
       <div className="h-1 bg-main-700 opacity-50 w-full mt-16 rounded-full" />
       <div className="text-main-700 mt-8 ">
-        Ich freu mich selbst auch immer über <strong>Buchempfehlungen</strong> -
-        schreib mir deine Tipps am Besten einfach auf{" "}
+        {/* {t("recommendToMe")} */}
+
+        {t.rich("recommendToMe", {
+          strong: (chunks) => <strong>{chunks}</strong>,
+        })}
+
+        {/* Ich freu mich selbst auch immer über <strong>Buchempfehlungen</strong> -
+        schreib mir deine Tipps am Besten einfach auf{" "} */}
         <StyledLink
           href="https://www.linkedin.com/in/raphael-fritz/"
           target="_blank"

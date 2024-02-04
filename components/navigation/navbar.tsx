@@ -16,6 +16,9 @@ import Image from "next/image";
 import NavElement from "./navElement";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
+import LocaleSwitcher from "./localeSwitcher";
 
 const user = {
   name: "Raphael Fritz",
@@ -26,38 +29,38 @@ const user = {
 
 const navigation = [
   {
-    name: "Home",
+    name: "home",
     icon: <HomeIcon className="h-6 w-6 " />,
     href: "/",
     current: true,
   },
   {
-    name: "Empfehlungen",
+    name: "recommendations",
     icon: <StarIcon className="h-6 w-6 " />,
     href: "/recommendations",
     current: false,
   },
   {
-    name: "Reviews",
+    name: "reviews",
     icon: <BookOpenIcon className="h-6 w-6" />,
     href: "/books",
     current: true,
   },
   {
-    name: "Artikel",
+    name: "articles",
     icon: <DocumentTextIcon className="h-6 w-6" />,
     href: "/articles",
     current: false,
   },
   {
-    name: "LinkedIn",
+    name: "linkedin",
     largeNoName: true,
     icon: <FaLinkedin size={30} className="text-blue-700" />,
     href: "https://www.linkedin.com/in/raphael-fritz/",
     current: false,
   },
   {
-    name: "Über mich",
+    name: "aboutme",
     largeNoName: true,
     icon: (
       <Image
@@ -91,6 +94,10 @@ export default function Navbar() {
     };
   }, []);
 
+  const t = useTranslations("Navbar");
+
+  // console.log("pathname", pathname);
+
   return (
     <div
       className={`sticky top-0 z-50 ${
@@ -98,12 +105,17 @@ export default function Navbar() {
       }`}
     >
       <Disclosure as="nav" className="bg-white">
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
               <div className="flex h-14 md:h-16 items-center">
                 <div className="flex flex-row space-x-2 items-center w-full h-full">
-                  <NavElement navItem={navigation[0]} pathname={pathname} />
+                  <NavElement
+                    navItem={navigation[0]}
+                    pathname={pathname}
+                    className="px-6 md:px-4"
+                    close={() => close()}
+                  />
 
                   <div className="hidden  md:flex md:flew-row md:justify-between w-full h-full">
                     <div className="flex items-center space-x-2">
@@ -115,14 +127,17 @@ export default function Navbar() {
                         />
                       ))}
                     </div>
+
                     <div className="flex items-center space-x-2">
-                      {navigation.slice(-2).map((item) => (
+                      {/* removed linkedin icon to make space for locale swither*/}
+                      {navigation.slice(-1).map((item) => (
                         <NavElement
                           key={item.name}
                           navItem={item}
                           pathname={pathname}
                         />
                       ))}
+                      <LocaleSwitcher />
                     </div>
                   </div>
                 </div>
@@ -146,14 +161,16 @@ export default function Navbar() {
             >
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                 {navigation.slice(1).map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
+                  <Link
                     href={item.href}
+                    onClick={() => close()}
+                    key={item.name}
+                    target={item.href.startsWith("http") ? "_blank" : "_self"}
                     className={cn(
-                      "block rounded-md px-3 py-2 text-lg font-medium text-main-700 border-b-4 border-transparent",
+                      "block rounded-md px-4 py-2 text-lg font-medium text-main-700 border-b-4 border-transparent",
                       //item.current
-                      pathname === item.href
+                      (!(item.href === "/") && pathname.includes(item.href)) ||
+                        (item.href === "/" && pathname.length <= 4)
                         ? "bg-gradient-to-r from-main-600 to-main-700 text-white hover:bg-opacity-90"
                         : "hover:bg-purewhite hover:shadow-lg hover:border-main-700"
                     )}
@@ -163,12 +180,12 @@ export default function Navbar() {
                       <div className="w-12 flex flex-col items-center ">
                         {item.icon}
                       </div>
-                      <p>{item.name} </p>
+                      <p>{t(item.name)} </p>
                     </div>
-                  </Disclosure.Button>
+                  </Link>
                 ))}
+                <LocaleSwitcher />
               </div>
-
             </Disclosure.Panel>
           </>
         )}
