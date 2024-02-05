@@ -28,7 +28,11 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Home({ params: { slug, locale } }: any) {
+export default function Home({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: string };
+}) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Reviews");
   //  const t = await getTranslations("Reviews");

@@ -11,7 +11,7 @@ export default function Home({
 }: {
   params: { locale: string };
 }) {
-
+  unstable_setRequestLocale(locale);
   const t = useTranslations("About");
   // unstable_setRequestLocale(locale);
 

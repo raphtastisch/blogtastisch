@@ -6,7 +6,7 @@ import { cn, shuffleArray } from "@/lib/utils";
 import { getUniqueTags, uniqueTags } from "@/lib/books";
 
 import InfiniteSlider from "@/components/InfiniteSlider";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import {  unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
 export default function Home({
@@ -14,8 +14,7 @@ export default function Home({
 }: {
   params: { locale: string };
 }) {
-  
-
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Home");
   const translateTags = useTranslations("Tags");
 

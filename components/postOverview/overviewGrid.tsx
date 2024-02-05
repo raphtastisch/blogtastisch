@@ -1,8 +1,7 @@
 import { getAllPosts, getImagePath } from "@/lib/getPosts";
 import OverviewElement from "@/components/postOverview/overviewElement";
 import { shuffleArray } from "@/lib/utils";
-import { getBooksWithFullText, getBooksWithGermanContent } from "@/lib/books";
-import { Post, defaultWrittenBy } from "@/lib/config";
+import {  defaultWrittenBy } from "@/lib/config";
 import { useLocale } from "next-intl";
 
 export default function OverviewGrid({ category }: { category?: string }) {

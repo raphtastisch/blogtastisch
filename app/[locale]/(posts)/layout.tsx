@@ -1,9 +1,9 @@
 import { Locales, locales } from "@/lib/config";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }));
+// }
 
 export default function RootLayout({
   children,

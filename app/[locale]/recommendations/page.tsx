@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 
 export default function Home({ params: { locale } }: any) {
 
-
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Recommendations");
   // const t = await getTranslations("Recommendations");
 

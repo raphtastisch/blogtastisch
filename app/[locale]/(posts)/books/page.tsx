@@ -1,11 +1,16 @@
 import OverviewGrid from "@/components/postOverview/overviewGrid";
 import StyledH1 from "@/components/ui/styledH1";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
-
-export default  function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const category = "books";
-  const t =  useTranslations("Reviews");
+  unstable_setRequestLocale(locale);
+  const t = useTranslations("Reviews");
 
   return (
     <>

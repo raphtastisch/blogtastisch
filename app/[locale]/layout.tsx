@@ -7,6 +7,7 @@ import Navbar from "@/components/navigation/navbar";
 import Impressum from "@/components/impressum";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { locales } from "@/lib/config";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,8 @@ export default function RootLayout({
   params: { locale: string };
 }) {
   const messages = useMessages();
-
+  unstable_setRequestLocale(locale);
+  
   // w-scren fixes navbar jumps due to scrollbar on pc, but is anoying on mobile, thus only after viewport is bigger than md
   return (
     <html lang={locale} className="h-full md:w-screen">
