@@ -20,8 +20,6 @@ export default function RecommendationGrid({
 
   const t = useTranslations("Recommendations");
 
-
-
   const searchParams = useSearchParams(); // Extract the tag from the URL
   // console.log("searchParams", searchParams.getAll("tag"));
 
@@ -118,7 +116,9 @@ export default function RecommendationGrid({
           )}
         </div>
       </div>
-      <div className="text-main-700 text-xs md:text-sm mt-4">{t("notTranslated")}</div>
+      <div className="text-main-700 text-xs md:text-sm mt-4">
+        {t("notTranslated")}
+      </div>
       <div className="h-1 bg-gradient-to-r from-main-600 to-main-700 opacity-50 w-full mt-1 mb-1 rounded-full" />
       <div className="text-main-700 text-xs md:text-sm text-right w-full mb-8 xl:mb-4">
         {t.rich("showingXfromXRecommendations", {
@@ -165,7 +165,7 @@ export default function RecommendationGrid({
                   <div className="flex flex-col space-y-1 md:pt-2">
                     <div className="text-main-700 bg-white text-center">
                       {t("sounds")}
-                      {readResons[index % 3]}
+                      {readResons[index % 3]}?
                     </div>
                     <Wrapper key={book.slug}>
                       <div className="rounded-lg p-2 w-full button">
