@@ -79,7 +79,6 @@ export function getAllPosts(category?: string, locale: string = "en"): Post[] {
 
 
 const widthSettings = " w-full max-w-text"
-const responsiveXPadding = ""//" px-4 md:px-0"
 const components = {
     InPostImage,
 
@@ -120,34 +119,55 @@ const components = {
 
 
 
-export async function getPostBySlug(slug: string, locale: string): Promise<{ content: any, frontmatter: any, category: Category | null }> {
+export async function getPostBySlug(slug: string, locale: string, category: Category): Promise<{ content: any }> {
 
     // check in all folders
-    for (const category of categories) {
-        try {
-            // get content and frontmatter (=metadata) for one article
-            const { content, frontmatter } = await compileMDX<{ title: string }>({
-                source: fs.readFileSync(
-                    path.join(process.cwd(), ...contentPath, category, slug, locale + ".mdx"), //add .mdx
-                    "utf8"
-                ),
-                options: { parseFrontmatter: true },
-                components: components,
-            });
-            return { content, frontmatter, category }
 
-        } catch (error) {
-            null
-        }
+    try {
+        // get content and frontmatter (=metadata) for one article
+        const { content } = await compileMDX<{ title: string }>({
+            source: fs.readFileSync(
+                path.join(process.cwd(), ...contentPath, category, slug, locale + ".mdx"), //add .mdx
+                "utf8"
+            ),
+            options: { parseFrontmatter: true },
+            components: components,
+        });
+        return { content }
+
+    } catch (error) {
+        null
+        // process below
     }
 
+    console.log("Error: Post not found: ", slug)
+    return { content: null }
+
+    // // check in all folders
+    // for (const category of categories) {
+    //     try {
+    //         // get content and frontmatter (=metadata) for one article
+    //         const { content, frontmatter } = await compileMDX<{ title: string }>({
+    //             source: fs.readFileSync(
+    //                 path.join(process.cwd(), ...contentPath, category, slug, locale + ".mdx"), //add .mdx
+    //                 "utf8"
+    //             ),
+    //             options: { parseFrontmatter: true },
+    //             components: components,
+    //         });
+    //         return { content, frontmatter, category }
+
+    //     } catch (error) {
+    //         null
+    //     }
+    // }
+
     // return an error if no article was found
-    console.log("Error: Article not found: ", slug)
-    return { content: null, frontmatter: null, category: null }
+
 }
 
 
-export async function getImagesForContent(category: Category, slug: string): Promise<any> {
+export function getImagesForContent(category: Category, slug: string): any {
 
     // get all images in the folder
     const folderPath = path.join(process.cwd(), "public", contentFolder, category, slug);
@@ -164,14 +184,14 @@ export async function getImagesForContent(category: Category, slug: string): Pro
 }
 
 
-export async function getImagePath(
+export function getImagePath(
     category: Category,
     slug: string,
     imagename: ImageType
 ) {
 
     try {
-        const images: string[] = await getImagesForContent(category, slug);
+        const images: string[] = getImagesForContent(category, slug);
 
         // find the image with the given name, regardless of the image extension
         const imagenameWithExtension = images.find((image) => image.includes(imagename));

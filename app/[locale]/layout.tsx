@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/navigation/navbar";
 import Impressum from "@/components/impressum";
 import { NextIntlClientProvider, useMessages } from "next-intl";
+import { locales } from "@/lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
   title: "Raphis Blog",
   description: "Great book recommendations!",
 };
+
+// can most likely be deleted (or does it tickle down everyhwere, thus not needed in (posts)/layout.tsx ?
+// removing might need to remove params {locale} from children
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default function RootLayout({
   children,

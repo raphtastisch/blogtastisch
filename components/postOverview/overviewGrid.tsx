@@ -3,28 +3,20 @@ import OverviewElement from "@/components/postOverview/overviewElement";
 import { shuffleArray } from "@/lib/utils";
 import { getBooksWithFullText, getBooksWithGermanContent } from "@/lib/books";
 import { Post, defaultWrittenBy } from "@/lib/config";
-import { getLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
 
-export default async function OverviewGrid({
-  category,
-}: {
-  category?: string;
-}) {
+export default function OverviewGrid({ category }: { category?: string }) {
   // console.log("category", category)
 
-  const locale = await getLocale();
+  const locale = useLocale();
 
   const overviewElementDataWithoutImagePaths = shuffleArray(
     getAllPosts(category, locale)
   );
 
-  const overviewElementData = await Promise.all(
-    overviewElementDataWithoutImagePaths.map(async (post) => {
-      const imagePath = await getImagePath(
-        post.category,
-        post.slug,
-        "illustration"
-      );
+  const overviewElementData = overviewElementDataWithoutImagePaths.map(
+    (post) => {
+      const imagePath = getImagePath(post.category, post.slug, "illustration");
 
       return {
         title: post.title,
@@ -36,7 +28,7 @@ export default async function OverviewGrid({
         date: post.date,
         author: post.author ? post.author : post.writtenBy || defaultWrittenBy, // if an author exists, use it, otherwise use written by, default writtenby as default
       };
-    })
+    }
   );
 
   return (

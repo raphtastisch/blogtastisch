@@ -6,11 +6,18 @@ import { cn, shuffleArray } from "@/lib/utils";
 import { getUniqueTags, uniqueTags } from "@/lib/books";
 
 import InfiniteSlider from "@/components/InfiniteSlider";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function Home() {
-  const t = await getTranslations("Home");
-  const translateTags = await getTranslations("Tags");
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  
+
+  const t = useTranslations("Home");
+  const translateTags = useTranslations("Tags");
 
   // checks if all tags have correct full names set
   // checkTags();

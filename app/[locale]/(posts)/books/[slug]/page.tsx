@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getAllPosts, getPostBySlug, getImagePath } from "@/lib/getPosts";
+import { getPostBySlug, getImagePath } from "@/lib/getPosts";
 import InPostImage from "@/components/ui/inPostImage";
 import StyledLink from "@/components/ui/styledLink";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
@@ -10,9 +10,11 @@ import { books, createAmazonLink, getBookBySlug } from "@/lib/books";
 import { dateToString } from "@/lib/utils";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import PostContent from "@/components/postContent";
+import { Category } from "@/lib/config";
 
 // not sure if actually working
-export async function generateStaticParams() {
+export function generateStaticParams() {
   // const data = await getAllPosts();
 
   // //   console.log("dynamicpath data", data);
@@ -26,34 +28,29 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Home({ params }: any) {
-  unstable_setRequestLocale(params.locale);
-  const t = await getTranslations("Reviews");
-
+export default function Home({ params: { slug, locale } }: any) {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations("Reviews");
+  //  const t = await getTranslations("Reviews");
   // slug because that is the name of the [folder]
-  const slug = params.slug;
+  // const slug = params.slug;
 
-  const { content, frontmatter, category } = await getPostBySlug(
-    slug,
-    params.locale
-  );
+  // const { content, frontmatter, category } = await getPostBySlug(slug, locale);
 
-  if (!content || !category) {
-    return <div>404 no data found</div>;
-  }
+  // if (!content || !category) {
+  //   return <div>404 no data found</div>;
+  // }
 
-  const book = getBookBySlug(slug, params.locale);
+  const category: Category = "books"; // get from path?
+
+  const book = getBookBySlug(slug, locale);
   if (!book) {
     return <div>404 no metadata found</div>;
   }
 
-  const illustrationImagePath = await getImagePath(
-    category,
-    slug,
-    "illustration"
-  );
+  const illustrationImagePath = getImagePath(category, slug, "illustration");
 
-  const coverImagePath = await getImagePath(category, slug, "cover");
+  const coverImagePath = getImagePath(category, slug, "cover");
 
   // console.log("book", book);
 
@@ -83,8 +80,10 @@ export default async function Home({ params }: any) {
 
       <InPostImage src={illustrationImagePath} priority={true} />
 
-      {/* Content */}
-      <div className="flex flex-col items-center w-full">{content}</div>
+      <div className="flex flex-col items-center w-full">
+        {/* {content} */}
+        <PostContent slug={slug} locale={locale} category={category} />
+      </div>
 
       {/* Footer */}
       {book.initialReleaseUrl && book.initialReleaseName ? (

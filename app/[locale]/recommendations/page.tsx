@@ -5,29 +5,31 @@ import { getImagePath } from "@/lib/getPosts";
 import { books } from "@/lib/books";
 import { shuffleArray } from "@/lib/utils";
 import StyledLink from "@/components/ui/styledLink";
-import { getTranslations } from "next-intl/server";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function Home() {
-  const t = await getTranslations("Recommendations");
+export default function Home({ params: { locale } }: any) {
+
+
+  const t = useTranslations("Recommendations");
+  // const t = await getTranslations("Recommendations");
 
   //iterate over all books and add "imagePath" to each book
   const allTags: string[] = [];
-  const booksWithImages = await Promise.all(
-    books.map(async (book) => {
-      // get the image path
-      const imagePath = await getImagePath("books", book.slug, "cover");
+  const booksWithImages = books.map((book) => {
+    // get the image path
+    const imagePath = getImagePath("books", book.slug, "cover");
 
-      // add all tags to the set
-      if (book.tags) {
-        book.tags.forEach((tag) => {
-          if (!allTags.includes(tag)) allTags.push(tag);
-        });
-      }
+    // add all tags to the set
+    if (book.tags) {
+      book.tags.forEach((tag) => {
+        if (!allTags.includes(tag)) allTags.push(tag);
+      });
+    }
 
-      return { ...book, imagePath: imagePath };
-    })
-  );
+    return { ...book, imagePath: imagePath };
+  });
+
   const shuffledBookData: Book[] = shuffleArray(booksWithImages);
 
   return (

@@ -1,13 +1,13 @@
-// import OverviewElement from "@/components/overviewElement";
+
 import OverviewGrid from "@/components/postOverview/overviewGrid";
 import StyledH1 from "@/components/ui/styledH1";
-// import { contentFolder } from "@/lib/config";
-// import { getAllPosts, getImagePath } from "@/lib/getarticles";
+import { useTranslations } from "next-intl";
+
 import { getTranslations } from "next-intl/server";
 
-export default async function Home() {
+export default function Home() {
   const category = "articles";
-  const t = await getTranslations("Articles");
+  const t = useTranslations("Articles");
 
   return (
     <>

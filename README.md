@@ -1,4 +1,16 @@
 
+
+
+# New Content:
+
+* Books with fulltext = true should have all book-content in German
+* Books with ned Tags need an update of the taglist in books.ts and in both translation files
+* books with full text should have a "de.mdx" and "en.mdx" in the corresponding folder
+* New books need illustration and cover image in the correct folder (and only with .jpg, .png, .jpeg, or .webp format); articles need only the illustration
+* check descriptionLong length for appropriate space
+
+
+
 # Content Prompt:
 
 Take the the list of books below.

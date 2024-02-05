@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default async function InPostImage({
+export default function InPostImage({
   src,
   height,
   width,

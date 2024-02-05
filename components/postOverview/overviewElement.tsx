@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Link } from "@/navigation";
-import { getTranslations } from "next-intl/server";
 
-export default async function OverviewElement({
+import { useTranslations } from "next-intl";
+
+export default function OverviewElement({
   data,
   isBig,
 }: {
@@ -21,10 +22,7 @@ export default async function OverviewElement({
 }) {
   isBig = isBig || false;
 
-  
-
-  const t = await getTranslations("OverviewGrid");
-
+  const t = useTranslations("OverviewGrid");
 
   return (
     <div

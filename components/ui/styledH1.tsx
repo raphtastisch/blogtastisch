@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-
-export default async function StyledH1({ props, children, className }: any) {
+export default function StyledH1({ props, children, className }: any) {
   return (
     <h1
       className={cn(

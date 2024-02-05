@@ -3,14 +3,16 @@ import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import StyledLink from "@/components/ui/styledLink";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function Home({
+export default function Home({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
-  const t = await getTranslations("About");
+
+  const t = useTranslations("About");
   // unstable_setRequestLocale(locale);
 
   return (

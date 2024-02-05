@@ -1,17 +1,18 @@
-import Image from "next/image";
-import { getAllPosts, getPostBySlug, getImagePath } from "@/lib/getPosts";
-import { Link } from "@/navigation";
+import { getPostBySlug, getImagePath } from "@/lib/getPosts";
 import InPostImage from "@/components/ui/inPostImage";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
-import StyledLink from "@/components/ui/styledLink";
+
 import { articles, getArticleBySlug } from "@/lib/articles";
 import { dateToString } from "@/lib/utils";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { Category } from "@/lib/config";
+import PostContent from "@/components/postContent";
 
 // not sure if actually working
-export async function generateStaticParams() {
+export function generateStaticParams() {
   // const data = await getAllPosts();
 
   //   console.log("dynamicpath data", data);
@@ -25,31 +26,18 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Home({ params }: any) {
-  unstable_setRequestLocale(params.locale);
-  const t = await getTranslations("Articles");
+export default function Home({ params: { slug, locale } }: any) {
+  unstable_setRequestLocale(locale);
+  // const t = await getTranslations("Articles");
+  const t = useTranslations("Reviews");
 
-  const slug = params.slug;
-
-  const { content, frontmatter, category } = await getPostBySlug(
-    slug,
-    params.locale
-  );
-
-  if (!content || !category) {
-    return <div>404 no data found</div>;
-  }
-
-  const article = getArticleBySlug(slug, params.locale);
+  const article = getArticleBySlug(slug, locale);
   if (!article) {
     return <div>404 no metadata found</div>;
   }
 
-  const illustrationImagePath = await getImagePath(
-    category,
-    slug,
-    "illustration"
-  );
+  const category: Category = "articles";
+  const illustrationImagePath = getImagePath(category, slug, "illustration");
 
   return (
     <div className="mdx flex flex-col items-center w-full">
@@ -78,7 +66,10 @@ export default async function Home({ params }: any) {
       <InPostImage src={illustrationImagePath} priority={true} />
 
       {/* Content */}
-      <div className="flex flex-col items-center w-full">{content}</div>
+      <div className="flex flex-col items-center w-full">
+        {/* {content} */}
+        <PostContent slug={slug} locale={locale} category={category} />
+      </div>
     </div>
   );
 }

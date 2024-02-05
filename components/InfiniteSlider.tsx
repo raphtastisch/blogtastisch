@@ -2,9 +2,10 @@ import { Link } from "@/navigation";
 import Image from "next/image";
 import { shuffleArray } from "@/lib/utils";
 import { getImagePath } from "@/lib/getPosts";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function InfiniteSlider() {
+export default function InfiniteSlider() {
+ 
   const exampleCovers: string[] = shuffleArray([
     "promised-land",
     "atomic-habits",
@@ -33,12 +34,10 @@ export default async function InfiniteSlider() {
     "animal-farm",
   ]);
 
-  const t = await getTranslations("Home");
+  const t = useTranslations("Home");
 
-  const exampleCoversPath: string[] = await Promise.all(
-    exampleCovers.map(
-      async (pathname) => await getImagePath("books", pathname, "cover")
-    )
+  const exampleCoversPath: string[] = exampleCovers.map((pathname) =>
+    getImagePath("books", pathname, "cover")
   );
 
   {

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export default async function StyledBlockquote({
+export default function StyledBlockquote({
   props,
   children,
   className,

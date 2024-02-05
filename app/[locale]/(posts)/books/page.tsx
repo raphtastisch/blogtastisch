@@ -1,15 +1,11 @@
-// import OverviewElement from "@/components/overviewElement";
 import OverviewGrid from "@/components/postOverview/overviewGrid";
 import StyledH1 from "@/components/ui/styledH1";
-// import { contentFolder } from "@/lib/config";
-// import { getAllPosts, getImagePath } from "@/lib/getarticles";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function Home() {
+
+export default  function Home() {
   const category = "books";
-  const t = await getTranslations("Reviews");
-  // const headline = "Alles zum Thema Bücher";
-
+  const t =  useTranslations("Reviews");
 
   return (
     <>
