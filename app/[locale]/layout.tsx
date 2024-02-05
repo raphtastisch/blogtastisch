@@ -6,15 +6,44 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/navigation/navbar";
 import Impressum from "@/components/impressum";
 import { NextIntlClientProvider, useMessages } from "next-intl";
-import { locales } from "@/lib/config";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { Locale, locales } from "@/lib/config";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Raphis Blog",
-  description: "Great book recommendations!",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: {
+      default: t("title"),
+      template: "%s | " + t("title"),
+    },
+    description: t("description"),
+    creator: "Raphael Fritz",
+    keywords: [
+      t("book"),
+      t("recommendation"),
+      t("read"),
+      t("audiobook"),
+      t("blog"),
+    ], //["Book", "Recommendation", "Read", "Audiobook"],
+  };
+}
+
+// export const metadata: Metadata = {
+//   title: {
+//     default: "Raphis Blog",
+//     template: "%s | Raphis Blog",
+//   },
+//   description: "Great book recommendations!",
+//   creator: "Raphael Fritz",
+//   keywords: ["Book", "Recommendation", "Read", "Audiobook"],
+// };
 
 // can most likely be deleted (or does it tickle down everyhwere, thus not needed in (posts)/layout.tsx ?
 // removing might need to remove params {locale} from children
@@ -27,11 +56,11 @@ export default function RootLayout({
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 }) {
   const messages = useMessages();
   unstable_setRequestLocale(locale);
-  
+
   // w-scren fixes navbar jumps due to scrollbar on pc, but is anoying on mobile, thus only after viewport is bigger than md
   return (
     <html lang={locale} className="h-full md:w-screen">

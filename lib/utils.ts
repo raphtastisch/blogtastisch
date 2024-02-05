@@ -36,15 +36,3 @@ export function dateToString(date: Date): string {
 }
 
 
-export function getPostWithGermanContent(post: Post): Post {
-
-  // its important to copy the book, otherwise the original book would be changed
-  const postCopy = { ...post }
-
-  if (postCopy.titleDE) { postCopy.title = postCopy.titleDE }
-  if (postCopy.subtitleDE) { postCopy.subtitle = postCopy.subtitleDE }
-  if (postCopy.shortDescriptionDE) { postCopy.shortDescription = postCopy.shortDescriptionDE }
-  if (postCopy.longDescriptionDE) { postCopy.longDescription = postCopy.longDescriptionDE }
-
-  return postCopy
-}

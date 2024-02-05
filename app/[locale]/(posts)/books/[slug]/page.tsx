@@ -1,37 +1,46 @@
 import Image from "next/image";
-import { getPostBySlug, getImagePath } from "@/lib/getPosts";
+import {
+  getPostContentBySlug,
+  getImagePath,
+  getBookBySlug,
+} from "@/lib/getPosts";
 import InPostImage from "@/components/ui/inPostImage";
 import StyledLink from "@/components/ui/styledLink";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import { Link } from "@/navigation";
-import { books, createAmazonLink, getBookBySlug } from "@/lib/books";
+import { books, createAmazonLink } from "@/lib/books";
 import { dateToString } from "@/lib/utils";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import PostContent from "@/components/postContent";
-import { Category } from "@/lib/config";
+import { Category, Locale } from "@/lib/config";
 
-// not sure if actually working
 export function generateStaticParams() {
-  // const data = await getAllPosts();
-
-  // //   console.log("dynamicpath data", data);
-
-  // return data.map((frontmatter: any) => ({
-  //   params: { slug: frontmatter.slug },
-  // }));
-
   return books.map((book) => ({
     params: { slug: book.slug },
   }));
 }
 
+export async function generateMetadata({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  const book = getBookBySlug(slug, locale);
+
+  return {
+    title: book ? book.title : t("reviews"),
+  };
+}
+
 export default function Home({
   params: { slug, locale },
 }: {
-  params: { slug: string; locale: string };
+  params: { slug: string; locale: Locale };
 }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Reviews");

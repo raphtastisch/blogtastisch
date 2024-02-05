@@ -3,13 +3,26 @@ import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import StyledLink from "@/components/ui/styledLink";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { Locale } from "@/lib/config";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  return {
+    title: t("aboutme"),
+  };
+}
 
 export default function Home({
   params: { locale },
 }: {
-  params: { locale: string };
+  params: { locale: Locale };
 }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("About");

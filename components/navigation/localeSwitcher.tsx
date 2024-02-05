@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { locales } from "@/lib/config";
+import { Locale, locales } from "@/lib/config";
 import { FlagIcon } from "react-flag-kit";
 
 import { useRouter, usePathname } from "@/navigation";
@@ -15,7 +15,7 @@ export default function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
-  let nextLocale: string;
+  let nextLocale: Locale;
   if (locale === locales[0]) {
     nextLocale = locales[1];
   } else {

@@ -1,4 +1,4 @@
-import { locales } from "@/lib/config";
+import { Locale, locales } from "@/lib/config";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
@@ -11,7 +11,7 @@ export default function RecommendationsLayout({
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 }) {
   const messages = useMessages();
   unstable_setRequestLocale(locale);

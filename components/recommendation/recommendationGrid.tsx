@@ -164,7 +164,7 @@ export default function RecommendationGrid({
                   </div>
                   <div className="flex flex-col space-y-1 md:pt-2">
                     <div className="text-main-700 bg-white text-center">
-                      {t("sounds")}
+                      {/* {t("sounds")} */}
                       {readResons[index % 3]}?
                     </div>
                     <Wrapper key={book.slug}>

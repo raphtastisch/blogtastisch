@@ -1,15 +1,26 @@
 import RecommendationGrid from "@/components/recommendation/recommendationGrid";
 import StyledH1 from "@/components/ui/styledH1";
-import { Book } from "@/lib/config";
+import { Book, Locale } from "@/lib/config";
 import { getImagePath } from "@/lib/getPosts";
 import { books } from "@/lib/books";
 import { shuffleArray } from "@/lib/utils";
 import StyledLink from "@/components/ui/styledLink";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
-export default function Home({ params: { locale } }: any) {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
 
+  return {
+    title: t("recommendations"),
+  };
+}
+
+export default function Home({ params: { locale } }: any) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Recommendations");
   // const t = await getTranslations("Recommendations");

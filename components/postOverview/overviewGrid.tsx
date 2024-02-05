@@ -1,16 +1,20 @@
 import { getAllPosts, getImagePath } from "@/lib/getPosts";
 import OverviewElement from "@/components/postOverview/overviewElement";
 import { shuffleArray } from "@/lib/utils";
-import {  defaultWrittenBy } from "@/lib/config";
+import { Locale, defaultWrittenBy, locales } from "@/lib/config";
 import { useLocale } from "next-intl";
 
 export default function OverviewGrid({ category }: { category?: string }) {
   // console.log("category", category)
 
-  const locale = useLocale();
+  // make sure that the locale is valid
+  let locale = useLocale();
+  if (!locale || !(locales as string[]).includes(locale)) {
+    locale = "en";
+  }
 
   const overviewElementDataWithoutImagePaths = shuffleArray(
-    getAllPosts(category, locale)
+    getAllPosts(category, locale as Locale)
   );
 
   const overviewElementData = overviewElementDataWithoutImagePaths.map(

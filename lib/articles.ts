@@ -1,5 +1,4 @@
 import { Article } from "./config";
-import { getPostWithGermanContent } from "./utils";
 
 export const articles: Article[] = [{
 
@@ -18,27 +17,6 @@ export const articles: Article[] = [{
 
 
 
-export function getArticlesWithGermanContent(): Article[] {
-
-    // replaces the content with german content if avialable
-    return articles.map((article) => getPostWithGermanContent(article) as Article)
-
-}
-
-export function getArticleBySlug(slug: string, locale: string = "en"): Article | null {
-
-    for (let article of articles) {
-        if (article.slug === slug) {
-            if (locale === "de") {
-                return getPostWithGermanContent(article);
-            }
-            else {
-                return article;
-            }
-        }
-    }
-    return null;
-}
 
 
 

@@ -1,5 +1,5 @@
-import { Book, languageMapping } from "./config";
-import { getPostWithGermanContent } from "./utils";
+import { Book, Locale, languageMapping } from "./config";
+import { getPostWithGermanContent } from "./getPosts";
 
 export const books: Book[] = [
 
@@ -944,26 +944,10 @@ export const uniqueTags: string[] = ['non-fiction',
 
 
 
-export function getBooksWithGermanContent(): Book[] {
-    // replaces the content with german content if avialable
-    return books.filter((book) => book.hasFullText).map((book) => getPostWithGermanContent(book) as Book)
-}
 
 
-export function getBookBySlug(slug: string, locale: string = "en"): Book | null {
 
-    for (let book of books) {
-        if (book.slug === slug) {
-            if (locale === "de") {
-                return getPostWithGermanContent(book) as Book
-            }
-            else {
-                return book
-            }
-        }
-    }
-    return null;
-}
+
 
 
 export function getUniqueTags(bookList: Book[] = books): string[] {
@@ -985,7 +969,7 @@ export function getBooksWithFullText(): Book[] {
     return books.filter((book) => book.hasFullText);
 }
 
-export function createAmazonLink(title?: string, locale: string = "de"): string {
+export function createAmazonLink(title?: string, locale: Locale = "de"): string {
 
     if (!title) {
         return "https://www.amazon.de/b?_encoding=UTF8&tag=raphaelfritz-21&linkCode=ur2&linkId=d40a5c82224a657f67daad1c413ab1d7&camp=1638&creative=6742&node=186606"

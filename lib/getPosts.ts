@@ -1,7 +1,7 @@
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import fs from "fs";
-import { contentPath, categories, contentFolder, Category, ImageType, backupImagePaths, locales, Post, Article, Book } from "./config";
+import { contentPath, categories, contentFolder, Category, ImageType, backupImagePaths, locales, Post, Article, Book, Locale } from "./config";
 import React from "react";
 import InPostImage from "@/components/ui/inPostImage";
 import StyledLink from "@/components/ui/styledLink";
@@ -9,13 +9,35 @@ import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import { cn } from "./utils";
-import { articles, getArticlesWithGermanContent } from "./articles";
-import { getBooksWithFullText, getBooksWithGermanContent } from "./books";
+import { articles } from "./articles";
+import { getBooksWithFullText, books } from "./books";
 
+export function getPostWithGermanContent(post: Post): Post {
 
+    // its important to copy the book, otherwise the original book would be changed
+    const postCopy = { ...post }
 
+    if (postCopy.titleDE) { postCopy.title = postCopy.titleDE }
+    if (postCopy.subtitleDE) { postCopy.subtitle = postCopy.subtitleDE }
+    if (postCopy.shortDescriptionDE) { postCopy.shortDescription = postCopy.shortDescriptionDE }
+    if (postCopy.longDescriptionDE) { postCopy.longDescription = postCopy.longDescriptionDE }
 
-export function getAllPosts(category?: string, locale: string = "en"): Post[] {
+    return postCopy
+}
+
+export function getBooksWithGermanContent(): Book[] {
+    // replaces the content with german content if avialable
+    return books.filter((book) => book.hasFullText).map((book) => getPostWithGermanContent(book) as Book)
+}
+
+export function getArticlesWithGermanContent(): Article[] {
+
+    // replaces the content with german content if avialable
+    return articles.map((article) => getPostWithGermanContent(article) as Article)
+
+}
+
+export function getAllPosts(category?: string, locale: Locale = "en"): Post[] {
     const result: Post[] = []
 
     if (category == undefined || category == "books") {
@@ -119,7 +141,7 @@ const components = {
 
 
 
-export async function getPostBySlug(slug: string, locale: string, category: Category): Promise<{ content: any }> {
+export async function getPostContentBySlug(slug: string, locale: Locale, category: Category): Promise<{ content: any }> {
 
     // check in all folders
 
@@ -142,29 +164,38 @@ export async function getPostBySlug(slug: string, locale: string, category: Cate
 
     console.log("Error: Post not found: ", slug)
     return { content: null }
-
-    // // check in all folders
-    // for (const category of categories) {
-    //     try {
-    //         // get content and frontmatter (=metadata) for one article
-    //         const { content, frontmatter } = await compileMDX<{ title: string }>({
-    //             source: fs.readFileSync(
-    //                 path.join(process.cwd(), ...contentPath, category, slug, locale + ".mdx"), //add .mdx
-    //                 "utf8"
-    //             ),
-    //             options: { parseFrontmatter: true },
-    //             components: components,
-    //         });
-    //         return { content, frontmatter, category }
-
-    //     } catch (error) {
-    //         null
-    //     }
-    // }
-
-    // return an error if no article was found
-
 }
+
+export function getBookBySlug(slug: string, locale: Locale = "en"): Book | null {
+
+    for (let book of books) {
+        if (book.slug === slug) {
+            if (locale === "de") {
+                return getPostWithGermanContent(book) as Book
+            }
+            else {
+                return book
+            }
+        }
+    }
+    return null;
+}
+
+export function getArticleBySlug(slug: string, locale: Locale = "en"): Article | null {
+
+    for (let article of articles) {
+        if (article.slug === slug) {
+            if (locale === "de") {
+                return getPostWithGermanContent(article);
+            }
+            else {
+                return article;
+            }
+        }
+    }
+    return null;
+}
+
 
 
 export function getImagesForContent(category: Category, slug: string): any {

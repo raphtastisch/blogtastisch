@@ -54,7 +54,7 @@ export const backupImagePaths = {
     }
 }
 
-export type Locales = 'en' | 'de'
-export const locales: string[] = ['en', 'de'];
+export type Locale = 'en' | 'de'
+export const locales: Locale[] = ['en', 'de'];
 
 export const languageMapping: Record<string, string> = { "en": "en_US", "de": "de_DE" };

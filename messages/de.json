@@ -1,4 +1,13 @@
 {
+    "Metadata": {
+        "title": "Raphis Blog",
+        "description": "Großartige Buchempfehlungen, Reviews & Artikel!",
+        "book": "Buch",
+        "recommendation": "Empfehlung",
+        "read": "Lesen",
+        "audiobook": "Hörbuch",
+        "blog": "Blog"
+    },
     "Navbar": {
         "home": "Home",
         "recommendations": "Empfehlungen",
@@ -30,9 +39,9 @@
         "notTranslated": "Diese Seite ist wegen der Menge des Inhalts noch nicht ins Deutsche übersetzt.",
         "showingXfromXRecommendations": "Ausgewählte Tags zeigen <strong>{filteredLength}</strong> von <strong>{booksLength}</strong> Empfehlungen",
         "sounds": "Klingt ",
-        "interesting": "interessant",
-        "readable": "lesenswert",
-        "thrilling": "spannend",
+        "interesting": "Klingt interessant",
+        "readable": "Klingt lesenswert",
+        "thrilling": "Klingt spannend",
         "toReview": "Zum Review!",
         "availableHere": "Hier erhältlich!",
         "by": "von",

@@ -1,5 +1,5 @@
-import { Category } from "@/lib/config";
-import { getPostBySlug } from "@/lib/getPosts";
+import { Category, Locale } from "@/lib/config";
+import { getPostContentBySlug } from "@/lib/getPosts";
 
 export default async function PostContent({
   slug,
@@ -7,10 +7,10 @@ export default async function PostContent({
   category,
 }: {
   slug: string;
-  locale: string;
+  locale: Locale;
   category: Category;
 }) {
-  const { content } = await getPostBySlug(slug, locale, category);
+  const { content } = await getPostContentBySlug(slug, locale, category);
 
   return <>{content ? content : <>No contant found!</>}</>;
 }

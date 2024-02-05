@@ -1,4 +1,13 @@
 {
+    "Metadata": {
+        "title": "Raphis Blog",
+        "description": "Great Book Recommendations, Reviews, & Articles!",
+        "book": "Book",
+        "recommendation": "Recommendation",
+        "read": "Read",
+        "audiobook": "Audiobook",
+        "blog": "Blog"
+    },
     "Navbar": {
         "home": "Home",
         "recommendations": "Recommendations",
@@ -30,13 +39,13 @@
         "notTranslated": "",
         "showingXfromXRecommendations": "Selected tags show <strong>{filteredLength}</strong> from <strong>{booksLength}</strong> recommendations",
         "sounds": "Sounds ",
-        "interesting": "interesting",
-        "readable": "worth reading",
-        "thrilling": "exciting",
+        "interesting": "Sounds interesting",
+        "readable": "Worth reading",
+        "thrilling": "Sounds exciting",
         "toReview": "Read Review!",
         "availableHere": "Available here!",
         "by": "by",
-                "recommendToMe": "I always enjoy <strong>book recommendations</strong> myself - just write me your tips on "
+        "recommendToMe": "I always enjoy <strong>book recommendations</strong> myself - just write me your tips on "
     },
     "Reviews": {
         "title": "Everything about Books",

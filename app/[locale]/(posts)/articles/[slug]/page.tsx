@@ -1,29 +1,38 @@
-import { getPostBySlug, getImagePath } from "@/lib/getPosts";
+import {
+  getPostContentBySlug,
+  getImagePath,
+  getArticleBySlug,
+} from "@/lib/getPosts";
 import InPostImage from "@/components/ui/inPostImage";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 
-import { articles, getArticleBySlug } from "@/lib/articles";
+import { articles } from "@/lib/articles";
 import { dateToString } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { Category } from "@/lib/config";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { Category, Locale } from "@/lib/config";
 import PostContent from "@/components/postContent";
 
-// not sure if actually working
 export function generateStaticParams() {
-  // const data = await getAllPosts();
-
-  //   console.log("dynamicpath data", data);
-
-  // return data.map((content: any, frontmatter: any, category: any) => ({
-  //   params: { books: frontmatter.slug },
-  // }));
-
   return articles.map((article) => ({
     params: { slug: article.slug },
   }));
+}
+
+export async function generateMetadata({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
+
+  const book = getArticleBySlug(slug, locale);
+
+  return {
+    title: book ? book.title : t("articles"),
+  };
 }
 
 export default function Home({ params: { slug, locale } }: any) {
