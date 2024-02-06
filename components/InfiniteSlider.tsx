@@ -5,7 +5,6 @@ import { getImagePath } from "@/lib/getPosts";
 import { useTranslations } from "next-intl";
 
 export default function InfiniteSlider() {
- 
   const exampleCovers: string[] = shuffleArray([
     "promised-land",
     "atomic-habits",
@@ -79,6 +78,7 @@ export default function InfiniteSlider() {
         </div>
 
         <div className="flex flex-row items-center py-2 sm:py-4 px-4 sm:px-8  absolute top-16 md:top-16 text-xl md:text-2xl rounded-lg button">
+          {/* Find it at&nbsp;<u>raphaelfritz.at</u> */}
           {t("allRecommendations")}
         </div>
       </Link>

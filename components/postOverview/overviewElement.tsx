@@ -42,7 +42,7 @@ export default function OverviewElement({
           <div
             className={cn(
               "transition-transform duration-500 ease-in-out transform hover:scale-110",
-              "relative ",
+              "relative",
               isBig ? "h-80 xl:h-illustration" : "h-80 lg:h-40 xl:h-56"
               // "[&>img]:object-cover [&>img]:object-center "
             )}
@@ -51,9 +51,8 @@ export default function OverviewElement({
               src={data.illustrationImagePath}
               alt="The illustration for this book"
               fill={true}
-              sizes={"(max-width:992px):576px " + isBig ? "60vw" : "40vw"}
+              sizes={"(max-width:992px):100vw " + isBig ? "60vw" : "40vw"}
               className="object-cover object-center"
-              // style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
           <div className="absolute bottom-2 right-2 bg-black py-0.5 px-2 text-white w-fit h-fit rounded-lg">
