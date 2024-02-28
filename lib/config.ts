@@ -5,41 +5,54 @@ export const categories: Category[] = ["books", "articles"];
 export type ImageType = 'illustration' | 'cover';
 
 
+export interface Content {
+    title?: string;
+    subtitle?: string;
+    shortDescription?: string;
+    longDescription?: string;
+    iLike?: string;
+}
+
 export interface Post {
     slug: string;
     date: Date;
-    title: string;
-    subtitle?: string;
-    shortDescription: string;
-    longDescription?: string;
     writtenBy?: string;
     category?: Category;
+
+    title?: string;
+    subtitle?: string;
+    shortDescription?: string;
+    longDescription?: string;
 
     titleDE?: string;
     subtitleDE?: string;
     shortDescriptionDE?: string;
     longDescriptionDE?: string;
+
+    de?: Content;
+    en?: Content;
 }
 
 export interface Book extends Post {
     author: string;
+    tags: string[];
+    iLike?: string;
+
     hasFullText?: boolean;
     releaseDate?: Date;
     initialReleaseUrl?: string;
     initialReleaseName?: string;
     imagePath?: string;
     amazonLink?: string;
-    tags?: string[];
+
 }
 
 export interface Article extends Post {
-    test?: string
+   // nothing needed so far
 }
 
 export const defaultWrittenBy = "Raphael Fritz";
-
 export const contentFolder = "data";
-
 export const contentPath = ["public", "data"] // is linked to gether, no different paths!
 
 

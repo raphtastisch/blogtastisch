@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Book } from "@/lib/config";
 import { useEffect, useState } from "react";
-import { cn, shuffleArray } from "@/lib/utils";
 import Tag from "./tag";
 import { Link } from "@/navigation";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "@/navigation";
 import { useTranslations } from "next-intl";
+import { track } from "@vercel/analytics";
+import { HeartIcon } from "@heroicons/react/24/solid";
 
 export default function RecommendationGrid({
   books,
@@ -24,16 +26,19 @@ export default function RecommendationGrid({
   // console.log("searchParams", searchParams.getAll("tag"));
 
   const router = useRouter();
+  const path = usePathname();
   useEffect(() => {
     const tagsFromUrl = searchParams.getAll("tag");
     if (tagsFromUrl.length > 0) {
       setTags(tagsFromUrl);
+      router.push(path);
+      track("tag", { fromUrl: tagsFromUrl.join(";") });
     }
 
     // TODO: would remove locale -> needs fixing
     // // removes the search params from the URL
     // router.replace("/recommendations");
-  }, [searchParams, router]);
+  }, [searchParams, router, path]);
 
   // used to display only those tags to the user, that are still linked with a book that is shown
   const availableTags: string[] = [];
@@ -75,7 +80,16 @@ export default function RecommendationGrid({
       <div className="flex flex-col items-start space-y-2 md:space-y-0 md:flex-row md:space-x-8 w-full pt-4 md:items-center">
         <div className="min-w-44 h-fit cursor-pointer ml-0 md:ml-4 p-2 rounded-lg  button">
           {tags.length > 0 ? (
-            <div className="" onClick={() => setTags([])}>
+            <div
+              className=""
+              onClick={() => {
+                setTags([]);
+                track("interaction", {
+                  clicked: "New Search",
+                  activeTags: tags.join(";"),
+                });
+              }}
+            >
               {t("newSearch")}
             </div>
           ) : (
@@ -98,10 +112,14 @@ export default function RecommendationGrid({
                 onClick={() => {
                   if (tags.includes(tag)) {
                     setTags(tags.filter((t) => t !== tag));
+                    track("tag", {
+                      name: tag,
+                      otherTags: tags.join(";"),
+                    });
                   } else {
                     setTags([...tags, tag]);
+                    track("tagRemoved", { name: tag });
                   }
-                  return null;
                 }}
               />
             ) : null
@@ -135,7 +153,7 @@ export default function RecommendationGrid({
             ) : (
               <Link
                 target="_blank"
-                href={`https://www.amazon.de/s?k=${book.title.replace(
+                href={`https://www.amazon.de/s?k=${book.title!.replace(
                   " ",
                   "+"
                 )}&i=audible&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y539SCFIVZKF&sprefix=alignment+prob%2Caudible%2C286&linkCode=ll2&tag=raphaelfritz-21&linkId=11b8f9eddf91a807e78d59cdb6ea22b5&language=de_DE&ref_=as_li_ss_tl`}
@@ -147,6 +165,15 @@ export default function RecommendationGrid({
 
           return (
             <div key={book.slug} className="sm:p-4 flex flex-col space-y-0 ">
+              {/* <div className="text-main-700 p-2 flex flex-row items-center space-x-2 border-main-700 border-t-2 mt-4 sm:mt-0 sm:border-none ">
+                <HeartIcon className="w-8 h-8 shrink-0" />
+                <div>
+                  <strong>Why I like it:</strong>{" "}
+                  {book.iLike
+                    ? book.iLike
+                    : "My personal recommendation for this book."}
+                </div>
+              </div> */}
               <div className="flex flex-row">
                 <div className="flex flex-col space-y-2">
                   <div className="relative w-40 h-56 sm:w-48 sm:h-72">
@@ -179,20 +206,30 @@ export default function RecommendationGrid({
                   </div>
                 </div>
 
-                <div className="flex flex-col pl-4">
-                  <div className=" text-main-700  italic">
+                <div className="flex flex-col pl-4 space-y-1">
+                  <div className=" text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
+                    {book.title}
+                  </div>
+                  {/* <div className=" text-main-700  italic">
                     {book.subtitle ? (
                       <>{book.subtitle}</>
                     ) : (
                       <>{book.shortDescription}</>
                     )}
-                  </div>
-                  <div className="mt-1 text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
-                    {book.title}
-                  </div>
+                  </div> */}
 
-                  <div className=" mt-2">{book.longDescription}</div>
-                  <div className="mt-1  text-right text-main-700">
+                  <div className="text-main-700 flex flex-row items-center space-x-2 pb-2 ">
+                    {/* <HeartIcon className="w-8 h-8 shrink-0" /> */}
+                    <div>
+                      {/* &#x2764;  - Heart in red*/}
+                      &#9829; <strong>Why I like it:</strong>{" "}
+                      {book.iLike
+                        ? book.iLike
+                        : "My personal recommendation for this book."}
+                    </div>
+                  </div>
+                  <div className=" mt-1">{book.longDescription}</div>
+                  <div className=" text-right text-main-700">
                     {t("by")}&nbsp;<strong>{book.author}</strong>
                   </div>
                 </div>

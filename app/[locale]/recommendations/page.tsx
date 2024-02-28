@@ -2,7 +2,7 @@ import RecommendationGrid from "@/components/recommendation/recommendationGrid";
 import StyledH1 from "@/components/ui/styledH1";
 import { Book, Locale } from "@/lib/config";
 import { getImagePath } from "@/lib/getPosts";
-import { books } from "@/lib/books";
+import { books } from "@/lib/content/books";
 import { shuffleArray } from "@/lib/utils";
 import StyledLink from "@/components/ui/styledLink";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";

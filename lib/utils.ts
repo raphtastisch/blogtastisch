@@ -1,8 +1,8 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { Post } from "./config";
-import { getBooksWithFullText } from "./books";
-import { articles } from "./articles";
+import { getBooksWithFullText } from "./content/books";
+import { articles } from "./content/articles";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

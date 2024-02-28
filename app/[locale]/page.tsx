@@ -3,7 +3,7 @@ import StyledH1 from "@/components/ui/styledH1";
 
 import { Link } from "@/navigation"; //"next/link";
 import { cn, shuffleArray } from "@/lib/utils";
-import { getUniqueTags, uniqueTags } from "@/lib/books";
+import { getUniqueTags, uniqueTags } from "@/lib/content/books";
 
 import InfiniteSlider from "@/components/InfiniteSlider";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";

@@ -10,7 +10,7 @@ import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import { Link } from "@/navigation";
-import { books, createAmazonLink } from "@/lib/books";
+import { books, createAmazonLink } from "@/lib/content/books";
 import { dateToString } from "@/lib/utils";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";

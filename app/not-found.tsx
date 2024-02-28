@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // does not work with the intl router, keep it as next router
 
 export default function NotFound() {
   const router = useRouter();

@@ -8,7 +8,7 @@ import StyledBlockquote from "@/components/ui/styledBlockquote";
 import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 
-import { articles } from "@/lib/articles";
+import { articles } from "@/lib/content/articles";
 import { dateToString } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";

@@ -9,8 +9,8 @@ import StyledH1 from "@/components/ui/styledH1";
 import StyledH2 from "@/components/ui/styledH2";
 import StyledBlockquote from "@/components/ui/styledBlockquote";
 import { cn } from "./utils";
-import { articles } from "./articles";
-import { getBooksWithFullText, books } from "./books";
+import { articles } from "./content/articles";
+import { getBooksWithFullText, books } from "./content/books";
 
 export function getPostWithGermanContent(post: Post): Post {
 

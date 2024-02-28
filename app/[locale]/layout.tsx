@@ -8,6 +8,7 @@ import Impressum from "@/components/impressum";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Locale, locales } from "@/lib/config";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import TrackRefs from "@/components/trackRefs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,6 +79,7 @@ export default function RootLayout({
         </main>
         <SpeedInsights />
         <Analytics />
+        <TrackRefs />
       </body>
     </html>
   );
