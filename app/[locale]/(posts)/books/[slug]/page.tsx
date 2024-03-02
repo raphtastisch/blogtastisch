@@ -72,7 +72,7 @@ export default function Home({
 
         <StyledH1 className="text-center">{book[locale]!.title}</StyledH1>
 
-        {book[locale]!.subtitle && book.subtitle !== "" ? (
+        {book[locale]!.subtitle && book[locale]!.subtitle !== "" ? (
           <StyledH2 className="text-center mt-2">
             {book[locale]!.subtitle}
           </StyledH2>
@@ -123,7 +123,7 @@ export default function Home({
           <div className="relative h-illustration w-xs overflow-hidden rounded-xl">
             <Image
               src={coverImagePath}
-              alt={book.title + " Cover"}
+              alt={book[locale]!.title + " Cover"}
               className=""
               // width={300}
               // height={500}

@@ -31,7 +31,7 @@ export async function generateMetadata({
   const post = getArticleBySlug(slug, locale);
 
   return {
-    title: post ? post.title : t("articles"),
+    title: post ? post[locale]!.title : t("articles"),
   };
 }
 
