@@ -38,6 +38,7 @@
         "hiddenTags": " ausgeblendete Tags",
         "notTranslated": "Diese Seite ist wegen der Menge des Inhalts noch nicht ins Deutsche übersetzt.",
         "showingXfromXRecommendations": "Ausgewählte Tags zeigen <strong>{filteredLength}</strong> von <strong>{booksLength}</strong> Empfehlungen",
+        "iLike": "Wieso ich es mag:",
         "sounds": "Klingt ",
         "interesting": "Klingt interessant",
         "readable": "Klingt lesenswert",
@@ -107,6 +108,8 @@
         "classic": "Klassiker",
         "thrilling": "Spannend",
         "crime": "Krimi",
-        "self-help": "Selbsthilfe"
+        "self-help": "Selbsthilfe",
+        "marketing": "Marketing",
+        "learning": "Lernen"
     }
 }

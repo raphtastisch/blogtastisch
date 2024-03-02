@@ -19,15 +19,15 @@ export interface Post {
     writtenBy?: string;
     category?: Category;
 
-    title?: string;
-    subtitle?: string;
-    shortDescription?: string;
-    longDescription?: string;
+    // title?: string;
+    // subtitle?: string;
+    // shortDescription?: string;
+    // longDescription?: string;
 
-    titleDE?: string;
-    subtitleDE?: string;
-    shortDescriptionDE?: string;
-    longDescriptionDE?: string;
+    // titleDE?: string;
+    // subtitleDE?: string;
+    // shortDescriptionDE?: string;
+    // longDescriptionDE?: string;
 
     de?: Content;
     en?: Content;
@@ -36,8 +36,8 @@ export interface Post {
 export interface Book extends Post {
     author: string;
     tags: string[];
-    iLike?: string;
-
+    // iLike?: string;
+    onlyEnglish?: boolean;
     hasFullText?: boolean;
     releaseDate?: Date;
     initialReleaseUrl?: string;

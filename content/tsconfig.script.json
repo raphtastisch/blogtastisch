@@ -1,0 +1,12 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "moduleResolution": "node"
+    },
+    "include": [
+        "./translate.ts" // Adjust the path to where your script is located
+    ]
+}
+

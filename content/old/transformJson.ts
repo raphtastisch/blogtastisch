@@ -1,16 +1,7 @@
-import { Book } from '../lib/config';
+import { Book } from '../../lib/config';
 import * as fs from 'fs';
 
-function readJsonFile(filePath: string): any {
-    try {
-        const rawData = fs.readFileSync(filePath, 'utf-8');
-        const jsonData = JSON.parse(rawData);
-        return jsonData;
-    } catch (error) {
-        console.error('Error reading the JSON file:', error);
-        return null;
-    }
-}
+import { readJsonFile, writeJsonFile } from './../utils';
 
 const data = readJsonFile('./content/books.json');
 
@@ -33,10 +24,10 @@ const newData: Book[] = data.map((book: Book) => {
         imagePath:book.imagePath,
         amazonLink:book.amazonLink,
         de: {
-            title:book.titleDE,
-            subtitle:book.subtitleDE,
-            shortDescription:book.shortDescriptionDE,
-            longDescription:book.longDescriptionDE,
+            // title:book.titleDE,
+            // subtitle:book.subtitleDE,
+            // shortDescription:book.shortDescriptionDE,
+            // longDescription:book.longDescriptionDE,
             iLike:undefined
         },
         en: {
@@ -52,14 +43,5 @@ const newData: Book[] = data.map((book: Book) => {
 })
 
 
-function writeJsonFile(filePath: string, data: any): void {
-    try {
-        const jsonData = JSON.stringify(data, null, 2); // Pretty print
-        fs.writeFileSync(filePath, jsonData, 'utf-8');
-        console.log('JSON file has been saved.');
-    } catch (error) {
-        console.error('Error writing to the JSON file:', error);
-    }
-}
 
 writeJsonFile('./content/books_new.json', newData);

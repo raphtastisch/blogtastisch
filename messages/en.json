@@ -38,6 +38,7 @@
         "hiddenTags": " hidden Tags",
         "notTranslated": "",
         "showingXfromXRecommendations": "Selected tags show <strong>{filteredLength}</strong> from <strong>{booksLength}</strong> recommendations",
+        "iLike": "Why I like it:",
         "sounds": "Sounds ",
         "interesting": "Sounds interesting",
         "readable": "Worth reading",
@@ -107,6 +108,8 @@
         "classic": "Classic",
         "thrilling": "Thrilling",
         "crime": "Crime",
-        "self-help": "Self-help"
+        "self-help": "Self-help",
+        "marketing": "Marketing",
+        "learning": "Learning"
     }
 }

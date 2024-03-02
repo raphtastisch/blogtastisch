@@ -14,7 +14,7 @@ export default function OverviewGrid({ category }: { category?: string }) {
   }
 
   const overviewElementDataWithoutImagePaths = shuffleArray(
-    getAllPosts(category, locale as Locale)
+    getAllPosts(category)
   );
 
   const overviewElementData = overviewElementDataWithoutImagePaths.map(
@@ -22,11 +22,12 @@ export default function OverviewGrid({ category }: { category?: string }) {
       const imagePath = getImagePath(post.category, post.slug, "illustration");
 
       return {
-        title: post.title,
-        subtitle: post.subtitle || null,
+        title: post[locale].title,
+        subtitle: post[locale].subtitle || null,
         href: `/${post.category}/${post.slug}`,
         illustrationImagePath: imagePath,
-        longDescription: post.longDescription,
+        shortDescription: post[locale].shortDescription,
+        longDescription: post[locale].longDescription,
         category: post.category,
         date: post.date,
         author: post.author ? post.author : post.writtenBy || defaultWrittenBy, // if an author exists, use it, otherwise use written by, default writtenby as default

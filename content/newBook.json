@@ -1,0 +1,103 @@
+{
+  "instructions:": [
+    "1. create a slug: one word or connected with '-'",
+    "2. create folder ",
+    "3. add cover image",
+    "4. fill out newBook",
+    "Dates: YYYY-MM-DD",
+    "connect multiple authors with &",
+    "initial release url looks like: https://materie.at/gk/rezension-aufklaerung-jetzt/",
+    "initial release name: Materie.at",
+    "5.   run npx ts-node -P .\\content\\tsconfig.script.json .\\content\\createNewBook.ts"
+  ],
+  "newBookTemplate": {
+    "slug": "",
+    "date": "",
+    "author": "",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "",
+    "onlyEnglish": false,
+    "de": {
+      "title": "",
+      "subtitle": ""
+    },
+    "en": {
+      "title": "",
+      "subtitle": "",
+      "iLike": ""
+    }
+  },
+  "newBook": {
+    "slug": "imperium",
+    "date": "2006-09-15",
+    "author": "Robert Harris",
+    "hasFullText": false,
+    "amazonLink": "https://amzn.to/42YP2ju",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Imperium",
+      "subtitle": "Die Cicero Trilogie, Teil 1"
+    },
+    "en": {
+      "title": "Imperium",
+      "subtitle": "The Cicero Triology, Part",
+      "iLike": "An interesting biography of Cicero, presented in a thrilling novel."
+    }
+  },
+  "newBookWithEnTexts": {
+    "slug": "imperium",
+    "date": "2006-09-15",
+    "author": "Robert Harris",
+    "hasFullText": false,
+    "amazonLink": "https://amzn.to/42YP2ju",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Imperium",
+      "subtitle": "Die Cicero Trilogie, Teil 1"
+    },
+    "en": {
+      "title": "Imperium",
+      "subtitle": "The Cicero Triology, Part",
+      "iLike": "An interesting biography of Cicero, presented in a thrilling novel.",
+      "shortDescription": "A gripping tale of power and politics in ancient Rome.",
+      "longDescription": "Delves into the life of Cicero, Rome's greatest orator, and his relentless quest for power within the Republic's political system. Through cunning strategies and eloquent speeches, he navigates the treacherous waters of Roman politics, facing formidable adversaries and moral dilemmas. The narrative not only captures the essence of political maneuvering but also paints a vivid picture of the societal norms and challenges of the time."
+    },
+    "tags": [
+      "history",
+      "biography",
+      "non-fiction",
+      "politics"
+    ]
+  },
+  "newBookFinished": {
+    "slug": "imperium",
+    "date": "2006-09-15",
+    "author": "Robert Harris",
+    "hasFullText": false,
+    "amazonLink": "https://amzn.to/42YP2ju",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Imperium",
+      "subtitle": "Die Cicero Trilogie, Teil 1",
+      "shortDescription": "Eine fesselnde Geschichte über Macht und Politik im antiken Rom.",
+      "longDescription": "Taucht ein in das Leben von Cicero, Roms größtem Redner, und seine unermüdliche Suche nach Macht innerhalb des politischen Systems der Republik. Durch geschickte Strategien und beredte Reden navigiert er durch die tückischen Gewässer der römischen Politik, konfrontiert mit formidablen Gegnern und moralischen Dilemmata. Die Erzählung fängt nicht nur das Wesen politischer Manöver ein, sondern malt auch ein lebendiges Bild der gesellschaftlichen Normen und Herausforderungen der Zeit.",
+      "iLike": "Eine interessante Biografie von Cicero, präsentiert in einem spannenden Roman."
+    },
+    "en": {
+      "title": "Imperium",
+      "subtitle": "The Cicero Triology, Part",
+      "iLike": "An interesting biography of Cicero, presented in a thrilling novel.",
+      "shortDescription": "A gripping tale of power and politics in ancient Rome.",
+      "longDescription": "Delves into the life of Cicero, Rome's greatest orator, and his relentless quest for power within the Republic's political system. Through cunning strategies and eloquent speeches, he navigates the treacherous waters of Roman politics, facing formidable adversaries and moral dilemmas. The narrative not only captures the essence of political maneuvering but also paints a vivid picture of the societal norms and challenges of the time."
+    },
+    "tags": [
+      "history",
+      "biography",
+      "non-fiction",
+      "politics"
+    ]
+  }
+}

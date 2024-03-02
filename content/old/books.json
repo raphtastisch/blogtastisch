@@ -73,7 +73,6 @@
     "initialReleaseUrl": "https://materie.at/gk/rezension-the-strategy-of-denial/",
     "initialReleaseName": "Materie.at",
     "amazonLink": "https://amzn.to/4beImS1",
-    "onlyEnglish": true,
     "de": {
       "title": "The Strategy of Denial",
       "subtitle": "Amerikanische Verteidigungsstrategie im Zeitalter der Großmachtkonflikte",
@@ -109,7 +108,7 @@
       "subtitle": "Teil 1 der Biografie des 44. Präsidenten der USA",
       "shortDescription": "Der erste Teil von Obamas spannender Autobiografie.",
       "longDescription": "„Ein verheißenes Land“ ist der erste Teil von Barack Obamas Autobiographie. Es beschreibt seinen Werdegang zum mächtigsten Mann der Welt und gibt spannende Einblick in die schwierigsten und folgenreichsten Entscheidungen seiner ersten Amtszeit. Dabei wirft es ein spannendes Licht auf die Überlegungen, die hinter seinen weitreichendsten Handlungen stehen.",
-      "iLike": "Ein faszinierender Blick hinter die Kulissen macht viele Entscheidungen viel verständlicher."
+      "iLike":"Ein faszinierender Blick hinter die Kulissen macht viele Entscheidungen viel verständlicher."
     },
     "en": {
       "title": "A Promised Land",
@@ -281,8 +280,7 @@
       "leadership",
       "strategy",
       "business",
-      "mindset",
-      "marketing"
+      "mindset"
     ],
     "iLike": "Helped me to understand that why you do something is in the long run more important than how you do it.",
     "de": {
@@ -1245,7 +1243,6 @@
     ],
     "iLike": "Simply the best biography ever. With a huge margin. Super long, but worth every second.",
     "amazonLink": "https://www.amazon.de/s?k=the+years+of+lyndon+johnson&i=stripbooks&camp=1638&creative=6742&linkCode=ur2&linkId=7978b47e290f1df3529a45a4117337a6&tag=raphaelfritz-21",
-    "onlyEnglish": true,
     "de": {
       "title": "The Years of Lyndon Johnson",
       "shortDescription": "Eine erschöpfende Biografie des 36. Präsidenten der Vereinigten Staaten, Lyndon B. Johnson.",
@@ -1791,204 +1788,5 @@
       "longDescription": "Introduces a new approach to business that's being adopted around the world. Ries outlines how startups can be more efficient, innovate rapidly, and adapt to changing markets through \"lean\" principles. The book emphasizes the importance of validated learning, rapid scientific experimentation, and a number of counter-intuitive practices that shorten product development cycles, measure actual progress without resorting to vanity metrics, and learn what customers really want.",
       "iLike": "A timeless classic for every entrepreneur."
     }
-  },
-  {
-    "slug": "contagious",
-    "date": "2013-05-03",
-    "author": "Jonah Berger",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/3uKbO1Y",
-    "onlyEnglish": true,
-    "de": {
-      "title": "Contagious",
-      "subtitle": "Wieso sich Information, Verhalten und Produkte verbreiten",
-      "shortDescription": "Erforschung, warum bestimmte Ideen sich wie ein Lauffeuer verbreiten.",
-      "longDescription": "Erforscht die Wissenschaft dahinter, warum bestimmte Produkte, Ideen und Verhaltensweisen Anklang finden und beliebt werden. Es geht auf die sechs Schlüsselprinzipien ein, die Dinge ansteckend machen, von sozialem Kapital bis hin zum praktischen Wert. Das Buch bietet aufschlussreiche Beispiele aus verschiedenen Branchen und zeigt, wie diese Prinzipien angewendet werden können, um Ideen haften zu bleiben und sich zu verbreiten.",
-      "iLike": "Gut geschrieben und prägnante Aufschlüsselung der Faktoren, die Dinge viral gehen lassen."
-    },
-    "en": {
-      "title": "Contagious",
-      "subtitle": "Why Things Catch On",
-      "iLike": "Well written and concise break-down of the factors that make things go viral.",
-      "shortDescription": "Exploring why certain ideas spread like wildfire.",
-      "longDescription": "Explores the science behind why certain products, ideas, and behaviors catch on and become popular. It delves into the six key principles that drive things to become contagious, from social currency to practical value. The book provides insightful examples from various industries, showing how these principles can be applied to make ideas stick and spread."
-    },
-    "tags": [
-      "marketing",
-      "psychology",
-      "business",
-      "non-fiction",
-      "entrepreneurship"
-    ]
-  },
-  {
-    "slug": "hidden-potential",
-    "date": "2023-10-24",
-    "author": "Adam Grant",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/3Im6epD",
-    "de": {
-      "title": "Hidden Potential",
-      "subtitle": "Die Wissenschaft des Erfolgs: Wie man über sich hinauswächst",
-      "shortDescription": "Enthüllung der Geheimnisse, um ungenutzten persönlichen Erfolg zu erzielen.",
-      "longDescription": "Enthüllt, wie Individuen ihr ungenutztes Potenzial identifizieren und nutzen können. Durch fesselnde Geschichten und wissenschaftliche Forschung bietet das Buch Einblicke in die Überwindung von Hindernissen und Selbstzweifeln, um persönliche und berufliche Ziele zu erreichen. Es fordert die Leser auf, ihre Herangehensweise an Misserfolg und Erfolg zu überdenken und fördert eine Wachstumsmentalität. Praktische Übungen und umsetzbare Ratschläge machen es zu einer wertvollen Ressource für jeden, der sein volles Potenzial ausschöpfen möchte.",
-      "iLike": "So viel Potenzial wird verschwendet, aber dieses Buch hilft, mehr davon freizusetzen."
-    },
-    "en": {
-      "title": "Hidden Potential",
-      "subtitle": "The Science of Achieving Greater Things",
-      "iLike": "So much potential is wasted, but this book helps unlock more of it.",
-      "shortDescription": "Unlocking the secrets to achieving untapped personal success.",
-      "longDescription": "Reveals how individuals can identify and harness their untapped potentials. Through engaging stories and scientific research, the book offers insights into overcoming obstacles and self-doubt to reach personal and professional goals. It challenges readers to rethink their approach to failure and success, encouraging a growth mindset. Practical exercises and actionable advice make it a valuable resource for anyone looking to unlock their full potential."
-    },
-    "tags": [
-      "productivity",
-      "mindset",
-      "non-fiction",
-      "learning",
-      "self-help"
-    ]
-  },
-  {
-    "slug": "elephant",
-    "date": "2018-01-02",
-    "author": "Kevin Simler & Robin Hanson",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/3uQOcJ0",
-    "onlyEnglish": true,
-    "de": {
-      "title": "The Elephant in the Brain",
-      "subtitle": "Versteckte Motive im täglichen Leben",
-      "shortDescription": "Enthüllung der Geheimnisse für unerschlossenen persönlichen Erfolg.",
-      "longDescription": "Enthüllt, wie Einzelpersonen ihre ungenutzten Potenziale identifizieren und nutzen können. Durch fesselnde Geschichten und wissenschaftliche Forschung bietet das Buch Einblicke in das Überwinden von Hindernissen und Selbstzweifeln, um persönliche und berufliche Ziele zu erreichen. Es fordert die Leser auf, ihre Herangehensweise an Misserfolg und Erfolg zu überdenken und fördert eine Wachstumsmentalität. Praktische Übungen und umsetzbare Ratschläge machen es zu einer wertvollen Ressource für jeden, der sein volles Potenzial ausschöpfen möchte.",
-      "iLike": "So viel Potenzial wird verschwendet, aber dieses Buch hilft, mehr davon freizusetzen."
-    },
-    "en": {
-      "title": "The Elephant in the Brain",
-      "subtitle": "Hidden Motives in Everyday Life",
-      "iLike": "Helped my understand my unconciousness better.",
-      "shortDescription": "Exploring hidden motives in everyday human behavior.",
-      "longDescription": "Unveils the hidden motives driving human behavior, challenging readers to reconsider their assumptions about why people do what they do. The authors delve into various aspects of society, including politics, charity, and education, to reveal the self-serving underpinnings often at play. By combining insights from evolutionary psychology with a keen observation of social dynamics, this book offers a provocative lens through which to view human actions. It encourages a deeper understanding of our own behaviors and the societal norms that shape them."
-    },
-    "tags": [
-      "psychology",
-      "sociology",
-      "politics",
-      "non-fiction",
-      "evolution"
-    ]
-  },
-  {
-    "slug": "rational-ritual",
-    "date": "2013-04-28",
-    "author": "Michael Suk-Young Chwe",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/42XmwyC",
-    "onlyEnglish": true,
-    "de": {
-      "title": "Rational Ritual",
-      "subtitle": "Kultur, Koordination und geteiltes Wissen",
-      "shortDescription": "Erforschung verborgener Motive im alltäglichen menschlichen Verhalten.",
-      "longDescription": "Enthüllt die verborgenen Motive, die menschliches Verhalten antreiben, und fordert die Leser auf, ihre Annahmen darüber, warum Menschen tun, was sie tun, zu überdenken. Die Autoren gehen auf verschiedene Aspekte der Gesellschaft ein, einschließlich Politik, Wohltätigkeit und Bildung, um die oft im Spiel befindlichen eigennützigen Grundlagen aufzudecken. Durch die Kombination von Erkenntnissen aus der evolutionären Psychologie mit einer scharfen Beobachtung sozialer Dynamiken bietet dieses Buch eine provokative Linse, durch die menschliche Handlungen betrachtet werden können. Es fördert ein tieferes Verständnis unserer eigenen Verhaltensweisen und der gesellschaftlichen Normen, die sie formen.",
-      "iLike": "Hat mir geholfen, mein Unterbewusstsein besser zu verstehen."
-    },
-    "en": {
-      "title": "Rational Ritual",
-      "subtitle": "Culture, Coordination, and Common Knowledge",
-      "iLike": "Eye-opening to realise how important it is to know that others know what you know.",
-      "shortDescription": "Explores the power of public rituals in fostering cooperation.",
-      "longDescription": "Explores how public rituals and ceremonies play a crucial role in creating common knowledge, which is essential for fostering cooperation among individuals. By analyzing a wide range of examples, from religious ceremonies to political rallies, the book demonstrates how shared experiences can align individuals' beliefs and actions, facilitating coordination and collective action. It delves into the theory of common knowledge and its implications for understanding social and economic behaviors. The insights provided are valuable for anyone interested in the dynamics of social interaction and the mechanisms that underpin collective decision-making."
-    },
-    "tags": [
-      "sociology",
-      "non-fiction",
-      "psychology",
-      "politics",
-      "marketing"
-    ]
-  },
-  {
-    "slug": "fear-index",
-    "date": "2011-11-09",
-    "author": "Robert Harris",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/3wFVwrp",
-    "onlyEnglish": false,
-    "de": {
-      "title": "Angst",
-      "subtitle": "",
-      "shortDescription": "Ein spannender Einblick in die von KI gesteuerte Manipulation der Finanzmärkte.",
-      "longDescription": "Die Geschichte folgt Dr. Alex Hoffmann, einem Physiker, der zum Hedgefonds-Tycoon wurde und einen Algorithmus entwickelt, der Marktbewegungen auf Basis menschlicher Angst vorhersagt. Dieser Roman verbindet hochriskante finanzielle Intrigen mit spekulativer Spitzentechnologie und ist eine fesselnde Lektüre für jeden, der sich für die Schnittstelle von Finanzen, Technologie und menschlicher Psychologie interessiert.",
-      "iLike": "Ein großartiger Thriller mit einer überraschenden Handlung."
-    },
-    "en": {
-      "title": "The Fear Index",
-      "subtitle": "",
-      "iLike": "A great thriller with a twisted plot.",
-      "shortDescription": "A thrilling dive into AI-driven financial market manipulation.",
-      "longDescription": "The story follows Dr. Alex Hoffmann, a physicist turned hedge fund tycoon, who creates an algorithm that predicts market movements based on human fear. This novel combines high-stakes financial intrigue with cutting-edge technological speculation, making it a compelling read for anyone fascinated by the intersection of finance, technology, and human psychology."
-    },
-    "tags": [
-      "thrilling",
-      "AI",
-      "fiction",
-      "technology"
-    ]
-  },
-  {
-    "slug": "pompeii",
-    "date": "2005-11-08",
-    "author": "Robert Harris",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/4bUSOyh",
-    "onlyEnglish": false,
-    "de": {
-      "title": "Pompeji",
-      "subtitle": "",
-      "shortDescription": "Spannender historischer Roman in den letzten Tagen des antiken Pompeji.",
-      "longDescription": "Transportiert die Leser zurück in die belebten Straßen des antiken Pompeji. Durch die Augen eines jungen Ingenieurs, Marcus Attilius, erkundet der Roman die Komplexitäten der römischen Gesellschaft, die technischen Wunderwerke der Aquädukte und die drohende Katastrophe, die alles auszulöschen droht. Es ist eine lebendige Darstellung von Überleben, Ehrgeiz und dem unbeugsamen menschlichen Geist, der sich der Wut der Natur stellt.",
-      "iLike": "Eine ikonische historische Kulisse, zum Leben erweckt mit diesem packenden Meisterwerk."
-    },
-    "en": {
-      "title": "Pompeii",
-      "subtitle": "",
-      "iLike": "An iconic historic setting brought to life with this thrilling masterpiece.",
-      "shortDescription": "Thrilling historical novel set in ancient Pompeii's final days.",
-      "longDescription": "Transports readers back to the bustling streets of ancient Pompeii. Through the eyes of a young engineer, Marcus Attilius, the novel explores the complexities of Roman society, the engineering marvels of the aqueducts, and the looming disaster that threatens to erase everything. It's a vivid portrayal of survival, ambition, and the indomitable human spirit facing nature's wrath."
-    },
-    "tags": [
-      "history",
-      "fiction",
-      "thrilling"
-    ]
-  },
-  {
-    "slug": "imperium",
-    "date": "2006-09-15",
-    "author": "Robert Harris",
-    "hasFullText": false,
-    "amazonLink": "https://amzn.to/42YP2ju",
-    "onlyEnglish": false,
-    "de": {
-      "title": "Imperium",
-      "subtitle": "Die Cicero Trilogie, Teil 1",
-      "shortDescription": "Eine fesselnde Geschichte über Macht und Politik im antiken Rom.",
-      "longDescription": "Taucht ein in das Leben von Cicero, Roms größtem Redner, und seine unermüdliche Suche nach Macht innerhalb des politischen Systems der Republik. Durch geschickte Strategien und beredte Reden navigiert er durch die tückischen Gewässer der römischen Politik, konfrontiert mit formidablen Gegnern und moralischen Dilemmata. Die Erzählung fängt nicht nur das Wesen politischer Manöver ein, sondern malt auch ein lebendiges Bild der gesellschaftlichen Normen und Herausforderungen der Zeit.",
-      "iLike": "Eine interessante Biografie von Cicero, präsentiert in einem spannenden Roman."
-    },
-    "en": {
-      "title": "Imperium",
-      "subtitle": "The Cicero Triology, Part 1",
-      "iLike": "An interesting biography of Cicero, presented in a thrilling novel.",
-      "shortDescription": "A gripping tale of power and politics in ancient Rome.",
-      "longDescription": "Delves into the life of Cicero, Rome's greatest orator, and his relentless quest for power within the Republic's political system. Through cunning strategies and eloquent speeches, he navigates the treacherous waters of Roman politics, facing formidable adversaries and moral dilemmas. The narrative not only captures the essence of political maneuvering but also paints a vivid picture of the societal norms and challenges of the time."
-    },
-    "tags": [
-      "history",
-      "biography",
-      "non-fiction",
-      "politics",
-      "thrilling"
-    ]
   }
 ]

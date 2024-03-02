@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Book } from "@/lib/config";
+import { Book, Locale, locales } from "@/lib/config";
 import { useEffect, useState } from "react";
 import Tag from "./tag";
 import { Link } from "@/navigation";
@@ -10,6 +10,7 @@ import { useRouter, usePathname } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { track } from "@vercel/analytics";
 import { HeartIcon } from "@heroicons/react/24/solid";
+import { useLocale } from "next-intl";
 
 export default function RecommendationGrid({
   books,
@@ -21,6 +22,12 @@ export default function RecommendationGrid({
   const [tags, setTags] = useState<string[]>([]);
 
   const t = useTranslations("Recommendations");
+
+  // make sure that the locale is valid
+  let locale: Locale = useLocale() as Locale;
+  if (!locale || !(locales as string[]).includes(locale)) {
+    locale = "en";
+  }
 
   const searchParams = useSearchParams(); // Extract the tag from the URL
   // console.log("searchParams", searchParams.getAll("tag"));
@@ -134,10 +141,10 @@ export default function RecommendationGrid({
           )}
         </div>
       </div>
-      <div className="text-main-700 text-xs md:text-sm mt-4">
+      {/* <div className="text-main-700 text-xs md:text-sm mt-4">
         {t("notTranslated")}
-      </div>
-      <div className="h-1 bg-gradient-to-r from-main-600 to-main-700 opacity-50 w-full mt-1 mb-1 rounded-full" />
+      </div> */}
+      <div className="mt-4 h-1 bg-gradient-to-r from-main-600 to-main-700 opacity-50 w-full mb-1 rounded-full" />
       <div className="text-main-700 text-xs md:text-sm text-right w-full mb-8 xl:mb-4">
         {t.rich("showingXfromXRecommendations", {
           strong: (chunks) => <strong>{chunks}</strong>,
@@ -147,25 +154,35 @@ export default function RecommendationGrid({
       </div>
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {filteredBooks.map((book, index) => {
-          const Wrapper = ({ children }: { children: JSX.Element }) => {
-            return book.hasFullText ? (
-              <Link href={"/books/" + book.slug}>{children}</Link>
-            ) : (
-              <Link
-                target="_blank"
-                href={`https://www.amazon.de/s?k=${book.title!.replace(
-                  " ",
-                  "+"
-                )}&i=audible&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y539SCFIVZKF&sprefix=alignment+prob%2Caudible%2C286&linkCode=ll2&tag=raphaelfritz-21&linkId=11b8f9eddf91a807e78d59cdb6ea22b5&language=de_DE&ref_=as_li_ss_tl`}
-              >
-                {children}
-              </Link>
-            );
-          };
+          if (!book || !book[locale]) {
+            console.error("Book is missing locale", book.slug, locale, book);
+            return <></>;
+          } else {
+            const Wrapper = ({ children }: { children: JSX.Element }) => {
+              return book.hasFullText ? (
+                <Link href={"/books/" + book.slug}>{children}</Link>
+              ) : (
+                <Link
+                  target="_blank"
+                  href={
+                    book.amazonLink
+                      ? book.amazonLink
+                      : `https://www.amazon.de/s?k=${book[
+                          locale
+                        ]!.title!.replace(
+                          " ",
+                          "+"
+                        )}&i=audible&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Y539SCFIVZKF&sprefix=alignment+prob%2Caudible%2C286&linkCode=ll2&tag=raphaelfritz-21&linkId=11b8f9eddf91a807e78d59cdb6ea22b5&language=de_DE&ref_=as_li_ss_tl`
+                  }
+                >
+                  {children}
+                </Link>
+              );
+            };
 
-          return (
-            <div key={book.slug} className="sm:p-4 flex flex-col space-y-0 ">
-              {/* <div className="text-main-700 p-2 flex flex-row items-center space-x-2 border-main-700 border-t-2 mt-4 sm:mt-0 sm:border-none ">
+            return (
+              <div key={book.slug} className="sm:p-4 flex flex-col space-y-0 ">
+                {/* <div className="text-main-700 p-2 flex flex-row items-center space-x-2 border-main-700 border-t-2 mt-4 sm:mt-0 sm:border-none ">
                 <HeartIcon className="w-8 h-8 shrink-0" />
                 <div>
                   <strong>Why I like it:</strong>{" "}
@@ -174,68 +191,75 @@ export default function RecommendationGrid({
                     : "My personal recommendation for this book."}
                 </div>
               </div> */}
-              <div className="flex flex-row">
-                <div className="flex flex-col space-y-2">
-                  <div className="relative w-40 h-56 sm:w-48 sm:h-72">
-                    <Image
-                      src={book.imagePath!}
-                      alt="Book"
-                      fill={true}
-                      sizes={"20vw"}
-                      style={{
-                        objectFit: "contain",
-                        objectPosition: "center",
-                      }}
-                      className=""
-                    ></Image>
-                  </div>
-                  <div className="flex flex-col space-y-1 md:pt-2">
-                    <div className="text-main-700 bg-white text-center">
-                      {/* {t("sounds")} */}
-                      {readResons[index % 3]}?
+                <div className="flex flex-row">
+                  <div className="flex flex-col space-y-2">
+                    <div className="relative w-40 h-56 sm:w-48 sm:h-72">
+                      <Image
+                        src={book.imagePath!}
+                        alt="Book"
+                        fill={true}
+                        sizes={"20vw"}
+                        style={{
+                          objectFit: "contain",
+                          objectPosition: "center",
+                        }}
+                        className=""
+                      ></Image>
                     </div>
-                    <Wrapper key={book.slug}>
-                      <div className="rounded-lg p-2 w-full button">
-                        {book.hasFullText ? (
-                          <>{t("toReview")}</>
-                        ) : (
-                          <>{t("availableHere")}</>
-                        )}
+                    <div className="flex flex-col space-y-1 md:pt-2">
+                      <div className="text-main-700 bg-white text-center">
+                        {/* {t("sounds")} */}
+                        {readResons[index % 3]}?
                       </div>
-                    </Wrapper>
+                      <Wrapper key={book.slug}>
+                        <div className="rounded-lg p-2 w-full button">
+                          {book.hasFullText ? (
+                            <>{t("toReview")}</>
+                          ) : (
+                            <>{t("availableHere")}</>
+                          )}
+                        </div>
+                      </Wrapper>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex flex-col pl-4 space-y-1">
-                  <div className=" text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
-                    {book.title}
-                  </div>
-                  {/* <div className=" text-main-700  italic">
+                  <div className="flex flex-col pl-4 space-y-1">
+                    <div className=" text-main-700 font-semibold text-xl sm:text-2xl md:text-3xl">
+                      {book[locale]!.title}
+                    </div>
+                    {/* <div className=" text-main-700  italic">
                     {book.subtitle ? (
-                      <>{book.subtitle}</>
+                      <>{book[
+                    locale
+                  ]!.subtitle}</>
                     ) : (
-                      <>{book.shortDescription}</>
+                      <>{book[
+                    locale
+                  ]!.shortDescription}</>
                     )}
                   </div> */}
 
-                  <div className="text-main-700 flex flex-row items-center space-x-2 pb-2 ">
-                    {/* <HeartIcon className="w-8 h-8 shrink-0" /> */}
-                    <div>
-                      {/* &#x2764;  - Heart in red*/}
-                      &#9829; <strong>Why I like it:</strong>{" "}
-                      {book.iLike
-                        ? book.iLike
-                        : "My personal recommendation for this book."}
+                    <div className="text-main-700 flex flex-row items-center space-x-2 pb-2 ">
+                      {/* <HeartIcon className="w-8 h-8 shrink-0" /> */}
+                      <div>
+                        {/* &#x2764;  - Heart in red*/}
+                        &#9829; <strong>{t("iLike")}</strong>{" "}
+                        {
+                          book[locale]!.iLike
+                          // ? book[locale]!.iLike
+                          // : "My personal recommendation for this book."
+                        }
+                      </div>
                     </div>
-                  </div>
-                  <div className=" mt-1">{book.longDescription}</div>
-                  <div className=" text-right text-main-700">
-                    {t("by")}&nbsp;<strong>{book.author}</strong>
+                    <div className=" mt-1">{book[locale]!.longDescription}</div>
+                    <div className=" text-right text-main-700">
+                      {t("by")}&nbsp;<strong>{book.author}</strong>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
+            );
+          }
         })}
       </div>
     </div>

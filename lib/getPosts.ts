@@ -12,52 +12,50 @@ import { cn } from "./utils";
 import { articles } from "./content/articles";
 import { getBooksWithFullText, books } from "./content/books";
 
-export function getPostWithGermanContent(post: Post): Post {
+// export function getPostWithGermanContent(post: Post): Post {
 
-    // its important to copy the book, otherwise the original book would be changed
-    const postCopy = { ...post }
+//     // its important to copy the book, otherwise the original book would be changed
+//     const postCopy = { ...post }
 
-    if (postCopy.titleDE) { postCopy.title = postCopy.titleDE }
-    if (postCopy.subtitleDE) { postCopy.subtitle = postCopy.subtitleDE }
-    if (postCopy.shortDescriptionDE) { postCopy.shortDescription = postCopy.shortDescriptionDE }
-    if (postCopy.longDescriptionDE) { postCopy.longDescription = postCopy.longDescriptionDE }
+//     if (postCopy.titleDE) { postCopy.title = postCopy.titleDE }
+//     if (postCopy.subtitleDE) { postCopy.subtitle = postCopy.subtitleDE }
+//     if (postCopy.shortDescriptionDE) { postCopy.shortDescription = postCopy.shortDescriptionDE }
+//     if (postCopy.longDescriptionDE) { postCopy.longDescription = postCopy.longDescriptionDE }
 
-    return postCopy
-}
+//     return postCopy
+// }
 
-export function getBooksWithGermanContent(): Book[] {
-    // replaces the content with german content if avialable
-    return books.filter((book) => book.hasFullText).map((book) => getPostWithGermanContent(book) as Book)
-}
+// export function getBooksWithGermanContent(): Book[] {
+//     // replaces the content with german content if avialable
+//     return books.filter((book) => book.hasFullText).map((book) => getPostWithGermanContent(book) as Book)
+// }
 
-export function getArticlesWithGermanContent(): Article[] {
+// export function getArticlesWithGermanContent(): Article[] {
 
-    // replaces the content with german content if avialable
-    return articles.map((article) => getPostWithGermanContent(article) as Article)
+//     // replaces the content with german content if avialable
+//     return articles.map((article) => getPostWithGermanContent(article) as Article)
 
-}
+// }
 
-export function getAllPosts(category?: string, locale: Locale = "en"): Post[] {
+export function getAllPosts(category?: string): Post[] {
     const result: Post[] = []
 
     if (category == undefined || category == "books") {
         // add category to each book
 
-        const bookData = locale === "de" ? getBooksWithGermanContent() : getBooksWithFullText()
+        //locale === "de" ? getBooksWithGermanContent() : 
+        const bookData = getBooksWithFullText()
 
-        result.push(...bookData.map((book: Book) => (
-            { ...book, category: "books" as Category }
-        )))
+        result.push(...bookData)
     }
 
     if (category == undefined || category == "articles") {
 
-        const articleData = locale === "de" ? getArticlesWithGermanContent() : articles
+        // locale === "de" ? getArticlesWithGermanContent() :
+        const articleData =  articles
         // all articles with metadata have a full text, thus no filtering necessary
         // add the category to each article
-        result.push(...articleData.map((article: Post) => (
-            { ...article, category: "articles" as Category }
-        )))
+        result.push(...articleData)
     }
 
     return result
@@ -166,16 +164,17 @@ export async function getPostContentBySlug(slug: string, locale: Locale, categor
     return { content: null }
 }
 
-export function getBookBySlug(slug: string, locale: Locale = "en"): Book | null {
+export function getBookBySlug(slug: string): Book | null {
 
     for (let book of books) {
         if (book.slug === slug) {
-            if (locale === "de") {
-                return getPostWithGermanContent(book) as Book
-            }
-            else {
-                return book
-            }
+            return book
+            // if (locale === "de") {
+            //     return getPostWithGermanContent(book) as Book
+            // }
+            // else {
+            //     return book
+            // }
         }
     }
     return null;
@@ -185,12 +184,15 @@ export function getArticleBySlug(slug: string, locale: Locale = "en"): Article |
 
     for (let article of articles) {
         if (article.slug === slug) {
-            if (locale === "de") {
-                return getPostWithGermanContent(article);
-            }
-            else {
-                return article;
-            }
+
+            return article
+
+            // if (locale === "de") {
+            //     return getPostWithGermanContent(article);
+            // }
+            // else {
+            //     return article;
+            // }
         }
     }
     return null;

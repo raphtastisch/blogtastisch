@@ -30,10 +30,10 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: "Navbar" });
 
-  const book = getBookBySlug(slug, locale);
+  const book = getBookBySlug(slug);
 
   return {
-    title: book ? book.title : t("reviews"),
+    title: book ? book[locale]!.title : t("reviews"),
   };
 }
 
@@ -54,18 +54,14 @@ export default function Home({
   //   return <div>404 no data found</div>;
   // }
 
-  const category: Category = "books"; // get from path?
-
-  const book = getBookBySlug(slug, locale);
-  if (!book) {
-    return <div>404 no metadata found</div>;
+  const book = getBookBySlug(slug);
+  if (!book || !book[locale]) {
+    return <div>404 no metadata found or locales is missing: {locale}</div>;
   }
 
+  const category: Category = "books"; // get from path?
   const illustrationImagePath = getImagePath(category, slug, "illustration");
-
   const coverImagePath = getImagePath(category, slug, "cover");
-
-  // console.log("book", book);
 
   return (
     <div className="mdx flex flex-col items-center  w-full">
@@ -74,19 +70,22 @@ export default function Home({
           {book.releaseDate ? <>{dateToString(book.releaseDate)}</> : null}
         </div>
 
-        <StyledH1 className="text-center">{book.title}</StyledH1>
+        <StyledH1 className="text-center">{book[locale]!.title}</StyledH1>
 
-        {book.subtitle && book.subtitle !== "" ? (
-          <StyledH2 className="text-center mt-2">{book.subtitle}</StyledH2>
+        {book[locale]!.subtitle && book.subtitle !== "" ? (
+          <StyledH2 className="text-center mt-2">
+            {book[locale]!.subtitle}
+          </StyledH2>
         ) : null}
 
         <div className="mt-2 flex w-full justify-end text-main-700">
           {t("by")}&nbsp;<strong>{book.author}</strong>
         </div>
 
-        {book.longDescription && book.longDescription !== "" ? (
+        {book[locale]!.longDescription &&
+        book[locale]!.longDescription !== "" ? (
           <StyledBlockquote className="mt-8">
-            {book.longDescription}
+            {book[locale]!.longDescription}
           </StyledBlockquote>
         ) : null}
       </div>
@@ -109,7 +108,11 @@ export default function Home({
       ) : null}
 
       <Link
-        href={book.amazonLink ? book.amazonLink : createAmazonLink(book.title)}
+        href={
+          book.amazonLink
+            ? book.amazonLink
+            : createAmazonLink(book[locale]!.title)
+        }
         target="_blank"
         className="p-8"
       >

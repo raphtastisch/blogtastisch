@@ -14,6 +14,7 @@ export default function OverviewElement({
     subtitle: string | null;
     href: string;
     illustrationImagePath: string;
+    shortDescription: string | null;
     longDescription: string | null;
     category: string;
     date: string;

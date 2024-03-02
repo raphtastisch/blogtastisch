@@ -28,21 +28,25 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: "Navbar" });
 
-  const book = getArticleBySlug(slug, locale);
+  const post = getArticleBySlug(slug, locale);
 
   return {
-    title: book ? book.title : t("articles"),
+    title: post ? post.title : t("articles"),
   };
 }
 
-export default function Home({ params: { slug, locale } }: any) {
+export default function Home({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: Locale };
+}) {
   unstable_setRequestLocale(locale);
   // const t = await getTranslations("Articles");
   const t = useTranslations("Reviews");
 
   const article = getArticleBySlug(slug, locale);
-  if (!article) {
-    return <div>404 no metadata found</div>;
+  if (!article || !article[locale]) {
+    return <div>404 no metadata found or locales is missing: {locale}</div>;
   }
 
   const category: Category = "articles";
@@ -55,19 +59,22 @@ export default function Home({ params: { slug, locale } }: any) {
           {dateToString(article.date)}
         </div>
 
-        <StyledH1 className="text-center">{article.title}</StyledH1>
+        <StyledH1 className="text-center">{article[locale]!.title}</StyledH1>
 
-        {article.subtitle && article.subtitle !== "" ? (
-          <StyledH2 className="text-center mt-2">{article.subtitle}</StyledH2>
+        {article[locale]!.subtitle && article[locale]!.subtitle !== "" ? (
+          <StyledH2 className="text-center mt-2">
+            {article[locale]!.subtitle}
+          </StyledH2>
         ) : null}
 
         <div className="mt-2 flex w-full justify-end text-main-700">
           {t("by")}&nbsp;<strong>{article.writtenBy}</strong>
         </div>
 
-        {article.longDescription && article.longDescription !== "" ? (
+        {article[locale]!.longDescription &&
+        article[locale]!.longDescription !== "" ? (
           <StyledBlockquote className="mt-8">
-            {article.longDescription}
+            {article[locale]!.longDescription}
           </StyledBlockquote>
         ) : null}
       </div>
