@@ -71,3 +71,17 @@ export type Locale = 'en' | 'de'
 export const locales: Locale[] = ['en', 'de'];
 
 export const languageMapping: Record<string, string> = { "en": "en_US", "de": "de_DE" };
+
+
+
+export interface BookSocialMediaPost {
+    slug: string;
+    linkedinText: string;
+    whatsappText: string;
+    facebookText:string;
+    linkedinPosted: boolean;
+    whatsappPosted: boolean;
+    facebookPosted:boolean;
+    picturePrompts: string[];
+}
+

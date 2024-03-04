@@ -27,7 +27,7 @@ import { Book, Content } from '../lib/config';
 //     }
 // }
 
-const newBookData = readJsonFile('./content/newBook.json');
+const newBookData = readJsonFile('../lib/content/newBook.json');
 // console.log("newBook", newBookData.newBook)
 
 

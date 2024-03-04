@@ -933,11 +933,11 @@ import fs from 'fs';
 
 
 // the dots ar enecessary, otherwise it goes thinks @ is a folder
-export const new_books_raw: any[] = JSON.parse(fs.readFileSync('./content/books.json', 'utf8'));
+export const new_books_raw: any[] = JSON.parse(fs.readFileSync('./lib/content/books.json', 'utf8'));
 
 export const books: Book[] = new_books_raw.map((book) => {
     book.date = new Date(book.date);
-    book.releaseDate = book.releaseDate ? new Date(book.releaseDate) : undefined ;
+    book.releaseDate = book.releaseDate ? new Date(book.releaseDate) : undefined;
     book.hasFullText = book.hasFullText ? true : false;
     book.category = 'books' as Category;
     return book;
@@ -946,50 +946,51 @@ export const books: Book[] = new_books_raw.map((book) => {
 // console.log(books.filter((book) => book.hasFullText))
 
 
-export function checkTags(): void {
-    for (let tag of getUniqueTags(books)) {
-        if (!(tag in fullNameTags)) {
-            console.log(`Tag "${tag}" is not in fullNameTags`);
-        }
-    }
-}
+// export function checkTags(): void {
+//     for (let tag of getUniqueTags(books)) {
+//         if (!(tag in fullNameTags)) {
+//             console.log(`Tag "${tag}" is not in fullNameTags`);
+//         }
+//     }
+// }
 
 
-const fullNameTags: { [keys: string]: string } = {
-    "non-fiction": "Sachbuch",
-    science: "Wissenschaft",
-    health: "Gesundheit",
-    fitness: "Fitness",
-    politics: "Politik",
-    philosophy: "Philosophie",
-    strategy: "Strategie",
-    business: "Business",
-    psychology: "Psychologie",
-    biography: "Biografie",
-    history: "Geschichte",
-    sociology: "Soziologie",
-    leadership: "Leadership",
-    mindset: "Mindset",
-    economics: "Wirtschaft",
-    productivity: "Produktivität",
-    "self-help": "Selbsthilfe",
-    technology: "Technologie",
-    biology: "Biologie",
-    religion: "Religion",
-    communication: "Kommunikation",
-    innovation: "Innovation",
-    entrepreneurship: "Unternehmertum",
-    IT: "IT & Software",
-    fiction: "Fiktion",
-    AI: "KI",
-    evolution: "Evolution",
-    humor: "Humor",
-    classic: "Klassiker",
-    thrilling: "Spannend",
-    crime: "Krimi",
-};
+// const fullNameTags: { [keys: string]: string } = {
+//     "non-fiction": "Sachbuch",
+//     science: "Wissenschaft",
+//     health: "Gesundheit",
+//     fitness: "Fitness",
+//     politics: "Politik",
+//     philosophy: "Philosophie",
+//     strategy: "Strategie",
+//     business: "Business",
+//     psychology: "Psychologie",
+//     biography: "Biografie",
+//     history: "Geschichte",
+//     sociology: "Soziologie",
+//     leadership: "Leadership",
+//     mindset: "Mindset",
+//     economics: "Wirtschaft",
+//     productivity: "Produktivität",
+//     "self-help": "Selbsthilfe",
+//     technology: "Technologie",
+//     biology: "Biologie",
+//     religion: "Religion",
+//     communication: "Kommunikation",
+//     innovation: "Innovation",
+//     entrepreneurship: "Unternehmertum",
+//     IT: "IT & Software",
+//     fiction: "Fiktion",
+//     AI: "KI",
+//     evolution: "Evolution",
+//     humor: "Humor",
+//     classic: "Klassiker",
+//     thrilling: "Spannend",
+//     crime: "Krimi",
+// };
 
-export const uniqueTags: string[] = ['non-fiction',
+export const uniqueTags: string[] = [
+    'non-fiction',
     'science',
     'health',
     'fitness',
@@ -1019,6 +1020,7 @@ export const uniqueTags: string[] = ['non-fiction',
     'humor',
     'classic',
     'thrilling',
+    'marketing',
     'crime']
 
 
