@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import LocaleSwitcher from "./localeSwitcher";
+import TrackRefs from "../trackRefs";
 
 const user = {
   name: "Raphael Fritz",
@@ -190,6 +191,7 @@ export default function Navbar() {
           </>
         )}
       </Disclosure>
+      <TrackRefs />
     </div>
   );
 }

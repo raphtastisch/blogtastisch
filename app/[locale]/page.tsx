@@ -79,6 +79,7 @@ export default function Home({
         </StyledH1>
         <OverviewGrid />
       </div>
+      
     </div>
   );
 }
