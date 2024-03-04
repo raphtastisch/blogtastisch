@@ -15,25 +15,25 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { Category, Locale } from "@/lib/config";
 import PostContent from "@/components/postContent";
 
-// export function generateStaticParams() {
-//   return articles.map((article) => ({
-//     params: { slug: article.slug },
-//   }));
-// }
-
-export async function generateMetadata({
-  params: { slug, locale },
-}: {
-  params: { slug: string; locale: Locale };
-}) {
-  const t = await getTranslations({ locale, namespace: "Navbar" });
-
-  const post = getArticleBySlug(slug, locale);
-
-  return {
-    title: post ? post[locale]!.title : t("articles"),
-  };
+export function generateStaticParams() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+  }));
 }
+
+// export async function generateMetadata({
+//   params: { slug, locale },
+// }: {
+//   params: { slug: string; locale: Locale };
+// }) {
+//   const t = await getTranslations({ locale, namespace: "Navbar" });
+
+//   const post = getArticleBySlug(slug, locale);
+
+//   return {
+//     title: post ? post[locale]!.title : t("articles"),
+//   };
+// }
 
 export default function Home({
   params: { slug, locale },
