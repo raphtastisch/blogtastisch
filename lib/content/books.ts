@@ -1,5 +1,7 @@
 import { Book, Category, Locale, languageMapping } from "../config";
 import fs from 'fs';
+import path from 'path';
+
 
 // export const old_books: Book[] = [
 
@@ -933,7 +935,13 @@ import fs from 'fs';
 
 
 // the dots ar enecessary, otherwise it goes thinks @ is a folder
-export const new_books_raw: any[] = JSON.parse(fs.readFileSync('./lib/content/books.json', 'utf8'));
+
+// export const new_books_raw: any[] = JSON.parse(fs.readFileSync('./lib/content/books.json', 'utf8'));
+
+
+
+const pathname = path.join(process.cwd(), "public", "books.json")
+export const new_books_raw: any[] = JSON.parse(fs.readFileSync(pathname, 'utf8'));
 
 export const books: Book[] = new_books_raw.map((book) => {
     book.date = new Date(book.date);
