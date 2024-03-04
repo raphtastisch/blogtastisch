@@ -77,9 +77,9 @@ export default function RootLayout({
             </NextIntlClientProvider>
           </div>
         </main>
-        <SpeedInsights />
+        {/* <SpeedInsights /> */}
         <Analytics />
-        <TrackRefs />
+        {/* <TrackRefs /> */}
       </body>
     </html>
   );

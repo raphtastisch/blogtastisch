@@ -21,19 +21,19 @@ export function generateStaticParams() {
   }));
 }
 
-// export async function generateMetadata({
-//   params: { slug, locale },
-// }: {
-//   params: { slug: string; locale: Locale };
-// }) {
-//   const t = await getTranslations({ locale, namespace: "Navbar" });
+export async function generateMetadata({
+  params: { slug, locale },
+}: {
+  params: { slug: string; locale: Locale };
+}) {
+  const t = await getTranslations({ locale, namespace: "Navbar" });
 
-//   const post = getArticleBySlug(slug, locale);
+  const post = getArticleBySlug(slug, locale);
 
-//   return {
-//     title: post ? post[locale]!.title : t("articles"),
-//   };
-// }
+  return {
+    title: post ? post[locale]!.title : t("articles"),
+  };
+}
 
 export default function Home({
   params: { slug, locale },
