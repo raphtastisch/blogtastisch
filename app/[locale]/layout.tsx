@@ -79,7 +79,7 @@ export default function RootLayout({
         </main>
         {/* <SpeedInsights /> */}
         <Analytics />
-
+        {/* <TrackRefs /> */}
       </body>
     </html>
   );
