@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 // import dotenv from 'dotenv';
-import { Book, Content } from '../lib/config';
-import { readJsonFile, writeJsonFile, openai, translate } from './utils';
+import { Book, Content } from '../../lib/config';
+import { readJsonFile, writeJsonFile, openai, translate } from '../utils';
 // dotenv.config();
 
 // const openai = new OpenAI({
