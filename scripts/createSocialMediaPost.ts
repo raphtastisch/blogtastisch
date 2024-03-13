@@ -28,8 +28,8 @@ const filteredBookData = bookData.filter((book: any) => !slugs.includes(book.slu
 async function createLinkedinText(author: string, enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Create a relatively short LinkedIn post for the book "${enTexts.title}" from ${author} using the long description and the reason why I like the book. Put a strong focus on the reason why I like the book. The post should start with an interesting sentence related to the book, followed by content from the long description. End with a call to action for more book recommendations on my homepage: https://raphaelfritz.at
-Use paragraphs to structure the text, but don't use headlines. Use fitting icons and emojis to make the post more engaging and give it a better structure. You must not use or include any hashtags in the post!
+            role: 'user', content: `Create a relatively short LinkedIn post for the book "${enTexts.title}" from ${author} using the long description and the reason why I like the book. Put a strong focus on the reason why I like the book. The post should start with an interesting sentence related to the book followed by an empty line. End with a call to action for more book recommendations on my homepage: https://raphaelfritz.at
+Use paragraphs to structure the text, but don't use headlines. Start every paragraph with a fitting icon or emoji to make the post more engaging. You must not use or include any hashtags in the post!
 
 Long Description: ${enTexts.longDescription}
 Reason why I like the book: ${enTexts.iLike}`
@@ -55,8 +55,7 @@ Reason why I like the book: ${enTexts.iLike}`
 async function createWhatsappText(author: string, deTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Erstelle einen kurzen WhatsApp-Status-Text über das Buch "${deTexts.title}" von ${author}, indem du die Beschreibungen und den Grund für das Mögen des Buches verwendest. Der Text sollte kurz, einprägsam und im lockeren Ton sein.
-Verwende Absätze, um den Text zu strukturieren, aber keine Überschriften. Benutze passende Icons und Emojis, um den Beitrag ansprechender zu machen und ihm eine bessere Struktur zu geben. Erstelle den Text auf Deutsch. Verwende auf keinen Fall Hashtags!
+            role: 'user', content: `Erstelle einen kurzen WhatsApp-Status-Text über das Buch "${deTexts.title}" von ${author}, indem du die Beschreibungen und den Grund, wieso ich das Buch mag, verwendest. Verwende nur 2 bis 3 Sätze. Der Text sollte kurz, einprägsam und im lockeren Ton sein. Benutze am Ende ein passendes Icons oder Emoji, um den Beitrag ansprechender zu machen. Verwende auf keinen Fall Hashtags!
 
 Der Grund, warum ich das Buch mag: ${deTexts.iLike}
 Kurze Beschreibung: ${deTexts.shortDescription}
@@ -82,11 +81,11 @@ Lange Beschreibung für den Kontext: ${deTexts.longDescription}`
 async function createImagePrompt(enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with an interesting idea tocapture the essence of the book or an important concept or scene. Don't spoil the plot if it is a novel! If possible include faces to make it more relatable. Aim for a hyper-realistic design suitable for social media posts. 
+            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with an interesting idea tocapture the essence of the book or an important concept or scene. Don't spoil the plot if it is a novel! If possible include faces to make it more relatable.  
 
 Don't mention the author or the title in the prompt, just the concept or scene what should be illustrated.            
 Don't return anything but the promt itself.`
-        }],
+        }], // Aim for a hyper-realistic design suitable for social media posts.
         model: 'gpt-4-turbo-preview',
         temperature: 0.3,
     });
@@ -95,7 +94,7 @@ Don't return anything but the promt itself.`
         console.log("Error while creating an image prompt", enTexts.title, 'Error while creating an Image Prompt undefined');
         return null;
     } else {
-        return "Create a 16:9 image in a hyper-realistic style. " + chatCompletion.choices[0].message.content;
+        return "Create a 16:9 image in a photo-realistic style. " + chatCompletion.choices[0].message.content;
     }
 }
 
@@ -146,8 +145,11 @@ function step1(numberResults: number, startIndex: number = 0) {
 /* -------------------------------------------------------------------------- */
 // Step 2
 /* -------------------------------------------------------------------------- */
-
+// Translates given text to German using OpenAI's translation model.
+// @param text: string - The text to be translated.
+// @returns Promise<string | null> - The translated text or null if translation fails.
 async function translateTextToDe(text: string): Promise<string | null> {
+    // Create a chat completion request to OpenAI's API for text translation.
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
             role: 'user', content: `Translate the following text to German: ${text}`
@@ -156,17 +158,21 @@ async function translateTextToDe(text: string): Promise<string | null> {
         temperature: 0.3,
     });
 
+    // Check if the translation was successful and return the result.
     if (!chatCompletion.choices[0].message.content) {
-        console.log("Error while translating text to German", text);
+        console.log("Error while translating text to German:", text);
         return null;
     } else {
         return chatCompletion.choices[0].message.content;
     }
-
 }
 
+// Generates an image based on the given prompt and saves it with a specified slug.
+// @param prompt: string - The prompt based on which the image is generated.
+// @param slug: string - A unique identifier used to name the saved image file.
+// @returns Promise<boolean | null> - Returns true if the image is successfully saved, null otherwise.
 async function generateImage(prompt: string, slug: string): Promise<boolean | null> {
-
+    // Generate an image using OpenAI's DALL-E model with the provided prompt.
     const image = await openai.images.generate({
         model: "dall-e-3",
         prompt: prompt, quality: "hd", size: "1792x1024",
@@ -175,58 +181,61 @@ async function generateImage(prompt: string, slug: string): Promise<boolean | nu
 
     console.log(image.data[0]);
 
+    // Check if the image data is present and correctly retrieved.
     if (!image.data || !image.data[0] || !image.data[0].b64_json) {
         console.log("No b64_json data found in image response");
         return null;
     }
 
-    // Convert b64_json to buffer
+    // Convert the base64 encoded JSON to a buffer.
     const buffer = Buffer.from(image.data[0].b64_json, 'base64');
 
-    // Write buffer to file
-    // fs.writeFileSync(path.join(process.cwd(), ...contentPath, "book", slug, "cover.webp"), buffer);
-    fs.writeFileSync(path.join(process.cwd(), "scripts", "images", slug + "_cover.webp"), buffer);
+    // Write the buffer as an image file to the specified path using the slug.
+    fs.writeFileSync(path.join(process.cwd(), "scripts", "images", slug + "_illustration.webp"), buffer);
 
-    // Confirmation message
-    console.log('Image saved successfully for ', slug);
+    console.log('Image saved successfully for', slug);
 
-
-    return true
+    return true;
 }
 
-
-
+// Processes social media posts for step 2, translating text and generating images.
+// No arguments are taken.
+// No explicit return value, but it will modify the state of `existingSocialMediaPosts`.
 async function step2() {
+    // Filter posts that have completed step 1 but not step 2.
     const filteredPosts = existingSocialMediaPosts.filter((post: BookSocialMediaPost) => post.step1completed && !post.step2completed);
 
-    // Use map to iterate over filteredPosts and create an array of promises
+    // Iterate over filteredPosts to translate text and generate images.
     const promises = filteredPosts.map(async (post: BookSocialMediaPost) => {
         try {
+            // Translate LinkedIn text to German for Facebook posts.
             const facebookText = await translateTextToDe(post.linkedinText);
-            const imagePrompt = await generateImage(post.imagePrompt, post.slug);
+            // Generate an image based on the post's image prompt.
+            await generateImage(post.imagePrompt, post.slug);
 
-            // Only modify post if facebookText is truthy
+            // Update the post if the Facebook text was successfully translated.
             if (facebookText) {
                 post.facebookText = facebookText;
                 post.step2completed = true;
             } else {
-                // Log error but do not throw, to ensure all other posts are processed
-                console.log("Error while translating LinkedIn text to German", post.slug);
+                console.log("Error while translating LinkedIn text to German for", post.slug);
             }
         } catch (error) {
-            // Handle any errors that might occur during translation or image generation
-            console.error("Error processing post", post.slug, error);
+            console.error("Error processing post for", post.slug, error);
         }
     });
 
-    // Wait for all promises to resolve
+    // Wait for all post processing to complete.
     await Promise.all(promises);
 
-    // Now that all posts have been processed, write the results to the JSON file
+    // Save the updated posts to a JSON file.
     writeJsonFile("./scripts/socialMediaPosts.json", existingSocialMediaPosts);
 }
 
 
+/* -------------------------------------------------------------------------- */
+// Step 3
+/* -------------------------------------------------------------------------- */
 
 function getNextMonday(date: Date): Date {
     const result = new Date(date.getTime()); // Create a new Date object with the same time
@@ -262,12 +271,17 @@ async function step3(firstDate: Date = new Date()) {
     let nextDate = firstDate;
     for (let i = 0; i < filteredPosts.length; i++) {
         nextDate = getNextMondayOrThursday(nextDate);
-        dueDates.push(nextDate);
+        // create a new object!
+        dueDates.push(new Date(nextDate.getTime()));
+        // go one day forward
+        nextDate.setDate(nextDate.getDate() + 1);
     }
+
+    console.log("dueDates", dueDates);
 
     // Use map to create an array of promises for each post processing
     const promises = filteredPosts.map(async (post: BookSocialMediaPost, index: number) => {
-        const imagePath = path.join(process.cwd(), "scripts", "images", post.slug + "_cover.webp");
+        const imagePath = path.join(process.cwd(), "scripts", "images", post.slug + "_illustration.webp");
         const dueDate = dueDates[index]; // Get the due date for the post
 
         try {
@@ -282,7 +296,8 @@ async function step3(firstDate: Date = new Date()) {
             await addImage(facebookTaskId, imagePath);
 
             // Copy and rename the file
-            const newImagePath = path.join(process.cwd(), ...contentPath, "book", post.slug, "cover.webp");
+            const newImagePath = path.join(process.cwd(), ...contentPath, "books", post.slug, "illustration.webp");
+            console.log(imagePath, newImagePath)
             fs.renameSync(imagePath, newImagePath);
 
             // Mark post as processed
@@ -302,13 +317,21 @@ async function step3(firstDate: Date = new Date()) {
 
 
 
-async function callSteps() {
-    // await step1(4, 2);
-    await step2();
-    // await step3(new Date());
+async function callSteps(step: number) {
+    if (step === 1) {
+        await step1(3, 0);
+    } else if (step === 2) {
+        await step2();
+    } else if (step === 3) {
+        await step3(new Date());
+    } else {
+        console.log("Invalid step number");
+    }
 }
 
-callSteps()
+callSteps(3);
+
+
 
 /* -------------------------------------------------------------------------- */
 // npx ts-node -P .\scripts\tsconfig.script.json .\scripts\createSocialMediaPost.ts

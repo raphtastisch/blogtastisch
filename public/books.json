@@ -1,5 +1,36 @@
 [
   {
+    "slug": "dictators-handbook",
+    "date": "2011-09-01",
+    "author": "Bruce Bueno de Mesquita & Alastair Smith",
+    "hasFullText": true,
+    "releaseDate": "2024-03-01",
+    "initialReleaseUrl": "https://materie.at/gk/rezension-the-dictators-handbook/",
+    "initialReleaseName": "Materie.at",
+    "amazonLink": "https://amzn.to/3IrJrsB",
+    "onlyEnglish": true,
+    "de": {
+      "title": "The Dictator's Handbook",
+      "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist",
+      "shortDescription": "Enthüllt die wahre Natur politischer Macht und Führung.",
+      "longDescription": "Erforscht die zugrundeliegenden Mechanismen politischer Macht und analysiert sie mit einem Rahmen, der sich auf die Anzahl der Personen konzentriert, die notwendig sind, um an die Macht zu kommen und sie zu erhalten. Es wird argumentiert, dass die Strategien, an der Macht zu bleiben, überraschend ähnlich sind, unabhängig vom Regierungssystem, und betont die Bedeutung der Kontrolle über Schlüsselressourcen und die Unterstützung wesentlicher Unterstützer. Das Buch verwendet eine breite Palette von historischen und zeitgenössischen Beispielen, um seine Punkte zu veranschaulichen, und macht komplexe politische Theorien zugänglich und fesselnd. Diese aufschlussreiche Analyse stellt die herkömmliche Weisheit über Demokratie und Diktatur in Frage und bietet eine neue Perspektive auf die Motivationen hinter politischen Handlungen.",
+      "iLike": "Hat meine Sicht auf Diktaturen tiefgreifend geprägt. Brillantes Rahmenwerk zur Erklärung von Anreizen in Diktaturen und jeder anderen Art von Staaten und Organisationen."
+    },
+    "en": {
+      "title": "The Dicator's Handbook",
+      "subtitle": "Why Bad Behavior Is Almost Always Good Politics",
+      "iLike": "Shaped my view on dictatorships profoundly. Brilliant framework to explain incentives in dictatorships and any other kind of states and organizations.",
+      "shortDescription": "Unveiling the true nature of political power and leadership.",
+      "longDescription": "Explores the underlying mechanics of political power and analyzes it with a framework that focuses on the number of people necessary to ascend to and maintain power. It argues that the strategies for staying in power are surprisingly similar across different systems of governance, emphasizing the importance of control over key resources and the support of essential backers. The book uses a wide array of historical and contemporary examples to illustrate its points, making complex political theories accessible and engaging. This insightful analysis challenges conventional wisdom about democracy and dictatorship, offering a new perspective on the motivations behind political actions."
+    },
+    "tags": [
+      "politics",
+      "strategy",
+      "non-fiction",
+      "science"
+    ]
+  },
+  {
     "slug": "enlightenment-now",
     "date": "2018-02-13",
     "author": "Steven Pinker",
@@ -1990,37 +2021,6 @@
       "non-fiction",
       "politics",
       "thrilling"
-    ]
-  },
-  {
-    "slug": "dictators-handbook",
-    "date": "2011-09-01",
-    "author": "Bruce Bueno de Mesquita & Alastair Smith",
-    "hasFullText": true,
-    "releaseDate": "2024-03-01",
-    "initialReleaseUrl": "https://materie.at/gk/rezension-the-dictators-handbook/",
-    "initialReleaseName": "Materie.at",
-    "amazonLink": "https://amzn.to/3IrJrsB",
-    "onlyEnglish": true,
-    "de": {
-      "title": "The Dictator's Handbook",
-      "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist",
-      "shortDescription": "Enthüllt die wahre Natur politischer Macht und Führung.",
-      "longDescription": "Erforscht die zugrundeliegenden Mechanismen politischer Macht und analysiert sie mit einem Rahmen, der sich auf die Anzahl der Personen konzentriert, die notwendig sind, um an die Macht zu kommen und sie zu erhalten. Es wird argumentiert, dass die Strategien, an der Macht zu bleiben, überraschend ähnlich sind, unabhängig vom Regierungssystem, und betont die Bedeutung der Kontrolle über Schlüsselressourcen und die Unterstützung wesentlicher Unterstützer. Das Buch verwendet eine breite Palette von historischen und zeitgenössischen Beispielen, um seine Punkte zu veranschaulichen, und macht komplexe politische Theorien zugänglich und fesselnd. Diese aufschlussreiche Analyse stellt die herkömmliche Weisheit über Demokratie und Diktatur in Frage und bietet eine neue Perspektive auf die Motivationen hinter politischen Handlungen.",
-      "iLike": "Hat meine Sicht auf Diktaturen tiefgreifend geprägt. Brillantes Rahmenwerk zur Erklärung von Anreizen in Diktaturen und jeder anderen Art von Staaten und Organisationen."
-    },
-    "en": {
-      "title": "The Dicator's Handbook",
-      "subtitle": "Why Bad Behavior Is Almost Always Good Politics",
-      "iLike": "Shaped my view on dictatorships profoundly. Brilliant framework to explain incentives in dictatorships and any other kind of states and organizations.",
-      "shortDescription": "Unveiling the true nature of political power and leadership.",
-      "longDescription": "Explores the underlying mechanics of political power and analyzes it with a framework that focuses on the number of people necessary to ascend to and maintain power. It argues that the strategies for staying in power are surprisingly similar across different systems of governance, emphasizing the importance of control over key resources and the support of essential backers. The book uses a wide array of historical and contemporary examples to illustrate its points, making complex political theories accessible and engaging. This insightful analysis challenges conventional wisdom about democracy and dictatorship, offering a new perspective on the motivations behind political actions."
-    },
-    "tags": [
-      "politics",
-      "strategy",
-      "non-fiction",
-      "science"
     ]
   }
 ]

@@ -23,7 +23,7 @@ export async function createTask(name: string, description: string, dueDate: Dat
     const dueDateNumber = dueDate.getTime()
 
     const resp = await fetch(
-        `https://api.clickup.com/api/v2/list/${clickupFolderIdeas}/task?${query}`,
+        `https://api.clickup.com/api/v2/list/${clickupFolderScheduled}/task?${query}`,
         {
             method: 'POST',
             headers: {
