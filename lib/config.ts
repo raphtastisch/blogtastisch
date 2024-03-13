@@ -48,7 +48,7 @@ export interface Book extends Post {
 }
 
 export interface Article extends Post {
-   // nothing needed so far
+    // nothing needed so far
 }
 
 export const defaultWrittenBy = "Raphael Fritz";
@@ -78,10 +78,18 @@ export interface BookSocialMediaPost {
     slug: string;
     linkedinText: string;
     whatsappText: string;
-    facebookText:string;
-    linkedinPosted: boolean;
-    whatsappPosted: boolean;
-    facebookPosted:boolean;
-    picturePrompts: string[];
+    facebookText: string;
+    imagePrompt: string;
+    // imageGenerated: boolean;
+    step1completed: boolean;
+    step1checked: boolean;
+    step2completed: boolean;
+    step2checked: boolean;
+    step3completed: boolean;
+    dueDate: Date | null;
+    // linkedinInClickup: boolean;
+    // whatsappInClickup: boolean;
+    // facebookInClickup: boolean;
+    // picturePrompts: string[];
 }
 

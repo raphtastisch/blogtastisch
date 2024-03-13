@@ -27,7 +27,7 @@ import { Book, Content } from '../lib/config';
 //     }
 // }
 
-const newBookData = readJsonFile('../lib/content/newBook.json');
+const newBookData = readJsonFile('./scripts/newBook.json');
 // console.log("newBook", newBookData.newBook)
 
 
@@ -79,52 +79,94 @@ async function createEnTexts(title: string, author: string): Promise<{ shortDesc
 
 // // Step 1: add all english texts
 
-function step1() {
+// async function step1():Promise<any> {
 
-    createEnTexts(newBookData.newBook.en.title, newBookData.newBook.author).then((content) => {
-        const newBookWithEnTexts = JSON.parse(JSON.stringify(newBookData.newBook))
-        // newBookWithEnTexts.en = { ...newBookData.newBook.en }
-        newBookWithEnTexts.en.shortDescription = content.shortDescription;
-        newBookWithEnTexts.en.longDescription = content.longDescription;
-        newBookWithEnTexts.tags = content.tags;
-        // Make sure to return the updated object if you need to use it outside
-        return newBookWithEnTexts;
-    }).then((newBookWithEnTexts: any) => {
-        // This console.log will wait until the createEnTexts promise resolves
-        console.log("newBookWithEnTexts", newBookWithEnTexts);
+//     await createEnTexts(newBookData.newBook.en.title, newBookData.newBook.author).then((content) => {
+//         const newBookWithEnTexts = JSON.parse(JSON.stringify(newBookData.newBook))
+//         // newBookWithEnTexts.en = { ...newBookData.newBook.en }
+//         newBookWithEnTexts.en.shortDescription = content.shortDescription;
+//         newBookWithEnTexts.en.longDescription = content.longDescription;
+//         newBookWithEnTexts.tags = content.tags;
+//         // Make sure to return the updated object if you need to use it outside
+//         return newBookWithEnTexts;
+//     }).then((newBookWithEnTexts: any) => {
+//         // This console.log will wait until the createEnTexts promise resolves
+//         console.log("newBookWithEnTexts", newBookWithEnTexts);
 
-        newBookData.newBookWithEnTexts = newBookWithEnTexts;
-        writeJsonFile('./content/newBook.json', newBookData);
+//         newBookData.newBookWithEnTexts = newBookWithEnTexts;
+//         writeJsonFile('./scripts/newBook.json', newBookData);
 
-        console.log("step 1 finished")
-        console.log("after step 1:", newBookData)
-    });
+//         console.log("step 1 finished")
+//         console.log("after step 1:", newBookData)
+
+//     });
+//     return true
+// }
+
+async function step1(): Promise<any> {
+    const content = await createEnTexts(newBookData.newBook.en.title, newBookData.newBook.author);
+    const newBookWithEnTexts = JSON.parse(JSON.stringify(newBookData.newBook));
+    newBookWithEnTexts.en.shortDescription = content.shortDescription;
+    newBookWithEnTexts.en.longDescription = content.longDescription;
+    newBookWithEnTexts.tags = content.tags;
+    console.log("newBookWithEnTexts", newBookWithEnTexts);
+    newBookData.newBookWithEnTexts = newBookWithEnTexts;
+    await writeJsonFile('./scripts/newBook.json', newBookData);
+    console.log("step 1 finished");
+    console.log("after step 1:", newBookData);
+    return true;
 }
 
 
-// Setp 2: translate all english texts to german and add them
-function step2() {
-    translate(newBookData.newBookWithEnTexts.en).then((content: Content) => {
-        const newBookFinished = JSON.parse(JSON.stringify(newBookData.newBookWithEnTexts));
+// // Setp 2: translate all english texts to german and add them
+// async function step2(): Promise<boolean> {
+//     await translate(newBookData.newBookWithEnTexts.en).then((content: Content) => {
+//         const newBookFinished = JSON.parse(JSON.stringify(newBookData.newBookWithEnTexts));
 
-        newBookFinished.de.shortDescription = content.shortDescription;
-        newBookFinished.de.longDescription = content.longDescription;
-        newBookFinished.de.iLike = content.iLike;
+//         newBookFinished.de.shortDescription = content.shortDescription;
+//         newBookFinished.de.longDescription = content.longDescription;
+//         newBookFinished.de.iLike = content.iLike;
 
-        return newBookFinished
-    }).then((newBookFinished: Book) => {
-        console.log("newBookFinished", newBookFinished);
-        newBookData.newBookFinished = newBookFinished;
-        writeJsonFile('./content/newBook.json', newBookData);
-    })
+//         return newBookFinished
+//     }).then((newBookFinished: Book) => {
+//         console.log("newBookFinished", newBookFinished);
+//         newBookData.newBookFinished = newBookFinished;
+//         writeJsonFile('./scripts/newBook.json', newBookData);
 
+//     })
+//     return true
+// }
+
+async function step2(): Promise<boolean> {
+    const content = await translate(newBookData.newBookWithEnTexts.en);
+    const newBookFinished = JSON.parse(JSON.stringify(newBookData.newBookWithEnTexts));
+    newBookFinished.de.shortDescription = content.shortDescription;
+    newBookFinished.de.longDescription = content.longDescription;
+    newBookFinished.de.iLike = content.iLike;
+    console.log("newBookFinished", newBookFinished);
+    newBookData.newBookFinished = newBookFinished;
+    await writeJsonFile('./scripts/newBook.json', newBookData);
+    return true;
 }
-
 
 // run either or, otherwise you get a race condition
-// step1()
-step2()
 
+async function main(run: number = 0) {
+    if (run === 0 || run === 1) {
+        await step1()
+
+    }
+
+    if (run === 0 || run === 2) {
+        await step2()
+    }
+
+
+}
+// step1()
+// step2()
+
+main(2)
 
 // TO add
 //     imagePath?: string;
