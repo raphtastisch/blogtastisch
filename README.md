@@ -11,7 +11,7 @@
 
 # Create new book
 * fill out newbook in newBook.json
-* run ```npx ts-node -P .\scripts\tsconfig.script.json .\scripts\createNewBook.ts``` for step 1
+* run ```npx ts-node -P .\scripts\tsconfig.script.json .\scripts\createNewBook.ts 1``` for step 1; replace 1 with 2 at the end for step 2
 * check result of step1 in newBook.json
 * run again with step2
 * check result of step2 in newBook.json
@@ -19,5 +19,5 @@
 
 
 # Create social media posts
-run ```npx ts-node -P .\scripts\tsconfig.script.json .\scripts\createSocialMediaPost.ts```
+run ```npx ts-node -P .\scripts\tsconfig.script.json .\scripts\createSocialMediaPost.ts 1``` for step 1; replace 1 with 2 at the end for step 2 and so on
 

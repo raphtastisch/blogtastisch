@@ -82,10 +82,11 @@ export interface BookSocialMediaPost {
     imagePrompt: string;
     // imageGenerated: boolean;
     step1completed: boolean;
-    step1checked: boolean;
+    // step1checked: boolean;
     step2completed: boolean;
-    step2checked: boolean;
+    // step2checked: boolean;
     step3completed: boolean;
+    step4completed: boolean;
     dueDate: Date | null;
     // linkedinInClickup: boolean;
     // whatsappInClickup: boolean;

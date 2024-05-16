@@ -14,7 +14,7 @@
       "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist",
       "shortDescription": "Enthüllt die wahre Natur politischer Macht und Führung.",
       "longDescription": "Erforscht die zugrundeliegenden Mechanismen politischer Macht und analysiert sie mit einem Rahmen, der sich auf die Anzahl der Personen konzentriert, die notwendig sind, um an die Macht zu kommen und sie zu erhalten. Es wird argumentiert, dass die Strategien, an der Macht zu bleiben, überraschend ähnlich sind, unabhängig vom Regierungssystem, und betont die Bedeutung der Kontrolle über Schlüsselressourcen und die Unterstützung wesentlicher Unterstützer. Das Buch verwendet eine breite Palette von historischen und zeitgenössischen Beispielen, um seine Punkte zu veranschaulichen, und macht komplexe politische Theorien zugänglich und fesselnd. Diese aufschlussreiche Analyse stellt die herkömmliche Weisheit über Demokratie und Diktatur in Frage und bietet eine neue Perspektive auf die Motivationen hinter politischen Handlungen.",
-      "iLike": "Hat meine Sicht auf Diktaturen tiefgreifend geprägt. Brillantes Rahmenwerk zur Erklärung von Anreizen in Diktaturen und jeder anderen Art von Staaten und Organisationen."
+      "iLike": "Hat meine Sicht auf Diktaturen tiefgreifend geprägt. Brillantes Framework zur Erklärung von Anreizen in Diktaturen und jeder anderen Art von Staaten und Organisationen."
     },
     "en": {
       "title": "The Dicator's Handbook",
@@ -28,6 +28,129 @@
       "strategy",
       "non-fiction",
       "science"
+    ]
+  },
+  {
+    "slug": "poor-economics",
+    "date": "2011-05-01",
+    "author": "Abhijit V. Banerjee & Esther Duflo",
+    "tags": [
+      "economics",
+      "strategy",
+      "politics",
+      "science",
+      "non-fiction"
+    ],
+    "iLike": "Eye-opening insights into the lives of the poor and the most effective strategies to alleviate poverty.",
+    "hasFullText": true,
+    "releaseDate": "2024-04-26",
+    "initialReleaseUrl": "https://materie.at/gk/poor-economics-plaedoyer-fuer-ein-neues-verstaendnis-von-armut/",
+    "initialReleaseName": "Materie.at",
+    "de": {
+      "title": "Poor Economics",
+      "shortDescription": "Analyse der globalen Armut und Strategien zu deren Linderung.",
+      "longDescription": "Das Buch bietet einen aufschlussreichen Einblick in das Leben der Armen und die wirtschaftlichen Entscheidungen, die sie treffen. Es präsentiert bahnbrechende Forschung und Analyse über die effektivsten Wege zur Bekämpfung der globalen Armut. Banerjee und Duflo verwenden reale Beispiele und fundierte Beweise, um gängige Annahmen in Frage zu stellen und innovative Lösungen vorzuschlagen, die das Wohlergehen der ärmsten Bevölkerungsgruppen der Welt erheblich verbessern können.",
+      "iLike": "Augenöffnende Einblicke in das Leben der Armen und die effektivsten Strategien zur Linderung der Armut."
+    },
+    "en": {
+      "title": "Poor Economics",
+      "shortDescription": "Analysis of global poverty and strategies to alleviate it.",
+      "longDescription": "The book offers an insightful exploration into the lives of the poor and the economic decisions they make. It presents groundbreaking research and analysis on the most effective ways to address global poverty. Banerjee and Duflo use real-world examples and rigorous evidence to challenge common assumptions and propose innovative solutions that can significantly improve the well-being of the world's poorest populations.",
+      "iLike": "Eye-opening insights into the lives of the poor and the most effective strategies to alleviate poverty."
+    }
+  },
+  {
+    "slug": "medici-effect",
+    "date": "2004-10-01",
+    "author": "Frans Johansson",
+    "tags": [
+      "innovation",
+      "strategy",
+      "business",
+      "science",
+      "non-fiction",
+      "entrepreneurship"
+    ],
+    "iLike": "Valuable insights into the necessity of broad knowledge for innovation and creativity. ",
+    "hasFullText": true,
+    "releaseDate": "2024-03-15",
+    "initialReleaseUrl": "https://materie.at/gk/der-medici-effekt-wie-innovation-entsteht/",
+    "initialReleaseName": "Materie.at",
+    "de": {
+      "title": "The Medici Effect",
+      "shortDescription": "Eine Untersuchung der Innovation, inspiriert durch die Schnittstelle von Feldern und Kulturen.",
+      "longDescription": "Diskutiert, wie bahnbrechende Ideen am häufigsten auftreten, wenn wir Konzepte aus einem Bereich in ein neues, unbekanntes Gebiet bringen. Verwendet Beispiele aus verschiedenen Disziplinen, um zu illustrieren, wie Innovation an der Schnittstelle geschieht. Ermutigt dazu, traditionelle Barrieren abzubauen und verschiedene Fachgebiete zu kombinieren. Fordert den Leser auf, anders zu denken und offener für vielfältige Ideen zu sein. Inspiriert von der Familie Medici der Renaissance, die Schöpfer aus einem breiten Spektrum von Disziplinen finanzierte.",
+      "iLike": "Wertvolle Einblicke in die Notwendigkeit von breitem Wissen für Innovation und Kreativität.",
+      "subtitle": "Was Elefanten und Epidemien uns über Innovation lehren können"
+    },
+    "en": {
+      "title": "The Medici Effect",
+      "subtitle": "What Elephants and Epidemics Can Teach Us About Innovation",
+      "shortDescription": "An examination of innovation inspired by the intersection of fields and cultures.",
+      "longDescription": "Discusses how breakthrough ideas most often occur when we bring concepts from one field into a new, unfamiliar territory. Uses examples from various disciplines to illustrate how innovation happens at the intersection. Encourages breaking down traditional barriers and combining different fields of expertise. Challenges the reader to think differently and be more open to diverse ideas. Inspired by the Medici family of the Renaissance, who funded creators from a wide range of disciplines.",
+      "iLike": "Valuable insights into the necessity of broad knowledge for innovation and creativity."
+    }
+  },
+  {
+    "slug": "dont-think-elephant",
+    "date": "2014-09-23",
+    "author": "George Lakoff",
+    "hasFullText": true,
+    "releaseDate": "2024-04-12",
+    "initialReleaseUrl": "https://materie.at/gk/rezension-dont-think-of-an-elephant/",
+    "initialReleaseName": "Materie.at",
+    "amazonLink": "https://amzn.to/4dIVY9t",
+    "onlyEnglish": true,
+    "de": {
+      "title": "The All New Don't Think of an Elephant",
+      "subtitle": "Kenn deine Werte und frame die Debatte",
+      "shortDescription": "Erforscht die Macht des Framings in der politischen Diskussion.",
+      "longDescription": "Enthüllt, wie Konservative politische Debatten dominiert haben, indem sie die Sprache, die in Diskussionen verwendet wird, gerahmt haben, und wie Progressive entgegenwirken können, indem sie ihre eigenen Rahmen effektiv verstehen und einsetzen. Die Analyse fokussiert sich dabei stark auf die Rolle der Sprache bei der Gestaltung der öffentlichen Meinung. Das Buch bietet praktische Ratschläge für das Umrahmen politischer Diskurse und ist somit ein Muss für jeden, der an den Dynamiken politischer Kommunikation interessiert ist. Es ist sowohl eine aufschlussreiche Analyse als auch ein praktischer Leitfaden für die Navigation in politischen Gesprächen.",
+      "iLike": "Sehr interessante und wertvolle Analyse des politischen Framings. Ein Muss für jeden, der politische Kommunikation verstehen möchte."
+    },
+    "en": {
+      "title": "The All New Don't Think of an Elephant",
+      "subtitle": "Know Your Values and Frame the Debate",
+      "iLike": "Very interesting and valuable analysis of political framing. A must read for anyone who wants to understand political communication.",
+      "shortDescription": "Explores the power of framing in political discourse.",
+      "longDescription": "Reveals how conservatives have dominated political debates by framing the language used in discussions, and how progressives can counter by understanding and employing their own frames effectively. At analysis focuses on the role of language in shaping public opinion. It offers practical advice for reframing political discourse, making it a must-read for anyone interested in the dynamics of political communication. The book is both an insightful analysis and a practical guide for navigating political conversations."
+    },
+    "tags": [
+      "politics",
+      "psychology",
+      "non-fiction",
+      "communication",
+      "marketing"
+    ]
+  },
+  {
+    "slug": "age-of-em",
+    "date": "2018-06-05",
+    "author": "Robin Hanson",
+    "hasFullText": false,
+    "amazonLink": "https://amzn.to/43g42cM",
+    "onlyEnglish": true,
+    "de": {
+      "title": "The Age of Em",
+      "subtitle": "Arbeit, Liebe und Leben wenn Roboter die Welt beherrschen",
+      "shortDescription": "Erforschung der Zukunft der Gehirnemulation und ihrer Implikationen.",
+      "longDescription": "Erforscht die potenzielle Zukunft, in der menschliche Gedanken auf Computern emuliert werden können, und geht dabei auf die gesellschaftlichen, wirtschaftlichen und ethischen Implikationen einer solchen Welt ein. Hanson verwendet einen multidisziplinären Ansatz, der sich aus Wirtschaftswissenschaften, Soziologie und Informatik speist, um ein detailliertes Bild davon zu malen, wie sich diese Zukunft entfalten könnte. Das Buch fordert die Leser auf, über die tiefgreifenden Veränderungen der menschlichen Identität, Arbeit und sozialen Strukturen nachzudenken. Es ist eine zum Nachdenken anregende Erkundung einer möglichen Zukunft, die in der aktuellen wissenschaftlichen Erkenntnis verankert ist.",
+      "iLike": "Sehr mutiges und detailliertes Gedankenexperiment. Es enthält viel Wissen und großartige Ideen. Insgesamt ist es ein interessanter Ansatz, um eine potenzielle zukünftige Gesellschaft auf Basis digitaler Menschen zu beschreiben. Große Empfehlung!"
+    },
+    "en": {
+      "title": "The Age of Em",
+      "subtitle": "Work, Love, and Life when Robots Rule the Earth",
+      "iLike": "I love this bold and thorough thought experiment. It contains a lot of wisdom and great ideas. Altogether, it's a great approach to describing a potential future society based on digital humans.",
+      "shortDescription": "Exploring the future of brain emulation and its implications.",
+      "longDescription": "Explores the potential future where human minds can be emulated on computers, delving into the societal, economic, and ethical implications of such a world. Hanson uses a multidisciplinary approach, drawing from economics, sociology, and computer science to paint a detailed picture of how this future could unfold. The book challenges readers to consider the profound changes to human identity, labor, and social structures. It's a thought-provoking exploration of a possible future, grounded in current scientific understanding."
+    },
+    "tags": [
+      "AI",
+      "IT",
+      "sociology",
+      "economics",
+      "technology",
+      "fiction"
     ]
   },
   {
@@ -212,6 +335,7 @@
       "history",
       "sociology"
     ],
+    "onlyEnglish": true,
     "iLike": "Intringuing instights into the development of political systems and the factors that shaped them.",
     "de": {
       "title": "The Origins of Political Order",
@@ -606,31 +730,6 @@
       "shortDescription": "Exploration of cognitive biases and rational thinking.",
       "longDescription": "Delves into how individuals can overcome cognitive biases and emotional reasoning to adopt a more accurate and rational approach to thinking and decision making. It emphasizes the importance of truth over comfort in beliefs. It presents strategies for developing the \"scout mindset\", a mental approach focused on seeking truth, even when it challenges existing beliefs, leading to more effective and objective decision-making.",
       "iLike": "Having an open mindset is such an important and underrated skill. This book is a great guide to it."
-    }
-  },
-  {
-    "slug": "poor-economics",
-    "date": "2011-05-01",
-    "author": "Abhijit V. Banerjee & Esther Duflo",
-    "tags": [
-      "economics",
-      "strategy",
-      "politics",
-      "science",
-      "non-fiction"
-    ],
-    "iLike": "Eye-opening insights into the lives of the poor and the most effective strategies to alleviate poverty.",
-    "de": {
-      "title": "Poor Economics",
-      "shortDescription": "Analyse der globalen Armut und Strategien zu deren Linderung.",
-      "longDescription": "Das Buch bietet einen aufschlussreichen Einblick in das Leben der Armen und die wirtschaftlichen Entscheidungen, die sie treffen. Es präsentiert bahnbrechende Forschung und Analyse über die effektivsten Wege zur Bekämpfung der globalen Armut. Banerjee und Duflo verwenden reale Beispiele und fundierte Beweise, um gängige Annahmen in Frage zu stellen und innovative Lösungen vorzuschlagen, die das Wohlergehen der ärmsten Bevölkerungsgruppen der Welt erheblich verbessern können.",
-      "iLike": "Augenöffnende Einblicke in das Leben der Armen und die effektivsten Strategien zur Linderung der Armut."
-    },
-    "en": {
-      "title": "Poor Economics",
-      "shortDescription": "Analysis of global poverty and strategies to alleviate it.",
-      "longDescription": "The book offers an insightful exploration into the lives of the poor and the economic decisions they make. It presents groundbreaking research and analysis on the most effective ways to address global poverty. Banerjee and Duflo use real-world examples and rigorous evidence to challenge common assumptions and propose innovative solutions that can significantly improve the well-being of the world's poorest populations.",
-      "iLike": "Eye-opening insights into the lives of the poor and the most effective strategies to alleviate poverty."
     }
   },
   {
@@ -1511,34 +1610,6 @@
     }
   },
   {
-    "slug": "medici-effect",
-    "date": "2004-10-01",
-    "author": "Frans Johansson",
-    "tags": [
-      "innovation",
-      "strategy",
-      "business",
-      "science",
-      "non-fiction",
-      "entrepreneurship"
-    ],
-    "iLike": "Valuable insights into the necessity of broad knowledge for innovation and creativity. ",
-    "de": {
-      "title": "The Medici Effect",
-      "shortDescription": "Eine Untersuchung der Innovation, inspiriert durch die Schnittstelle von Feldern und Kulturen.",
-      "longDescription": "Diskutiert, wie bahnbrechende Ideen am häufigsten auftreten, wenn wir Konzepte aus einem Bereich in ein neues, unbekanntes Gebiet bringen. Verwendet Beispiele aus verschiedenen Disziplinen, um zu illustrieren, wie Innovation an der Schnittstelle geschieht. Ermutigt dazu, traditionelle Barrieren abzubauen und verschiedene Fachgebiete zu kombinieren. Fordert den Leser auf, anders zu denken und offener für vielfältige Ideen zu sein. Inspiriert von der Familie Medici der Renaissance, die Schöpfer aus einem breiten Spektrum von Disziplinen finanzierte.",
-      "iLike": "Wertvolle Einblicke in die Notwendigkeit von breitem Wissen für Innovation und Kreativität.",
-      "subtitle": "Was Elefanten und Epidemien uns über Innovation lehren können"
-    },
-    "en": {
-      "title": "The Medici Effect",
-      "subtitle": "What Elephants and Epidemics Can Teach Us About Innovation",
-      "shortDescription": "An examination of innovation inspired by the intersection of fields and cultures.",
-      "longDescription": "Discusses how breakthrough ideas most often occur when we bring concepts from one field into a new, unfamiliar territory. Uses examples from various disciplines to illustrate how innovation happens at the intersection. Encourages breaking down traditional barriers and combining different fields of expertise. Challenges the reader to think differently and be more open to diverse ideas. Inspired by the Medici family of the Renaissance, who funded creators from a wide range of disciplines.",
-      "iLike": "Valuable insights into the necessity of broad knowledge for innovation and creativity."
-    }
-  },
-  {
     "slug": "animal-farm",
     "date": "1945-08-17",
     "author": "George Orwell",
@@ -1882,7 +1953,7 @@
     ]
   },
   {
-    "slug": "elephant",
+    "slug": "elephant-brain",
     "date": "2018-01-02",
     "author": "Kevin Simler & Robin Hanson",
     "hasFullText": false,
@@ -2021,6 +2092,167 @@
       "non-fiction",
       "politics",
       "thrilling"
+    ]
+  },
+  {
+    "slug": "deepness-sky",
+    "date": "1999-06-24",
+    "author": "Vernor Vinge",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/4bWaYz9",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Eine Tiefe am Himmel",
+      "subtitle": "",
+      "shortDescription": "Erforscht interstellaren Konflikt und eine geheimnisvolle außerirdische Zivilisation.",
+      "longDescription": "Erforscht das komplexe Zusammenspiel zwischen verschiedenen Zivilisationen und die weiten, unerforschten Gebiete des Weltraums. Im Zentrum der Geschichte steht eine geheimnisvolle außerirdische Rasse und das sich entfaltende Drama des Erstkontakts, vor dem Hintergrund eines interstellaren Krieges, der alle Parteien zu verschlingen droht. Der Roman vertieft sich in Themen wie Technologie, Macht und den menschlichen Geist und bietet ein reiches Gewebe aus Intrigen und Abenteuer. Es ist eine meisterhafte Mischung aus harter Science-Fiction und tiefgründigen philosophischen Fragen, was es zu einer fesselnden Lektüre für jeden macht, der von der Zukunft der Menschheit und den Geheimnissen des Kosmos fasziniert ist.",
+      "iLike": "Interessante und zum Nachdenken anregende Geschichte und gut geschrieben - ein wahrer Genuß."
+    },
+    "en": {
+      "title": "A Deepness in the Sky",
+      "subtitle": "",
+      "iLike": "Interesting and though-provoking story, well written and really enjoyable.",
+      "shortDescription": "Explores interstellar conflict and a mysterious alien civilization.",
+      "longDescription": "Explores the complex interplay between different civilizations and the vast, uncharted territories of space. At the heart of the story is a mysterious alien race and the unfolding drama of first contact, set against the backdrop of an interstellar war that threatens to engulf all parties. The novel delves into themes of technology, power, and the human spirit, offering a rich tapestry of intrigue and adventure. It's a masterful blend of hard science fiction and deep philosophical questions, making it a compelling read for anyone fascinated by the future of humanity and the mysteries of the cosmos."
+    },
+    "tags": [
+      "sifi",
+      "fiction",
+      "thrilling",
+      "philosophy"
+    ]
+  },
+  {
+    "slug": "fabric-reality",
+    "date": "1997-08-01",
+    "author": "David Deutsch",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/4aoodaz",
+    "onlyEnglish": true,
+    "de": {
+      "title": "The Fabric of Reality",
+      "subtitle": "Die Wissenschaft von Paralleluniversen und ihre Auswirkungen",
+      "shortDescription": "Erforschung der Verflechtung grundlegender wissenschaftlicher Theorien.",
+      "longDescription": "Erforscht die tiefen Verbindungen zwischen den grundlegenden Theorien der Physik, Informatik, Biologie und Philosophie. Der Autor stellt das konventionelle wissenschaftliche Denken in Frage und schlägt vor, dass unser Verständnis der Realität auf dem komplexen Zusammenspiel dieser Disziplinen basiert. Dieses zum Nachdenken anregende Buch lädt die Leser ein, die Natur der Realität und unseren Platz darin neu zu überdenken.",
+      "iLike": "Sehr spannende physikalisch-philosophische Thesen über Wissen, Computer und die grundlegende Funktionsweise der Realität."
+    },
+    "en": {
+      "title": "The Fabric of Reality",
+      "subtitle": "The Science of Parallel Universes and Its Implications",
+      "iLike": "Very exciting physics-philosophical theses about knowledge, computers, and the fundamental functioning of reality.",
+      "shortDescription": "Exploring the interconnectedness of fundamental scientific theories.",
+      "longDescription": "Explores the deep connections between the fundamental theories of physics, computer science, biology, and philosophy. The author challenges conventional scientific thinking, proposing that our understanding of reality is based on the complex interplay of these disciplines. This thought-provoking book invites readers to reconsider the nature of reality and our place within it."
+    },
+    "tags": [
+      "technology",
+      "philosophy",
+      "IT",
+      "non-fiction",
+      "science"
+    ]
+  },
+  {
+    "slug": "same-as-ever",
+    "date": "2023-11-07",
+    "author": "Morgan Housel",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3UZWE2D",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Same as Ever",
+      "subtitle": "23 Geschichten über die Dinge, die sich niemals ändern",
+      "shortDescription": "Erforschung zeitloser Lektionen über Reichtum, Gier und Glück.",
+      "longDescription": "Taucht in die unveränderliche Natur menschlichen Verhaltens ein. Durch eine Reihe fesselnder Essays hebt es hervor, wie historische Muster von Gier, Angst und Herdenmentalität sich auch in der modernen Zeit weiterhin abspielen. Das Buch bietet aufschlussreiche Lektionen und betont die Wichtigkeit, die psychologischen Treiber hinter Investitionsentscheidungen zu verstehen. Es ist eine fesselnde Lektüre für jeden, der die Komplexitäten von Reichtum und Glück mit einer informierteren, zeitlosen Perspektive navigieren möchte.",
+      "iLike": "Großartige Analyse von Dingen, die sich nie ändern - oder besser gesagt: Geschichte lehrt zeitlose Lektionen. Gut geschrieben und sehr interessant."
+    },
+    "en": {
+      "title": "Same as Ever",
+      "subtitle": "A Guide to What Never Changes",
+      "iLike": "Great analysis of things that never change - or better said: history teaches timeless lessons. Well written and very interesting.",
+      "shortDescription": "Exploring timeless lessons on wealth, greed, and happiness.",
+      "longDescription": "Delves into the unchanging nature of human behavior. Through a series of engaging essays, it highlights how historical patterns of greed, fear, and herd mentality continue to play out in modern times. The book offers insightful lessons, emphasizing the importance of understanding psychological drivers behind investment decisions. It's a compelling read for anyone looking to navigate the complexities of wealth and happiness with a more informed, timeless perspective."
+    },
+    "tags": [
+      "psychology",
+      "non-fiction",
+      "self-help",
+      "history",
+      "economics"
+    ]
+  },
+  {
+    "slug": "thinking-in-bets",
+    "date": "2018-02-06",
+    "author": "Annie Duke",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/44GysWe",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Thinking in Bets",
+      "subtitle": "Wie man immer die richtige Karte spielt: Kluge Entscheidungen treffen, selbst wenn man nicht alle Fakten kennt",
+      "shortDescription": "Klügere Entscheidungen treffen, wenn nicht alle Fakten bekannt sind.",
+      "longDescription": "Erforscht, wie man unter Bedingungen der Unsicherheit bessere Entscheidungen treffen kann. Zieht Beispiele aus Poker, Geschäftswelt und dem Leben heran, um zu illustrieren, wie das Denken in Wetten die Entscheidungsfindung verbessern kann. Ermutigt Leser, Unsicherheit zu akzeptieren und informiertere Entscheidungen zu treffen, indem alle möglichen Ergebnisse berücksichtigt werden. Bietet praktische Strategien, um die inhärente Unvorhersehbarkeit des Lebens anzuerkennen und damit umzugehen.",
+      "iLike": "Inspirierende Einblicke in die Entscheidungstheorie von einem professionellen Pokerspieler. Tolles Buch, um die Denkweise zu formen."
+    },
+    "en": {
+      "title": "Thinking in Bets",
+      "subtitle": "Making Smarter Decisions When You Don't Have All the Facts",
+      "iLike": "Inspiring insights into decision theory from a professional poker player. Great book to shape your mindset.",
+      "shortDescription": "Making smarter decisions when you don't have all the facts.",
+      "longDescription": "Explores how to make better decisions under conditions of uncertainty. Draws on examples from poker, business, and life to illustrate how thinking in bets can improve decision-making skills. Encourages readers to embrace uncertainty and make more informed choices by considering all possible outcomes. Offers practical strategies for acknowledging and dealing with the inherent unpredictability of life."
+    },
+    "tags": [
+      "strategy",
+      "non-fiction",
+      "psychology",
+      "mindset",
+      "business",
+      "self-help"
+    ]
+  },
+  {
+    "slug": "three-body-problem",
+    "date": "2006-01-12",
+    "author": "Cixin Liu",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3X0lfpN",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Die drei Sonnen",
+      "subtitle": "Teil 1 der Trisolaris Triologie",
+      "shortDescription": "Eine fesselnde Geschichte über außerirdischen Kontakt und kosmische Dilemmata.",
+      "longDescription": "Erforscht die komplexe Beziehung zwischen der Menschheit und einer fortgeschrittenen außerirdischen Zivilisation. Die Erzählung verwebt ein reichhaltiges Geflecht aus wissenschaftlichen Ideen, philosophischen Fragen und kulturellen Konflikten, was sie zu einer zum Nachdenken anregenden Reise durch Raum und Zeit macht. Sie fordert die Leser heraus, über die Konsequenzen des Erstkontakts und die ethischen Dilemmata der Kommunikation und des Zusammenlebens mit außerirdischen Wesen nachzudenken. Dieses Buch unterhält nicht nur, sondern lädt auch dazu ein, über unseren Platz im Universum zu reflektieren.",
+      "iLike": "Extrem kreatives Buch, das Dutzende interessanter Gedanken in meinem Kopf ausgelöst hat. Allerdings ist es, obwohl es im Allgemeinen gut geschrieben ist, oft nicht gut durchdacht und hätte einer strengeren Logik bedurft."
+    },
+    "en": {
+      "title": "The Three Body Problem",
+      "subtitle": "Part 1 of the Trisolaris Triology",
+      "iLike": "Extremly creative book that sparked dozens of interesting thoughts in my head. However, while it is generally well written, it is often not well though trough and would have needed a more stringent logic.",
+      "shortDescription": "A gripping tale of alien contact and cosmic dilemmas.",
+      "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
+    },
+    "tags": [
+      "sifi",
+      "philosophy",
+      "fiction",
+      "science",
+      "sociology",
+      "technology"
     ]
   }
 ]

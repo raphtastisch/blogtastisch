@@ -9,15 +9,17 @@ import fs from 'fs';
 import { addImage, createTask } from './clickupAPI';
 // const fs = require('fs');
 
-// Load existing book data and social media posts from JSON files
-const bookData = readJsonFile("./public/books.json"); // Corrected typo in file path
-const existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
+/* -------------------------------------------------------------------------- */
+// config
+/* -------------------------------------------------------------------------- */
 
-// Extract slugs of existing social media posts to avoid duplicates
-const slugs = existingSocialMediaPosts.map((post: BookSocialMediaPost) => post.slug);
+const systemMessage: OpenAI.ChatCompletionMessageParam = { role: 'system', content: "You are an expert in creating viral, well-crafted social media posts for books. Don't use any exotic words. Use the name of the author only once per post." };
 
-// Filter out books that already have social media posts
-const filteredBookData = bookData.filter((book: any) => !slugs.includes(book.slug));
+
+/* -------------------------------------------------------------------------- */
+// Step 1
+/* -------------------------------------------------------------------------- */
+
 
 /**
  * Generates a LinkedIn post text for a book.
@@ -27,8 +29,8 @@ const filteredBookData = bookData.filter((book: any) => !slugs.includes(book.slu
  */
 async function createLinkedinText(author: string, enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
-        messages: [{
-            role: 'user', content: `Create a relatively short LinkedIn post for the book "${enTexts.title}" from ${author} using the long description and the reason why I like the book. Put a strong focus on the reason why I like the book. The post should start with an interesting sentence related to the book followed by an empty line. End with a call to action for more book recommendations on my homepage: https://raphaelfritz.at
+        messages: [systemMessage, {
+            role: 'user', content: `Create a short LinkedIn post for the book "${enTexts.title}" from ${author} using the content from the long description and from the reason why I like the book. Put a strong focus on the reason why I like the book. The post should start with an interesting sentence related to the book (a "hook") followed by two empty lines. The second paragraph should include the book title and the name of the author. Don't use the book title in any of the following paragraphs. End with a call to action for more book recommendations on my homepage: https://raphaelfritz.at
 Use paragraphs to structure the text, but don't use headlines. Start every paragraph with a fitting icon or emoji to make the post more engaging. You must not use or include any hashtags in the post!
 
 Long Description: ${enTexts.longDescription}
@@ -54,12 +56,12 @@ Reason why I like the book: ${enTexts.iLike}`
  */
 async function createWhatsappText(author: string, deTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
-        messages: [{
-            role: 'user', content: `Erstelle einen kurzen WhatsApp-Status-Text über das Buch "${deTexts.title}" von ${author}, indem du die Beschreibungen und den Grund, wieso ich das Buch mag, verwendest. Verwende nur 2 bis 3 Sätze. Der Text sollte kurz, einprägsam und im lockeren Ton sein. Benutze am Ende ein passendes Icons oder Emoji, um den Beitrag ansprechender zu machen. Verwende auf keinen Fall Hashtags!
+        messages: [systemMessage, {
+            role: 'user', content: `Erstelle einen kurzen WhatsApp-Status-Text über das Buch "${deTexts.title}" von ${author}. Verwende 2 Sätze. Der Status-Text sollte kurz, einprägsam und im lockeren Ton sein. Verwende nur die Beschreibungen und den Grund, wieso ich das Buch mag, als Grundlage für den Post. Erwähne den Buchtitel nicht im Text! Benutze am Ende ein passendes Icons oder Emoji, um den Beitrag ansprechender zu machen. Verwende auf keinen Fall Hashtags! Setze den Text nicht in Anführungszeichen.
 
 Der Grund, warum ich das Buch mag: ${deTexts.iLike}
 Kurze Beschreibung: ${deTexts.shortDescription}
-Lange Beschreibung für den Kontext: ${deTexts.longDescription}`
+Lange Beschreibung als Kontext: ${deTexts.longDescription}`
         }],
         model: 'gpt-4-turbo-preview',
         temperature: 0.3,
@@ -81,10 +83,15 @@ Lange Beschreibung für den Kontext: ${deTexts.longDescription}`
 async function createImagePrompt(enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with an interesting idea tocapture the essence of the book or an important concept or scene. Don't spoil the plot if it is a novel! If possible include faces to make it more relatable.  
+            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with exactly one interesting idea to capture the essence of the book or an important concept of it. Use only the descriptions below as basis of your idea. If possible include one or more faces to make it more relatable. Don't overload the picture with lots of content.
 
 Don't mention the author or the title in the prompt, just the concept or scene what should be illustrated.            
-Don't return anything but the promt itself.`
+Don't return anything but the promt itself.
+
+Context:
+Short description: ${enTexts.shortDescription}
+Long description: ${enTexts.longDescription}
+Why i like the book: ${enTexts.iLike}`
         }], // Aim for a hyper-realistic design suitable for social media posts.
         model: 'gpt-4-turbo-preview',
         temperature: 0.3,
@@ -100,6 +107,20 @@ Don't return anything but the promt itself.`
 
 
 function step1(numberResults: number, startIndex: number = 0) {
+
+
+    // Load existing book data and social media posts from JSON files
+    const bookData = readJsonFile("./public/books.json"); // Corrected typo in file path
+    const existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
+
+    // Extract slugs of existing social media posts to avoid duplicates
+    const slugs = existingSocialMediaPosts.map((post: BookSocialMediaPost) => post.slug);
+
+    // Filter out books that already have social media posts
+    const filteredBookData = bookData.filter((book: any) => !slugs.includes(book.slug));
+
+
+
     // Generate social media posts for filtered books, limiting to the first three entries
     Promise.all(filteredBookData.slice(startIndex, startIndex + numberResults).map(async (book: Book): Promise<BookSocialMediaPost | null> => {
 
@@ -127,10 +148,9 @@ function step1(numberResults: number, startIndex: number = 0) {
             // whatsappInClickup: false,
             // facebookInClickup: false,
             step1completed: true,
-            step1checked: false,
             step2completed: false,
-            step2checked: false,
             step3completed: false,
+            step4completed: false,
             dueDate: null
         };
     })).then((result) => {
@@ -143,7 +163,7 @@ function step1(numberResults: number, startIndex: number = 0) {
 
 
 /* -------------------------------------------------------------------------- */
-// Step 2
+// Step 2 + 3
 /* -------------------------------------------------------------------------- */
 // Translates given text to German using OpenAI's translation model.
 // @param text: string - The text to be translated.
@@ -152,7 +172,7 @@ async function translateTextToDe(text: string): Promise<string | null> {
     // Create a chat completion request to OpenAI's API for text translation.
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Translate the following text to German: ${text}`
+            role: 'user', content: `Translate the following text to German. Use the informal way of referring to a person (e.g. "du" instead of "Sie"): ${text}`
         }],
         model: 'gpt-4-turbo-preview',
         temperature: 0.3,
@@ -179,7 +199,7 @@ async function generateImage(prompt: string, slug: string): Promise<boolean | nu
         response_format: "b64_json"
     });
 
-    console.log(image.data[0]);
+    // console.log(image.data[0]);
 
     // Check if the image data is present and correctly retrieved.
     if (!image.data || !image.data[0] || !image.data[0].b64_json) {
@@ -198,43 +218,86 @@ async function generateImage(prompt: string, slug: string): Promise<boolean | nu
     return true;
 }
 
+
+
+
 // Processes social media posts for step 2, translating text and generating images.
 // No arguments are taken.
 // No explicit return value, but it will modify the state of `existingSocialMediaPosts`.
-async function step2() {
+async function step2(noSave: boolean = false): Promise<BookSocialMediaPost[]> {
+
+    const existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
+
+
     // Filter posts that have completed step 1 but not step 2.
     const filteredPosts = existingSocialMediaPosts.filter((post: BookSocialMediaPost) => post.step1completed && !post.step2completed);
 
     // Iterate over filteredPosts to translate text and generate images.
     const promises = filteredPosts.map(async (post: BookSocialMediaPost) => {
         try {
+            // Generate an image based on the post's image prompt.
+            await generateImage(post.imagePrompt, post.slug)
+
+        } catch (error) {
+            console.error("Error processing post for", post.slug, error);
+        }
+
+        post.step2completed = true;
+    });
+
+    // Wait for all post processing to complete.
+    await Promise.all(promises);
+
+    if (!noSave) {    // Save the updated posts to a JSON file.
+        writeJsonFile("./scripts/socialMediaPosts.json", existingSocialMediaPosts);
+    }
+
+    return existingSocialMediaPosts;
+}
+
+
+async function step3(existingSocialMediaPosts: BookSocialMediaPost[] | null = null) {
+
+    if (!existingSocialMediaPosts || existingSocialMediaPosts.length === 0) {
+        existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
+
+        // if its still empty: throw an error
+        if (!existingSocialMediaPosts || existingSocialMediaPosts.length === 0) {
+            throw new Error("No posts found");
+        }
+    }
+
+    const filteredPosts = existingSocialMediaPosts!.filter((post: BookSocialMediaPost) => post.step1completed && post.step2completed && !post.step3completed);
+
+    const promises = filteredPosts.map(async (post: BookSocialMediaPost) => {
+        try {
+
             // Translate LinkedIn text to German for Facebook posts.
             const facebookText = await translateTextToDe(post.linkedinText);
-            // Generate an image based on the post's image prompt.
-            await generateImage(post.imagePrompt, post.slug);
 
             // Update the post if the Facebook text was successfully translated.
             if (facebookText) {
                 post.facebookText = facebookText;
-                post.step2completed = true;
             } else {
                 console.log("Error while translating LinkedIn text to German for", post.slug);
             }
         } catch (error) {
             console.error("Error processing post for", post.slug, error);
         }
+
+        post.step3completed = true;
     });
 
     // Wait for all post processing to complete.
     await Promise.all(promises);
 
+
     // Save the updated posts to a JSON file.
     writeJsonFile("./scripts/socialMediaPosts.json", existingSocialMediaPosts);
 }
 
-
 /* -------------------------------------------------------------------------- */
-// Step 3
+// Step 4
 /* -------------------------------------------------------------------------- */
 
 function getNextMonday(date: Date): Date {
@@ -261,10 +324,11 @@ function getNextMondayOrThursday(date: Date): Date {
 }
 
 
-async function step3(firstDate: Date = new Date()) {
+async function step4(firstDate: Date = new Date()) {
+    const existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
 
     // just filters it out, down stream it changes the elements in place
-    const filteredPosts = existingSocialMediaPosts.filter((post: BookSocialMediaPost) => post.step2completed && !post.step3completed);
+    const filteredPosts = existingSocialMediaPosts.filter((post: BookSocialMediaPost) => post.step2completed && post.step3completed && !post.step4completed);
 
     // Pre-compute due dates to avoid async issues when generating on the fly
     const dueDates: Date[] = [];
@@ -282,6 +346,19 @@ async function step3(firstDate: Date = new Date()) {
     // Use map to create an array of promises for each post processing
     const promises = filteredPosts.map(async (post: BookSocialMediaPost, index: number) => {
         const imagePath = path.join(process.cwd(), "scripts", "images", post.slug + "_illustration.webp");
+
+        const folderPath = path.join(process.cwd(), ...contentPath, "books", post.slug);
+
+        const filenames: string[] = fs.readdirSync(folderPath);
+        const imagenameWithExtension = filenames.find((file) => file.includes("cover"));
+
+        if (!imagenameWithExtension) {
+            console.log("No cover image found for", post.slug);
+            return;
+        }
+
+        const coverImagePath = path.join(folderPath, imagenameWithExtension);
+
         const dueDate = dueDates[index]; // Get the due date for the post
 
         try {
@@ -290,13 +367,13 @@ async function step3(firstDate: Date = new Date()) {
             await addImage(linkedinTaskId, imagePath);
 
             const whatsappTaskId = await createTask("Post on Whatsapp: " + post.slug, post.whatsappText, dueDate);
-            await addImage(whatsappTaskId, imagePath);
+            await addImage(whatsappTaskId, coverImagePath); // show the cover image instead of the illustration
 
             const facebookTaskId = await createTask("Post on Facebook: " + post.slug, post.facebookText, dueDate);
             await addImage(facebookTaskId, imagePath);
 
             // Copy and rename the file
-            const newImagePath = path.join(process.cwd(), ...contentPath, "books", post.slug, "illustration.webp");
+            const newImagePath = path.join(folderPath, "illustration.webp");
             console.log(imagePath, newImagePath)
             fs.renameSync(imagePath, newImagePath);
 
@@ -321,15 +398,31 @@ async function callSteps(step: number) {
     if (step === 1) {
         await step1(3, 0);
     } else if (step === 2) {
-        await step2();
+        await step2(); // create Image
     } else if (step === 3) {
-        await step3(new Date());
-    } else {
+        await step3(); // translate for facebook
+    } else if (step === 23) {
+        const existingSocialMediaPosts: BookSocialMediaPost[] = await step2(true); // don't save here
+        await step3(existingSocialMediaPosts);
+    } else if (step === 4) {
+        await step4(new Date());
+    }
+    else {
         console.log("Invalid step number");
     }
 }
 
-callSteps(3);
+
+
+
+const run = parseInt(process.argv[2]);
+//convert run to int and throw an error if it is not an int
+if (isNaN(run)) {
+    throw new Error('Please provide a number as an argument');
+}
+
+console.log("Running step ", run)
+callSteps(run);
 
 
 

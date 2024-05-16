@@ -31,82 +31,86 @@
     }
   },
   "newBook": {
-    "slug": "dictators-handbook",
-    "date": "2011-09-01",
-    "author": "Bruce Bueno de Mesquita & Alastair Smith",
-    "hasFullText": true,
-    "releaseDate": "2024-03-01",
-    "initialReleaseUrl": "https://materie.at/gk/rezension-the-dictators-handbook/",
-    "initialReleaseName": "Materie.at",
-    "amazonLink": "https://amzn.to/3IrJrsB",
-    "onlyEnglish": true,
+    "slug": "",
+    "date": "",
+    "author": "",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "",
+    "onlyEnglish": false,
     "de": {
-      "title": "The Dictator's Handbook",
-      "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist"
+      "title": "",
+      "subtitle": ""
     },
     "en": {
-      "title": "The Dicator's Handbook",
-      "subtitle": "Why Bad Behavior Is Almost Always Good Politics",
-      "iLike": "Shaped my view on dictatorships profoundly. Brilliant framework to explain incentives in dictatorships and any other kind of states and organizations."
+      "title": "",
+      "subtitle": "",
+      "iLike": ""
     }
   },
   "newBookWithEnTexts": {
-    "slug": "dictators-handbook",
-    "date": "2011-09-01",
-    "author": "Bruce Bueno de Mesquita & Alastair Smith",
-    "hasFullText": true,
-    "releaseDate": "2024-03-01",
-    "initialReleaseUrl": "https://materie.at/gk/rezension-the-dictators-handbook/",
-    "initialReleaseName": "Materie.at",
-    "amazonLink": "https://amzn.to/3IrJrsB",
-    "onlyEnglish": true,
+    "slug": "three-body-problem",
+    "date": "2016-01-12",
+    "author": "Cixin Liu",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3X0lfpN",
+    "onlyEnglish": false,
     "de": {
-      "title": "The Dictator's Handbook",
-      "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist"
+      "title": "Die drei Sonnen",
+      "subtitle": "Teil 1 der Trisolaris Triologie"
     },
     "en": {
-      "title": "The Dicator's Handbook",
-      "subtitle": "Why Bad Behavior Is Almost Always Good Politics",
-      "iLike": "Shaped my view on dictatorships profoundly. Brilliant framework to explain incentives in dictatorships and any other kind of states and organizations.",
-      "shortDescription": "Unveiling the true nature of political power and leadership.",
-      "longDescription": "Explores the underlying mechanics of political power and analyzes it with a framework that focuses on the number of people necessary to ascend to and maintain power. It argues that the strategies for staying in power are surprisingly similar across different systems of governance, emphasizing the importance of control over key resources and the support of essential backers. The book uses a wide array of historical and contemporary examples to illustrate its points, making complex political theories accessible and engaging. This insightful analysis challenges conventional wisdom about democracy and dictatorship, offering a new perspective on the motivations behind political actions."
+      "title": "The Three Body Problem",
+      "subtitle": "Part 1 of the Tirsolaris Triology",
+      "iLike": "Extremly creative book that sparked dozens of interesting thoughts in my head. However, while it is generally well written, it is often not well though trough and would have needed a more stringent logic.",
+      "shortDescription": "A gripping tale of alien contact and cosmic dilemmas.",
+      "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
     },
     "tags": [
-      "politics",
-      "strategy",
-      "non-fiction",
-      "science"
+      "sifi",
+      "philosophy",
+      "fiction",
+      "science",
+      "sociology",
+      "technology"
     ]
   },
   "newBookFinished": {
-    "slug": "dictators-handbook",
-    "date": "2011-09-01",
-    "author": "Bruce Bueno de Mesquita & Alastair Smith",
-    "hasFullText": true,
-    "releaseDate": "2024-03-01",
-    "initialReleaseUrl": "https://materie.at/gk/rezension-the-dictators-handbook/",
-    "initialReleaseName": "Materie.at",
-    "amazonLink": "https://amzn.to/3IrJrsB",
-    "onlyEnglish": true,
+    "slug": "three-body-problem",
+    "date": "2006-01-12",
+    "author": "Cixin Liu",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3X0lfpN",
+    "onlyEnglish": false,
     "de": {
-      "title": "The Dictator's Handbook",
-      "subtitle": "Wieso schlechtes Verhalten meist gute Politik ist",
-      "shortDescription": "Enthüllt die wahre Natur politischer Macht und Führung.",
-      "longDescription": "Erforscht die zugrundeliegenden Mechanismen politischer Macht und analysiert sie mit einem Rahmen, der sich auf die Anzahl der Personen konzentriert, die notwendig sind, um an die Macht zu kommen und sie zu erhalten. Es wird argumentiert, dass die Strategien, an der Macht zu bleiben, überraschend ähnlich sind, unabhängig vom Regierungssystem, und betont die Bedeutung der Kontrolle über Schlüsselressourcen und die Unterstützung wesentlicher Unterstützer. Das Buch verwendet eine breite Palette von historischen und zeitgenössischen Beispielen, um seine Punkte zu veranschaulichen, und macht komplexe politische Theorien zugänglich und fesselnd. Diese aufschlussreiche Analyse stellt die herkömmliche Weisheit über Demokratie und Diktatur in Frage und bietet eine neue Perspektive auf die Motivationen hinter politischen Handlungen.",
-      "iLike": "Hat meine Sicht auf Diktaturen tiefgreifend geprägt. Brillantes Rahmenwerk zur Erklärung von Anreizen in Diktaturen und jeder anderen Art von Staaten und Organisationen."
+      "title": "Die drei Sonnen",
+      "subtitle": "Teil 1 der Trisolaris Triologie",
+      "shortDescription": "Eine fesselnde Geschichte über außerirdischen Kontakt und kosmische Dilemmata.",
+      "longDescription": "Erforscht die komplexe Beziehung zwischen der Menschheit und einer fortgeschrittenen außerirdischen Zivilisation. Die Erzählung verwebt ein reichhaltiges Geflecht aus wissenschaftlichen Ideen, philosophischen Fragen und kulturellen Konflikten, was sie zu einer zum Nachdenken anregenden Reise durch Raum und Zeit macht. Sie fordert die Leser heraus, über die Konsequenzen des Erstkontakts und die ethischen Dilemmata der Kommunikation und des Zusammenlebens mit außerirdischen Wesen nachzudenken. Dieses Buch unterhält nicht nur, sondern lädt auch dazu ein, über unseren Platz im Universum zu reflektieren.",
+      "iLike": "Extrem kreatives Buch, das Dutzende interessanter Gedanken in meinem Kopf ausgelöst hat. Allerdings ist es, obwohl es im Allgemeinen gut geschrieben ist, oft nicht gut durchdacht und hätte einer strengeren Logik bedurft."
     },
     "en": {
-      "title": "The Dicator's Handbook",
-      "subtitle": "Why Bad Behavior Is Almost Always Good Politics",
-      "iLike": "Shaped my view on dictatorships profoundly. Brilliant framework to explain incentives in dictatorships and any other kind of states and organizations.",
-      "shortDescription": "Unveiling the true nature of political power and leadership.",
-      "longDescription": "Explores the underlying mechanics of political power and analyzes it with a framework that focuses on the number of people necessary to ascend to and maintain power. It argues that the strategies for staying in power are surprisingly similar across different systems of governance, emphasizing the importance of control over key resources and the support of essential backers. The book uses a wide array of historical and contemporary examples to illustrate its points, making complex political theories accessible and engaging. This insightful analysis challenges conventional wisdom about democracy and dictatorship, offering a new perspective on the motivations behind political actions."
+      "title": "The Three Body Problem",
+      "subtitle": "Part 1 of the Trisolaris Triology",
+      "iLike": "Extremly creative book that sparked dozens of interesting thoughts in my head. However, while it is generally well written, it is often not well though trough and would have needed a more stringent logic.",
+      "shortDescription": "A gripping tale of alien contact and cosmic dilemmas.",
+      "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
     },
     "tags": [
-      "politics",
-      "strategy",
-      "non-fiction",
-      "science"
+      "sifi",
+      "philosophy",
+      "fiction",
+      "science",
+      "sociology",
+      "technology"
     ]
   }
 }

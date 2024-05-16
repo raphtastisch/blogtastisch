@@ -166,7 +166,14 @@ async function main(run: number = 0) {
 // step1()
 // step2()
 
-main(2)
+const run = parseInt(process.argv[2]);
+//convert run to int and throw an error if it is not an int
+if (isNaN(run)) {
+    throw new Error('Please provide a number as an argument');
+}
+
+console.log("Running step ", run)
+main(run);
 
 // TO add
 //     imagePath?: string;
