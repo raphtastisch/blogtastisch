@@ -274,6 +274,38 @@
     }
   },
   {
+    "slug": "moral-landscape",
+    "date": "2010-10-05",
+    "author": "Sam Harris",
+    "hasFullText": true,
+    "onlyEnglish": true,
+    "releaseDate": "2024-06-21",
+    "initialReleaseUrl": "https://materie.at/gk/rezension-the-moral-landscape/",
+    "initialReleaseName": "Materie.at",
+    "amazonLink": "https://amzn.to/4cBN500",
+    "tags": [
+      "religion",
+      "science",
+      "philosophy",
+      "non-fiction"
+    ],
+    "iLike": "Science must provide the basis for our universal moral values - we can't leave it to religios fanatics and hypocratic politicians.",
+    "de": {
+      "title": "The Moral Landscape",
+      "shortDescription": "Ein wissenschaftlicher Ansatz zum Verständnis menschlicher Werte.",
+      "longDescription": "Argumentiert, dass Wissenschaft eine Autorität in moralischen Fragen sein kann und sollte, menschliche Werte formt und festlegt, was ein gutes Leben ausmacht. Harris fordert die traditionelle Grenze zwischen Wissenschaft und Moral heraus und schlägt vor, dass wissenschaftliches Verständnis des menschlichen Geistes zu objektiveren und rationaleren Grundlagen für die Diskussion von Moral, Ethik und menschlichem Wohlbefinden führen kann.",
+      "iLike": "Die Wissenschaft muss die Grundlage für unsere universellen moralischen Werte liefern - wir können es nicht religiösen Fanatikern und heuchlerischen Politikern überlassen.",
+      "subtitle": "Wie die Wissenschaft menschliche Werte bestimmen kann"
+    },
+    "en": {
+      "title": "The Moral Landscape",
+      "subtitle": "How Science Can Determine Human Values",
+      "shortDescription": "A scientific approach to understanding human values.",
+      "longDescription": "Argues that science can, and should, be an authority on moral issues, shaping human values and setting out what constitutes a good life. Harris challenges the traditional boundary between science and morality, proposing that scientific understanding of the human mind can lead to more objective and rational bases for discussing morality, ethics, and human well-being.",
+      "iLike": "Science must provide the basis for our universal moral values - we can't leave it to religious fanatics and hypocritical politicians."
+    }
+  },
+  {
     "slug": "outlive",
     "date": "2021-08-01",
     "author": "Peter Attia",
@@ -834,32 +866,6 @@
       "shortDescription": "Insights on entrepreneurship and startup innovation.",
       "longDescription": "Offers a unique perspective on startup innovation and entrepreneurship. It challenges conventional wisdom and presents contrarian views on building successful technology businesses, emphasizing the creation of new markets. Thiel and Masters guide readers through the process of thinking and acting innovatively, arguing that true progress comes from going from zero to one, rather than iterating on existing ideas.",
       "iLike": "Great book that shaped my thinking about radical innovation."
-    }
-  },
-  {
-    "slug": "moral-landscape",
-    "date": "2010-10-05",
-    "author": "Sam Harris",
-    "tags": [
-      "religion",
-      "science",
-      "philosophy",
-      "non-fiction"
-    ],
-    "iLike": "Science must provide the basis for our universal moral values - we can't leave it to religios fanatics and hypocratic politicians.",
-    "de": {
-      "title": "The Moral Landscape",
-      "shortDescription": "Ein wissenschaftlicher Ansatz zum Verständnis menschlicher Werte.",
-      "longDescription": "Argumentiert, dass Wissenschaft eine Autorität in moralischen Fragen sein kann und sollte, menschliche Werte formt und festlegt, was ein gutes Leben ausmacht. Harris fordert die traditionelle Grenze zwischen Wissenschaft und Moral heraus und schlägt vor, dass wissenschaftliches Verständnis des menschlichen Geistes zu objektiveren und rationaleren Grundlagen für die Diskussion von Moral, Ethik und menschlichem Wohlbefinden führen kann.",
-      "iLike": "Die Wissenschaft muss die Grundlage für unsere universellen moralischen Werte liefern - wir können es nicht religiösen Fanatikern und heuchlerischen Politikern überlassen.",
-      "subtitle": "Wie die Wissenschaft menschliche Werte bestimmen kann"
-    },
-    "en": {
-      "title": "The Moral Landscape",
-      "subtitle": "How Science Can Determine Human Values",
-      "shortDescription": "A scientific approach to understanding human values.",
-      "longDescription": "Argues that science can, and should, be an authority on moral issues, shaping human values and setting out what constitutes a good life. Harris challenges the traditional boundary between science and morality, proposing that scientific understanding of the human mind can lead to more objective and rational bases for discussing morality, ethics, and human well-being.",
-      "iLike": "Science must provide the basis for our universal moral values - we can't leave it to religious fanatics and hypocritical politicians."
     }
   },
   {

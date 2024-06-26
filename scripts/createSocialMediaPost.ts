@@ -30,10 +30,26 @@ const systemMessage: OpenAI.ChatCompletionMessageParam = { role: 'system', conte
 async function createLinkedinText(author: string, enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [systemMessage, {
-            role: 'user', content: `Create a short LinkedIn post for the book "${enTexts.title}" from ${author} using the content from the long description and from the reason why I like the book. Put a strong focus on the reason why I like the book. The post should start with an interesting sentence related to the book (a "hook") followed by two empty lines. The second paragraph should include the book title and the name of the author. Don't use the book title in any of the following paragraphs. End with a call to action for more book recommendations on my homepage: https://raphaelfritz.at
-Use paragraphs to structure the text, but don't use headlines. Start every paragraph with a fitting icon or emoji to make the post more engaging. You must not use or include any hashtags in the post!
+            role: 'user', content: `Create a short LinkedIn post for the book "${enTexts.title}" from ${author} using the content from the descriptions and from the reason why I like the book.
+Use paragraphs to structure the text, but don't use headlines. Start each paragraph with a fitting icon or emoji to make the post more engaging.
 
-Long Description: ${enTexts.longDescription}
+Structure:
+- The post should start with an interesting or controversial sentence related to the book (a "hook"), perferably short. Use only a single sentence! If it is a question, start the second paragraph with the answer.
+- Add: \n\n\n
+- The second paragraph should give the first paragraph (the "hook") some content and if necessary an explanation based on the content of the book. It should end with a question that makes the reader curious about the book. Keep the question simple and don't be too pushy. This paragraph should not include the book title or the author's name. Don't use "delves" in the text. 
+- Add \n\n
+- The third paragraph should include the book title and the name of the author and some general information about what the book is about. Don't use the book title in any of the following paragraphs.
+- Add \n\n
+- The fourth paragraph should include the reason why I like the book and end with question that tempts the reader to comment on the post. 
+- Add: \n\n\n
+- Add a few general hashtags that are related to the book.
+- Add: \n\n\n
+- Add four more line breaks and then a call to action for more book recommendations on my homepage: https:  //raphaelfritz.at
+
+
+Source Content:
+Short description: ${enTexts.shortDescription}
+Long description: ${enTexts.longDescription}
 Reason why I like the book: ${enTexts.iLike}`
         }],
         model: 'gpt-4-turbo-preview',
@@ -83,7 +99,7 @@ Lange Beschreibung als Kontext: ${deTexts.longDescription}`
 async function createImagePrompt(enTexts: Content): Promise<string | null> {
     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
         messages: [{
-            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with exactly one interesting idea to capture the essence of the book or an important concept of it. Use only the descriptions below as basis of your idea. If possible include one or more faces to make it more relatable. Don't overload the picture with lots of content.
+            role: 'user', content: `Create a prompt for an image with DALL-E illustrating the book "${enTexts.title}". If possible, base the prompt on the title, otherwise come up with exactly one interesting idea to capture the essence of the book or an important concept of it. Use only the descriptions below as basis of your idea. If possible make a face a prominent part of it to make it more relatable. Don't overload the picture with lots of content. Include as few persons as possible.
 
 Don't mention the author or the title in the prompt, just the concept or scene what should be illustrated.            
 Don't return anything but the promt itself.
@@ -379,7 +395,7 @@ async function step4(firstDate: Date = new Date()) {
 
             // Mark post as processed
             post.dueDate = dueDate;
-            post.step3completed = true;
+            post.step4completed = true;
         } catch (error) {
             // Handle any errors that might occur
             console.error("Error processing post", post.slug, error);
@@ -396,7 +412,7 @@ async function step4(firstDate: Date = new Date()) {
 
 async function callSteps(step: number) {
     if (step === 1) {
-        await step1(3, 0);
+        await step1(1, 0);
     } else if (step === 2) {
         await step2(); // create Image
     } else if (step === 3) {
@@ -433,122 +449,14 @@ callSteps(run);
 
 
 
-// generateImage("A 16:9 picture. Illustrate a grand, ancient hall where leaders from various civilizations are gathered around a round table, each passionately discussing and debating the foundations of society. In the background, a large, intricate tapestry depicts the evolution of political systems from tribal communities to complex governments. The faces of the leaders are expressive, showing determination, wisdom, and the weight of responsibility. The scene is bathed in a warm, golden light, suggesting the dawn of political order.")
+// insights
+/*
 
-// step 2: translation linkedin -> facebook and generate Image
+Make a few hook recommendations, then select one
 
+give comment to each section (or with voice?) and let GPT edit it
 
-
-
-
-// import OpenAI from 'openai';
-// import { Book, BookSocialMediaPost, Content } from "@/lib/config";
-// import { readJsonFile, writeJsonFile, openai, translate } from './utils';
-
-// const bookData = readJsonFile("./pulic/books.json");
-// const existingSocialMediaPosts = readJsonFile("./scripts/socialMediaPosts.json");
-
-// const slugs = existingSocialMediaPosts.map((post: BookSocialMediaPost) => post.slug);
-
-// const filteredBookData = bookData.filter((book: any) => !slugs.includes(book.slug));
+run a spell check automatically after editing
 
 
-// async function createLinkedinText(author: string, enTexts: Content): Promise<string | null> {
-//     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
-//         messages: [{
-//             role: 'user', content: `Create a linkedin post for the book "${enTexts.title}" from ${author}.
-//         As input use the long description and the reason why I like the book. The posts should be structured with an interesting and catchy sentence at the beginning that is related to the book. The rest of the post should then mainly include the content from the long description. Include the reason why I like the book at the beginning or end. Add a call to action at the end that more book recommendations can be found on my homepage: https://raphaelfritz.at
-//         Long Description: ${enTexts.longDescription}
-//         Reason why I like the book: ${enTexts.iLike}`
-//         }],
-//         model: 'gpt-4-turbo-preview',
-//         temperature: 0.3,
-//     });
-//     // console.log(chatCompletion.choices[0].message.content);
-//     if (!chatCompletion.choices[0].message.content) {
-//         console.log("Error while creating a linkedin text", enTexts.title, author, 'Error while creating a Linkedin Text.');
-//         return null
-//     }
-//     else {
-//         return chatCompletion.choices[0].message.content
-//     }
-// }
-
-// async function createWhatsappText(author: string, deTexts: Content): Promise<string | null> {
-//     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
-//         messages: [{
-//             role: 'user', content: `Erstelle einen sehr kurzen Text mit ein paar Sätzen über das Buch "${deTexts.title}" von ${author} für einen Whatsapp status. Der Ton sollte möglichst umgänglich formuliert sein. Er soll kurz, prägnat und catchy sein.
-// Als Input verwende die Beschreibungen und den Grund, wieso ich das Buch mag. Der
-// Gründe wieso ich das Buch mag: ${deTexts.iLike}
-// Kurze Beschreibung: ${deTexts.shortDescription}
-// Lange Beschreibung für Kontext: ${deTexts.longDescription}`
-//         }],
-//         model: 'gpt-4-turbo-preview',
-//         temperature: 0.3,
-//     });
-
-//     // console.log(chatCompletion.choices[0].message.content);
-//     if (!chatCompletion.choices[0].message.content) {
-//         console.log("Error while creating a whatsapp text", deTexts.title, author, 'Error while creating a Whatsapp Text.');
-//         return null
-//     }
-//     else {
-//         return chatCompletion.choices[0].message.content
-//     }
-// }
-
-// async function createImagePrompt(enTexts: Content): Promise<string | null> {
-//     const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
-//         messages: [{
-//             role: 'user', content: `Create a prompt to create a 16:9 image with Dall-E that illustrates the book "${enTexts.title}". Come up with a creative idea that illustrates the book as a whole or an importent concept of the book. If it is a novel, don't spoiler the plot. Use a pseudo-realistic design. The image should be suitable for a social media posts.`
-//         }],
-//         model: 'gpt-4-turbo-preview',
-//         temperature: 0.3,
-//     });
-
-//     // console.log(chatCompletion.choices[0].message.content);
-//     if (!chatCompletion.choices[0].message.content) {
-//         console.log("Error while creating an image prompt", enTexts.title, 'Error while creating a Image Prompt undefined');
-//         return null
-//     }
-//     else {
-//         return chatCompletion.choices[0].message.content
-//     }
-// }
-
-
-// // step1
-// Promise.all(filteredBookData.map(async (book: Book, index: number) => {
-//     if (index > 2) {
-//         return
-//     }
-//     if (!book.en || !book.de) {
-//         console.log("Book has no english or german content", book.slug)
-//         return;
-//     }
-//     const linkedinText = await createLinkedinText(book.author, book.en!);
-//     const whatsappText = await createWhatsappText(book.author, book.de!);
-//     const imagePrompt = await createImagePrompt(book.en!)
-//     if (!linkedinText || !whatsappText || !imagePrompt) {
-//         console.log("Error while creating social media posts", book.slug)
-//         return;
-//     }
-
-//     const newPost: BookSocialMediaPost = {
-//         slug: book.slug,
-//         linkedinText: linkedinText,
-//         whatsappText: whatsappText,
-//         facebookText: "",
-//         imagePrompt: imagePrompt,
-//         imageGenerated: false,
-//         linkedinPosted: false,
-//         whatsappPosted: false,
-//         facebookPosted: false,
-//         picturePrompts: []
-//     }
-//     return newPost;
-// })).then((result) => {
-//     // only add the "non-null posts"
-//     result.filter(post => post !== undefined && post !== null).forEach(post => existingSocialMediaPosts.push(post));
-//     writeJsonFile("./scripts/socialMediaPosts.json", existingSocialMediaPosts);
-// })
+*/

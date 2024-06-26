@@ -80,7 +80,7 @@
     "step1completed": true,
     "step2completed": true,
     "step3completed": true,
-    "step4completed": false,
+    "step4completed": true,
     "dueDate": "2024-05-16T11:32:45.847Z"
   },
   {
@@ -92,7 +92,7 @@
     "step1completed": true,
     "step2completed": true,
     "step3completed": true,
-    "step4completed": false,
+    "step4completed": true,
     "dueDate": "2024-05-20T11:32:45.847Z"
   },
   {
@@ -104,7 +104,7 @@
     "step1completed": true,
     "step2completed": true,
     "step3completed": true,
-    "step4completed": false,
+    "step4completed": true,
     "dueDate": "2024-05-23T11:32:45.847Z"
   },
   {
@@ -116,7 +116,19 @@
     "step1completed": true,
     "step2completed": true,
     "step3completed": true,
-    "step4completed": false,
+    "step4completed": true,
     "dueDate": "2024-05-27T11:32:45.847Z"
+  },
+  {
+    "slug": "moral-landscape",
+    "linkedinText": "Can science determine human values? 🔥\n\n🙅 If you say \"no\", you're not alone: Many people believe science and morality are different topics, and the latter should better be governed by religion and tradition.\n\n📚 But then you'll definitely want to read \"The Moral Landscape\" by Sam Harris. This great book challenges the age-old narrative, suggesting that our understanding of well-being and the human mind could offer a more objective foundation for ethics than any historic teaching.\n\n\nHere are my key takeaways:\n⚗️ Science Measures Morality: By studying the effects of moral principles on society, we can objectively determine which ones are better or worse.\n🌍 Universal Morality: Just like there’s no Christian mathematics or Islamic biology, there should be no religiously shaped moral differences.\n😄 Well-being as a Criterion: Morality should be grounded in the well-being of intelligent beings. Not a perfect criterion, but far better than the alternatives.\n\n\nWhat are your thoughts on this?\n\n#Science #Morality #ThoughtLeadership\n\n\nIf you don't want to read the book, you can get the main insights from my review: https://raphaelfritz.at/en/books/moral-landscape",
+    "whatsappText": "Wissenschaft oder Religion & Tradition - worauf sollen unsere Werte basieren? Sehr lesenswert zu dem Thema! ✨",
+    "facebookText": "Kann die Wissenschaft menschliche Werte bestimmen? 🔥\n\n🙅 Wenn du \"nein\" sagst, bist du nicht allein: Viele Leute glauben, dass Wissenschaft und Moral unterschiedliche Themen sind und letztere besser durch Religion und Tradition geregelt werden sollten.\n\n📚 Aber dann wirst du definitiv \"The Moral Landscape\" von Sam Harris lesen wollen. Dieses großartige Buch fordert die jahrhundertealte Erzählung \"Religion ist nötig für Werte\" heraus und schlägt vor, dass unser Verständnis von Wohlbefinden und dem menschlichen Gehirn eine objektivere Grundlage für Ethik bieten könnte als jede religöse Lehre.\n\nHier sind meine wichtigsten Erkenntnisse:\n⚗️ Wissenschaft misst Moral: Indem wir die Auswirkungen von moralischen Prinzipien auf die Gesellschaft studieren, können wir objektiv bestimmen, welche besser oder schlechter sind.\n🌍 Universelle Moral: Genau wie es keine christliche Mathematik oder islamische Biologie gibt, sollte es keine religiös geformten moralischen Unterschiede geben.\n😄 Wohlbefinden als Kriterium: Moral sollte im Wohlbefinden intelligenter Wesen verankert sein. Nicht das perfekte Kriterium, aber weit besser als die Alternativen.\n\nWas denkst du darüber?\n\n#Wissenschaft #Moral #ThoughtLeadership\n\nWenn du das Buch nicht lesen möchtest, kannst du das Wichtigste auch in meinem Buch-Review lesen: https://raphaelfritz.at/en/books/moral-landscape",
+    "imagePrompt": "Create a 16:9 image in a photo-realistic style. A scientist and Jesus both pull on a book with 'Values' written on it in front of a neutral background.",
+    "step1completed": true,
+    "step2completed": true,
+    "step3completed": true,
+    "step4completed": true,
+    "dueDate": null
   }
 ]
