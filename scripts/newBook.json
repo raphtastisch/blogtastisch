@@ -31,86 +31,84 @@
     }
   },
   "newBook": {
-    "slug": "",
-    "date": "",
-    "author": "",
+    "slug": "hail-mary",
+    "date": "2021-05-04",
+    "author": "Andy Weir",
     "hasFullText": false,
     "releaseDate": "",
     "initialReleaseUrl": "",
     "initialReleaseName": "",
-    "amazonLink": "",
-    "onlyEnglish": false,
+    "amazonLink": "https://amzn.to/4brFZdi",
+    "onlyEnglish": true,
     "de": {
-      "title": "",
+      "title": "Projekt Hail Mary",
       "subtitle": ""
     },
     "en": {
-      "title": "",
+      "title": "Project Hail Mary",
       "subtitle": "",
-      "iLike": ""
+      "iLike": "Captivating and super entertaining sci-fi novel. I loved the humor and the focus on actual science procedures in it."
     }
   },
   "newBookWithEnTexts": {
-    "slug": "three-body-problem",
-    "date": "2016-01-12",
-    "author": "Cixin Liu",
+    "slug": "hail-mary",
+    "date": "2021-05-04",
+    "author": "Andy Weir",
     "hasFullText": false,
     "releaseDate": "",
     "initialReleaseUrl": "",
     "initialReleaseName": "",
-    "amazonLink": "https://amzn.to/3X0lfpN",
-    "onlyEnglish": false,
+    "amazonLink": "https://amzn.to/4brFZdi",
+    "onlyEnglish": true,
     "de": {
-      "title": "Die drei Sonnen",
-      "subtitle": "Teil 1 der Trisolaris Triologie"
+      "title": "Projekt Hail Mary",
+      "subtitle": ""
     },
     "en": {
-      "title": "The Three Body Problem",
-      "subtitle": "Part 1 of the Tirsolaris Triology",
-      "iLike": "Extremly creative book that sparked dozens of interesting thoughts in my head. However, while it is generally well written, it is often not well though trough and would have needed a more stringent logic.",
-      "shortDescription": "A gripping tale of alien contact and cosmic dilemmas.",
-      "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
+      "title": "Project Hail Mary",
+      "subtitle": "",
+      "iLike": "Captivating and super entertaining sci-fi novel. I loved the humor and the focus on actual science procedures in it.",
+      "shortDescription": "An unexpected solo mission to save Earth from disaster.",
+      "longDescription": "Embarks on a desperate, last-chance mission to save Earth from an extinction-level threat. Alone and millions of miles from home, the protagonist must solve scientific puzzles, forge unexpected alliances, and muster the courage to survive against unimaginable odds. With humanity's fate hanging in the balance, the story explores themes of resilience, ingenuity, and the power of friendship in the face of despair."
     },
     "tags": [
-      "sifi",
-      "philosophy",
+      "scifi",
       "fiction",
       "science",
-      "sociology",
-      "technology"
+      "mindset",
+      "humor"
     ]
   },
   "newBookFinished": {
-    "slug": "three-body-problem",
-    "date": "2006-01-12",
-    "author": "Cixin Liu",
+    "slug": "hail-mary",
+    "date": "2021-05-04",
+    "author": "Andy Weir",
     "hasFullText": false,
     "releaseDate": "",
     "initialReleaseUrl": "",
     "initialReleaseName": "",
-    "amazonLink": "https://amzn.to/3X0lfpN",
-    "onlyEnglish": false,
+    "amazonLink": "https://amzn.to/4brFZdi",
+    "onlyEnglish": true,
     "de": {
-      "title": "Die drei Sonnen",
-      "subtitle": "Teil 1 der Trisolaris Triologie",
-      "shortDescription": "Eine fesselnde Geschichte über außerirdischen Kontakt und kosmische Dilemmata.",
-      "longDescription": "Erforscht die komplexe Beziehung zwischen der Menschheit und einer fortgeschrittenen außerirdischen Zivilisation. Die Erzählung verwebt ein reichhaltiges Geflecht aus wissenschaftlichen Ideen, philosophischen Fragen und kulturellen Konflikten, was sie zu einer zum Nachdenken anregenden Reise durch Raum und Zeit macht. Sie fordert die Leser heraus, über die Konsequenzen des Erstkontakts und die ethischen Dilemmata der Kommunikation und des Zusammenlebens mit außerirdischen Wesen nachzudenken. Dieses Buch unterhält nicht nur, sondern lädt auch dazu ein, über unseren Platz im Universum zu reflektieren.",
-      "iLike": "Extrem kreatives Buch, das Dutzende interessanter Gedanken in meinem Kopf ausgelöst hat. Allerdings ist es, obwohl es im Allgemeinen gut geschrieben ist, oft nicht gut durchdacht und hätte einer strengeren Logik bedurft."
+      "title": "Projekt Hail Mary",
+      "subtitle": "",
+      "shortDescription": "Eine unerwartete Solo-Mission, um die Erde vor einer Katastrophe zu retten.",
+      "longDescription": "Begibt sich auf eine verzweifelte, letzte Chance-Mission, um die Erde vor einer Bedrohung, die zur Auslöschung führen könnte, zu retten. Allein und Millionen von Meilen von zu Hause entfernt, muss der Protagonist wissenschaftliche Rätsel lösen, unerwartete Allianzen schmieden und den Mut aufbringen, gegen unvorstellbare Widerstände zu überleben. Mit dem Schicksal der Menschheit in der Schwebe erforscht die Geschichte Themen wie Widerstandsfähigkeit, Einfallsreichtum und die Kraft der Freundschaft angesichts der Verzweiflung.",
+      "iLike": "Fesselnder und super unterhaltsamer Sci-Fi-Roman. Ich habe den Humor und den Schwerpunkt auf tatsächliche wissenschaftliche Verfahren darin geliebt."
     },
     "en": {
-      "title": "The Three Body Problem",
-      "subtitle": "Part 1 of the Trisolaris Triology",
-      "iLike": "Extremly creative book that sparked dozens of interesting thoughts in my head. However, while it is generally well written, it is often not well though trough and would have needed a more stringent logic.",
-      "shortDescription": "A gripping tale of alien contact and cosmic dilemmas.",
-      "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
+      "title": "Project Hail Mary",
+      "subtitle": "",
+      "iLike": "Captivating and super entertaining sci-fi novel. I loved the humor and the focus on actual science procedures in it.",
+      "shortDescription": "An unexpected solo mission to save Earth from disaster.",
+      "longDescription": "Embarks on a desperate, last-chance mission to save Earth from an extinction-level threat. Alone and millions of miles from home, the protagonist must solve scientific puzzles, forge unexpected alliances, and muster the courage to survive against unimaginable odds. With humanity's fate hanging in the balance, the story explores themes of resilience, ingenuity, and the power of friendship in the face of despair."
     },
     "tags": [
-      "sifi",
-      "philosophy",
+      "scifi",
       "fiction",
       "science",
-      "sociology",
-      "technology"
+      "mindset",
+      "humor"
     ]
   }
 }

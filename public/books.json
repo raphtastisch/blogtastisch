@@ -2125,7 +2125,7 @@
       "longDescription": "Explores the complex interplay between different civilizations and the vast, uncharted territories of space. At the heart of the story is a mysterious alien race and the unfolding drama of first contact, set against the backdrop of an interstellar war that threatens to engulf all parties. The novel delves into themes of technology, power, and the human spirit, offering a rich tapestry of intrigue and adventure. It's a masterful blend of hard science fiction and deep philosophical questions, making it a compelling read for anyone fascinated by the future of humanity and the mysteries of the cosmos."
     },
     "tags": [
-      "sifi",
+      "scifi",
       "fiction",
       "thrilling",
       "philosophy"
@@ -2253,12 +2253,144 @@
       "longDescription": "Explores the complex relationship between humanity and an advanced alien civilization. The narrative weaves together a rich tapestry of scientific ideas, philosophical questions, and cultural conflicts, making it a thought-provoking journey through space and time. It challenges readers to ponder the consequences of first contact and the ethical dilemmas of communication and coexistence with extraterrestrial beings. This book not only entertains but also invites reflection on our place in the universe."
     },
     "tags": [
-      "sifi",
+      "scifi",
       "philosophy",
       "fiction",
       "science",
       "sociology",
       "technology"
+    ]
+  },
+  {
+    "slug": "we-are-bob",
+    "date": "2017-04-14",
+    "author": "Dennis E. Taylor",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3XK7eNe",
+    "onlyEnglish": false,
+    "de": {
+      "title": "Ich bin viele (Wir sind Bob)",
+      "subtitle": "Bobiverse, Buch 1",
+      "shortDescription": "Sci-Fi-Abenteuer eines Replikanten, der das Weltall durchquert.",
+      "longDescription": "Erforscht das faszinierende Konzept des Bewusstseins eines Software-Ingenieurs, das in ein Raumschiff hochgeladen wird und zu einer sich selbst replizierenden Von-Neumann-Sonde wird. Während der Protagonist, Bob, das Weltall durchquert, trifft er auf außerirdische Zivilisationen, stellt sich ethischen Dilemmata und begibt sich auf eine Mission, um die Menschheit vor dem Aussterben zu retten. Die Erzählung verbindet geschickt Humor, Science-Fiction und philosophische Überlegungen über Identität und den Platz der Menschheit im Universum. Es ist eine zum Nachdenken anregende Reise, die den Leser herausfordert, darüber nachzudenken, was es bedeutet, am Leben zu sein.",
+      "iLike": "Hervorragende Handlungsidee, wirklich unterhaltsam und sehr gut durchdacht. Einer meiner Favoriten!"
+    },
+    "en": {
+      "title": "We are Legion (We are Bob)",
+      "subtitle": "Bobiverse, Book 1",
+      "iLike": "Superb plot-idea, really entertaining and very well thought through. One of my favorites!",
+      "shortDescription": "Sci-fi adventure of a replicant navigating the cosmos.",
+      "longDescription": "Explores the intriguing concept of a software engineer's consciousness uploaded into a spaceship, becoming a self-replicating Von Neumann probe. As the protagonist, Bob, navigates the cosmos, he encounters alien civilizations, tackles ethical dilemmas, and embarks on a mission to save humanity from extinction. The narrative cleverly combines humor, science fiction, and philosophical musings on identity and humanity's place in the universe. It's a thought-provoking journey that challenges the reader to consider what it means to be alive."
+    },
+    "tags": [
+      "fiction",
+      "humor",
+      "philosophy",
+      "scifi",
+      "science",
+      "sociology",
+      "technology"
+    ]
+  },
+  {
+    "slug": "information-war",
+    "date": "2024-03-07",
+    "author": "Peter Pomerantsev",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3VIZ84N",
+    "onlyEnglish": true,
+    "de": {
+      "title": "Wie man eine Informationskrieg gewinnt",
+      "subtitle": "Der Propagandist der Hitler überlistete",
+      "shortDescription": "Navigation durch die Komplexitäten der modernen Informationskriegsführung.",
+      "longDescription": "Erforscht die Dynamiken von Propaganda, Fehlinformationen und Medienkriegsführung. Anhand des realen Beispiels des wichtigsten britischen Propagandaexperten im Zweiten Weltkrieg werden Strategien in Informationskriegen erläutert. Das Buch stellt eine Verbindung zur aktuellen Situation in der Ukraine her, wo Russland seit über einem Jahrzehnt einen Informationskrieg führt. Es ist ein Muss für jeden, der sich für das Thema Propaganda interessiert und bietet ein tiefes Verständnis der Mechanismen hinter der Manipulation von Informationen.",
+      "iLike": "Großartige Einblicke, wie Propaganda funktioniert und worum es wirklich geht."
+    },
+    "en": {
+      "title": "How to Win an Information War",
+      "subtitle": "The Propagandist Who Outwitted Hitler",
+      "iLike": "Great insights into how propaganda works and what it is really about.",
+      "shortDescription": "Navigating the complexities of modern information warfare.",
+      "longDescription": "Explores the dynamics of propaganda, misinformation, and media warfare. Drawing on the real-world example of the most important British propaganda expert in the Second World War, it explains strategies used in information wars. The book links this back to the current situation in Ukraine, where Russia has been waging an information war for over a decade. It is a must-read for anyone interested in the topic of propaganda, providing a deep understanding of the mechanisms behind the manipulation of information."
+    },
+    "tags": [
+      "non-fiction",
+      "politics",
+      "history",
+      "psychology",
+      "sociology",
+      "communication"
+    ]
+  },
+  {
+    "slug": "franklin",
+    "date": "2004-06-01",
+    "author": "Walter Isaacson",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/3RQZ3e5",
+    "onlyEnglish": true,
+    "de": {
+      "title": "Benjamin Franklin",
+      "subtitle": "Ein amerikanisches Leben",
+      "shortDescription": "Erforschung des vielseitigen Lebens von Benjamin Franklin.",
+      "longDescription": "Großartige Biografie eines Gründervaters Amerikas. Sie beleuchtet Franklins Beiträge als Staatsmann, Erfinder und Schriftsteller und zeigt seine vielfältigen Talente und sein bleibendes Erbe. Die Biografie zeichnet nicht nur seine öffentlichen Erfolge nach, sondern gibt auch Einblick in sein persönliches Leben und seinen Charakter, und enthüllt den Mann hinter dem Mythos. Durch akribische Forschung und eine fesselnde Erzählung malt sie ein lebendiges Bild von Franklins Einfluss auf die amerikanische Geschichte und die Epoche der Aufklärung.",
+      "iLike": "Großartige Biografie eines völlig unterschätzten Wissenschaftlers - und meines Lieblingsgründervaters. Wenn die anderen Schöpfer der Vereinigten Staaten mehr wie er gewesen wären, wäre ihr politisches System nicht so ein Durcheinander."
+    },
+    "en": {
+      "title": "Benjamin Franklin",
+      "subtitle": "An American Life",
+      "iLike": "Great biography of a completely underrated scientist - and my favorite founding father. If the other creators of the United States had been more like him, their political system wouldn't be such a mess.",
+      "shortDescription": "Exploring the multifaceted life of Benjamin Franklin.",
+      "longDescription": "Great biography of an America's founding father. It highlights Franklin's contributions as a statesman, inventor, and writer, showcasing his diverse talents and enduring legacy. The biography not only chronicles his public achievements but also gives insight into his personal life and character, revealing the man behind the myth. Through meticulous research and engaging narrative, it paints a vivid picture of Franklin's impact on American history and the Enlightenment era."
+    },
+    "tags": [
+      "biography",
+      "history",
+      "politics",
+      "non-fiction",
+      "business",
+      "entrepreneurship"
+    ]
+  },
+  {
+    "slug": "hail-mary",
+    "date": "2021-05-04",
+    "author": "Andy Weir",
+    "hasFullText": false,
+    "releaseDate": "",
+    "initialReleaseUrl": "",
+    "initialReleaseName": "",
+    "amazonLink": "https://amzn.to/4brFZdi",
+    "onlyEnglish": true,
+    "de": {
+      "title": "Projekt Hail Mary",
+      "subtitle": "",
+      "shortDescription": "Eine unerwartete Solo-Mission, um die Erde vor einer Katastrophe zu retten.",
+      "longDescription": "Begibt sich auf eine verzweifelte, letzte Chance-Mission, um die Erde vor einer Bedrohung, die zur Auslöschung führen könnte, zu retten. Allein und Millionen von Meilen von zu Hause entfernt, muss der Protagonist wissenschaftliche Rätsel lösen, unerwartete Allianzen schmieden und den Mut aufbringen, gegen unvorstellbare Widerstände zu überleben. Mit dem Schicksal der Menschheit in der Schwebe erforscht die Geschichte Themen wie Widerstandsfähigkeit, Einfallsreichtum und die Kraft der Freundschaft angesichts der Verzweiflung.",
+      "iLike": "Fesselnder und super unterhaltsamer Sci-Fi-Roman. Ich habe den Humor und den Schwerpunkt auf tatsächliche wissenschaftliche Verfahren darin geliebt."
+    },
+    "en": {
+      "title": "Project Hail Mary",
+      "subtitle": "",
+      "iLike": "Captivating and super entertaining sci-fi novel. I loved the humor and the focus on actual science procedures in it.",
+      "shortDescription": "An unexpected solo mission to save Earth from disaster.",
+      "longDescription": "Embarks on a desperate, last-chance mission to save Earth from an extinction-level threat. Alone and millions of miles from home, the protagonist must solve scientific puzzles, forge unexpected alliances, and muster the courage to survive against unimaginable odds. With humanity's fate hanging in the balance, the story explores themes of resilience, ingenuity, and the power of friendship in the face of despair."
+    },
+    "tags": [
+      "scifi",
+      "fiction",
+      "science",
+      "mindset",
+      "humor"
     ]
   }
 ]
